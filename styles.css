@@ -324,7 +324,18 @@ p { margin: 0; }
   color: var(--text-light);
 }
 
-.hero__bio b { color: var(--flag); font-weight: 600; }
+.hero__bio b { font-weight: 600; }
+
+.hero__company-link {
+  color: var(--flag);
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 0.2s var(--ease);
+}
+
+.hero__company-link:hover {
+  color: #478ee6;
+}
 
 .hero__actions {
   display: flex;
@@ -1000,6 +1011,49 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 24px;
+}
+
+.about-me__skills {
+  display: flex;
+  flex-direction: column;
+  padding-top: 56px;
+  margin-left: 32px;
+}
+
+.about-me__skills-title {
+  font-family: var(--f-mono);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--flag);
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+
+.about-me__skills-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-left: 180px;
+}
+
+.about-me__skills-list li {
+  font-size: 16px;
+  color: var(--text-muted);
+  padding-left: 18px;
+  position: relative;
+}
+
+.about-me__skills-list li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--flag);
+  font-family: var(--f-mono);
+  font-size: 12px;
 }
 
 .principle {
