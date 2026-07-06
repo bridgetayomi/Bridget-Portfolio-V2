@@ -723,7 +723,7 @@ section { position: relative; }
    NOW — checklist
    ========================================================================== */
 
-.now-panel {
+/* .now-panel {
   background: var(--paper);
   color: var(--text-dark);
   border-radius: var(--radius);
@@ -781,7 +781,73 @@ section { position: relative; }
   border-color: var(--pass);
 }
 
-.checklist li.is-checked .checkbox svg { opacity: 1; transform: scale(1); }
+.checklist li.is-checked .checkbox svg { opacity: 1; transform: scale(1); } */
+
+
+ 
+/* ==========================================================================
+   TESTIMONIALS
+   ========================================================================== */
+ 
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+ 
+.testimonial-card {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: rgb(246, 246, 246);
+  padding: 28px 24px;
+  transition: border-color 0.25s var(--ease), transform 0.25s var(--ease);
+
+}
+ 
+.testimonial-card:hover {
+  border-color: var(--line-strong);
+  transform: translateY(-4px);
+}
+ 
+.testimonial-card__tag { color: var(--pass) !important; }
+ 
+.testimonial-card__quote {
+  font-size: 15.5px;
+  line-height: 1.6;
+  color: var(--text-light);
+  flex: 1;
+}
+ 
+.testimonial-card__person {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+ 
+.testimonial-card__avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--line-strong);
+  background: var(--ink-panel-2);
+}
+ 
+.testimonial-card__name {
+  font-family: var(--f-display);
+  font-size: 14px;
+  font-weight: 600;
+}
+ 
+.testimonial-card__role {
+  font-family: var(--f-mono);
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
 
 /* ==========================================================================
    CONTACT / FOOTER
