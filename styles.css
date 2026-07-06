@@ -8,13 +8,13 @@
 
 :root {
   /* Color */
-  --ink: #f0f3f6;       /* light cool-gray canvas background */
+  --ink: #dbeaf9;       /* light cool-gray canvas background */
   --ink-panel: #e5eaf0; /* cards / panels */
   --ink-panel-2: #dae1e9; /* hover cards */
-  --paper: #1b222c;     /* dark navy-gray checklist box container */
+  --paper: #2c1b1b;     /* dark navy-gray checklist box container */
   --paper-panel: #252f3c; /* checklist divider lines */
   --text-light: #1b222c; /* primary dark text on light bg */
-  --text-muted: #5d6978; /* secondary text */
+  --text-muted: #475260; /* secondary text */
   --text-dark: #f0f3f6;  /* primary light text inside dark checklist box */
   --text-dark-muted: #9ab0c7; /* secondary light text inside dark checklist box */
   --flag: #2b73c9;      /* Deep Sky Blue */
@@ -384,16 +384,18 @@ p { margin: 0; }
 }
 
 .social-row a {
+  position: relative;   /* ← added: needed so the tooltip can anchor to this icon */
   width: 40px;
   height: 40px;
   border: 1px solid var(--line-strong);
-  border-radius: 100px;
+  border-radius:  999px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
   color: var(--text-muted);
   transition: color 0.2s var(--ease), border-color 0.2s var(--ease), transform 0.2s var(--ease);
+  
 }
 
 .social-row a:hover {
@@ -404,6 +406,40 @@ p { margin: 0; }
 }
 
 .social-row svg { width: 18px; height: 18px; }
+.social-row .tooltip {
+  position: absolute;
+  bottom: calc(100% + 10px);       /* sits just above the icon */
+  left: 50%;
+  transform: translate(-50%, 4px); /* centered, nudged down 4px when hidden */
+  background: var(--ink-panel);
+  border: 1px solid var(--line-strong);
+  color: var(--text-light);
+  font-family: var(--f-mono);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  padding: 6px 10px;
+  border-radius: 999px;
+  pointer-events: none;            /* so it never blocks the click */
+  opacity: 0;                      /* hidden by default */
+  transition: opacity 0.2s var(--ease), transform 0.2s var(--ease);
+}
+
+.social-row .tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: var(--line-strong);   /* the little pointer arrow */
+}
+
+.social-row a:hover .tooltip {
+  opacity: 1;                      /* fades in on hover */
+  transform: translate(-50%, 0);   /* slides up into place */
+}
 
 /* ==========================================================================
    SECTION SCAFFOLDING
@@ -967,13 +1003,12 @@ footer {
 }
 
 .quote-text {
-  font-family: var(--f-display);
-  font-size: clamp(22px, 4vw, 36px);
-  font-style: italic;
-  line-height: 1.35;
+  font-family: "Great Vibes", cursive;
+  font-size: clamp(24px, 5vw, 48px);
+  line-height: 1.4;
   color: var(--text-light);
   margin-bottom: 24px;
-  letter-spacing: -0.015em;
+  letter-spacing: 0;
 }
 
 .quote-author {
