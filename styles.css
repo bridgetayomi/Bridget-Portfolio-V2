@@ -1260,3 +1260,76 @@ footer {
   .btn { justify-content: center; }
   .social-row { flex-wrap: wrap; }
 }
+
+
+
+/* ==========================================================================
+   ADDITIONS — Users grid + Metrics grid (EstateIQ case study page)
+   Purely additive: does not modify any existing rule above.
+   ========================================================================== */
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.info-card {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: rgb(246, 246, 246);
+  padding: 22px 20px;
+}
+
+.info-card__title {
+  font-family: var(--f-display);
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.info-card__desc {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.metric-card {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: rgb(246, 246, 246);
+  padding: 24px 20px;
+  text-align: center;
+}
+
+.metric-card__value {
+  font-family: var(--f-display);
+  font-size: 32px;
+  font-weight: 600;
+  color: var(--flag);
+  line-height: 1.1;
+}
+
+.metric-card__label {
+  margin-top: 8px;
+  font-family: var(--f-mono);
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+/* Responsive — new media queries only, existing ones untouched */
+@media (max-width: 860px) {
+  .info-grid { grid-template-columns: 1fr; }
+  .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 520px) {
+  .metrics-grid { grid-template-columns: 1fr; }
+}
