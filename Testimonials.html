@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Testimonials — What People Say</title>
+
+<!--
+  INTEGRATION NOTE FOR YOU:
+  1) Replace the href below with the actual filename of your existing
+     site‑wide stylesheet (the one with --ink, --flag, .testimonial-card, etc).
+     It MUST load BEFORE testimonials.css so the new file can layer on top
+     of your existing variables/classes without touching them.
+  2) If Parkinsans / Great Vibes are already loaded globally on your site,
+     you can safely delete the Google Fonts <link> below.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Parkinsans:wght@400;500;600;700&family=Great+Vibes&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- 1. YOUR EXISTING SITE STYLESHEET (unmodified) -->
+<link rel="stylesheet" href="styles.css">
+
+
+<!-- 2. NEW, ADDITIVE STYLESHEET FOR THIS PAGE -->
+<link rel="stylesheet" href="testimonials.css">
+</head>
+<body>
+
+<!-- ============================= NAV ============================= -->
+<nav class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__mark">JD/</a>
+    <ul class="nav__links" id="navLinks">
+      <li><a href="index.html#work">Work</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="testimonials.html" class="is-active">Testimonials</a></li>
+      <li><a href="index.html#contact" class="btn-nav-cta">Get In Touch</a></li>
+    </ul>
+    <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ============================= HERO ============================= -->
+<header class="t-hero">
+  <!-- floating decorative field (blobs, dots, sparkles, rings) -->
+  <div class="t-hero__field" id="heroField" aria-hidden="true">
+    <div class="blob blob--a"></div>
+    <div class="blob blob--b"></div>
+    <div class="dotgrid"></div>
+    <svg class="ring ring--a" viewBox="0 0 100 100"><circle cx="50" cy="50" r="46"/></svg>
+    <svg class="ring ring--b" viewBox="0 0 100 100"><circle cx="50" cy="50" r="46"/></svg>
+    <svg class="spark spark--1" viewBox="0 0 24 24"><path d="M12 0 L14 10 L24 12 L14 14 L12 24 L10 14 L0 12 L10 10 Z"/></svg>
+    <svg class="spark spark--2" viewBox="0 0 24 24"><path d="M12 0 L14 10 L24 12 L14 14 L12 24 L10 14 L0 12 L10 10 Z"/></svg>
+    <svg class="spark spark--3" viewBox="0 0 24 24"><path d="M12 0 L14 10 L24 12 L14 14 L12 24 L10 14 L0 12 L10 10 Z"/></svg>
+  </div>
+
+  <div class="wrap t-hero__inner">
+    <span class="eyebrow reveal" data-reveal><span class="dot"></span>Testimonials</span>
+    <h1 class="t-hero__title reveal" data-reveal data-delay="80">What People Say<br>About Working With Me</h1>
+    <p class="t-hero__sub reveal" data-reveal data-delay="160">
+      From clients and teammates to mentors, these messages reflect the experiences
+      I've had designing products and collaborating with amazing people.
+    </p>
+  </div>
+</header>
+
+<!-- ===================== FEATURED TESTIMONIALS ===================== -->
+<section class="section" id="featured">
+  <div class="section__head reveal" data-reveal>
+    <div>
+      <span class="eyebrow"><span class="dot"></span>Featured</span>
+      <h2 class="section__title">In their own words</h2>
+    </div>
+    <p class="section__note">A handful of longer notes from people I've shipped work with.</p>
+  </div>
+
+  <div class="testimonial-grid t-featured-grid" id="testimonialGrid">
+    <!-- cards injected by testimonials.js from the TESTIMONIALS data array -->
+  </div>
+</section>
+
+<!-- ===================== APPRECIATION WALL ===================== -->
+<section class="section t-wall" id="wall">
+  <div class="section__head reveal" data-reveal>
+    <div>
+      <span class="eyebrow"><span class="dot"></span>Appreciation Wall ❤️</span>
+      <h2 class="section__title">More Kind Words</h2>
+    </div>
+    <p class="section__note">
+      Not every compliment comes as a formal testimonial. Sometimes the simplest
+      messages mean the most. Here are a few moments that made my day.
+    </p>
+  </div>
+
+  <div class="wall-grid" id="wallGrid">
+    <!-- mock message cards injected by testimonials.js from the WALL_NOTES array -->
+  </div>
+</section>
+
+<!-- ===================== SOCIAL PROOF / METRICS ===================== -->
+<section class="section" id="proof">
+  <div class="section__head reveal" data-reveal>
+    <div>
+      <span class="eyebrow"><span class="dot"></span>By the numbers</span>
+      <h2 class="section__title">A quick tally</h2>
+    </div>
+    <p class="section__note">Rounded down, exaggerated never.</p>
+  </div>
+
+  <div class="metrics-grid reveal" data-reveal id="metricsGrid">
+    <div class="metric-card" data-count="20" data-suffix="+">
+      <div class="metric-card__value"><span class="count">0</span><span class="count-suffix">+</span></div>
+      <div class="metric-card__label">Projects Completed</div>
+    </div>
+    <div class="metric-card" data-count="4" data-suffix="+">
+      <div class="metric-card__value"><span class="count">0</span><span class="count-suffix">+</span></div>
+      <div class="metric-card__label">Years Designing Digital Products</div>
+    </div>
+    <div class="metric-card" data-count="10" data-suffix="+">
+      <div class="metric-card__value"><span class="count">0</span><span class="count-suffix">+</span></div>
+      <div class="metric-card__label">Happy Clients</div>
+    </div>
+    <div class="metric-card" data-count="100" data-suffix="+">
+      <div class="metric-card__value"><span class="count">0</span><span class="count-suffix">+</span></div>
+      <div class="metric-card__label">Design Reviews &amp; Feedback Sessions</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= CTA ============================= -->
+<section class="section t-cta-section">
+  <div class="t-cta-card reveal" data-reveal>
+    <div class="t-cta-card__glow" aria-hidden="true"></div>
+    <span class="eyebrow"><span class="dot"></span>Let's talk</span>
+    <h2 class="t-cta-card__title">Let's Build Something<br>Great Together</h2>
+    <p class="t-cta-card__desc">
+      Whether you're looking for a product designer, a collaborator, or simply
+      want to connect, I'd love to hear from you.
+    </p>
+    <a href="index.html#contact" class="btn btn--primary t-cta-card__btn">
+      Get In Touch
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- ============================= FOOTER ============================= -->
+<footer>
+  <div class="footer__inner">
+    <span>© <span id="year"></span> — Built with care.</span>
+    <button class="back-to-top" id="backToTop">Back to top ↑</button>
+  </div>
+</footer>
+
+<!-- ============================= LIGHTBOX ============================= -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <div class="lightbox__backdrop" id="lightboxBackdrop"></div>
+  <button class="lightbox__close" id="lightboxClose" aria-label="Close">✕</button>
+  <button class="lightbox__nav lightbox__nav--prev" id="lightboxPrev" aria-label="Previous">‹</button>
+  <div class="lightbox__stage" id="lightboxStage"></div>
+  <button class="lightbox__nav lightbox__nav--next" id="lightboxNext" aria-label="Next">›</button>
+</div>
+
+<script src="Testimonials.js"></script>
+</body>
+</html>
+
+
