@@ -562,13 +562,14 @@ function setupChrome() {
 
 document.addEventListener('DOMContentLoaded', () => {
   const grid = document.getElementById('testimonialGrid');
-  TESTIMONIALS.forEach((t, i) => grid.appendChild(renderTestimonialCard(t, i)));
-
-  setupReveal();
-  setupTilt();
-  setupCountUp();
-  setupWall();
-  setupChrome();
+  if (grid) {
+    TESTIMONIALS.forEach((t, i) => grid.appendChild(renderTestimonialCard(t, i)));
+    setupReveal();
+    setupTilt();
+    setupCountUp();
+    setupWall();
+    setupChrome();
+  }
 });
 
 
