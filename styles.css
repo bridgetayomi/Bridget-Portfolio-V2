@@ -978,11 +978,10 @@ font-family: var(--f-body);
   border-radius: 12px;
   background-color:var(--ink-panel-2);
 }
+
+
  .p-frame__inner iframe {
   aspect-ratio: 16/9;
-  /* background-color:#5F2EEA; */
-  /* border: 1px solid var(--line); */
-  /* border-radius: 12px; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -992,13 +991,14 @@ font-family: var(--f-body);
   overflow: hidden;
   border-radius: 12px;
   background-color:var(--ink-panel-2);
+  
 
 }
 
  
 .p-shots {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 24px;
   margin-top: 24px;
 }
@@ -1398,6 +1398,40 @@ font-family: var(--f-body);
 
 @media (max-width: 520px) {
   .metrics-grid { grid-template-columns: 1fr; }
+  .p-shots { grid-template-columns: 1fr; }
+}
+
+/* ==========================================================================
+   HELPNEST — responsive grid helpers
+   ========================================================================== */
+
+/* 4-column solution grid (overrides the default 3-col info-grid) */
+.info-grid--4col {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* Yes/No flow branch grid */
+.flow-branch {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 20px;
+  width: 100%;
+}
+
+@media (max-width: 860px) {
+  .info-grid--4col { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 520px) {
+  .info-grid--4col { grid-template-columns: 1fr; }
+  .flow-branch { grid-template-columns: 1fr; }
+
+  /* Hero section top padding reduced on small screens */
+  .p-hero { padding-top: 100px; }
+
+  /* Tighten up the user-flow diagram padding */
+  .p-flow-diagram { padding: 20px 16px; }
 }
 
 
@@ -1899,3 +1933,4 @@ font-family: var(--f-body);
 .bg-bluwox { background-color: #1438B9 !important; background-image: none !important; }
 .bg-cashr { background-color: #015F2D !important; background-image: none !important; }
 .bg-securekid { background-color: #BA1A63 !important; background-image: none !important; }
+.bg-helpnest { background-color: #0F4C75 !important; background-image: none !important; }
