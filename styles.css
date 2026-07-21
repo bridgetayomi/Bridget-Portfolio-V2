@@ -1050,13 +1050,22 @@ font-family: var(--f-body);
 
 }
 
-.p-block__label {
+.p-block__label,
+.eyebrow.p-block__label {
   margin-bottom: 16px;
+  font-weight: 700;
+  font-size: 13.5px;
+  color: var(--text-light);
+  letter-spacing: 0.12em;
 }
 
 .p-block h3 {
-  font-size: 26px;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-light);
+  margin-top: 24px;
   margin-bottom: 16px;
+  line-height: 1.25;
 }
 
 .p-block p {
@@ -1349,8 +1358,8 @@ font-family: var(--f-body);
 
 .info-card__title {
   font-family: var(--f-display);
-  font-size: 15px;
-  font-weight: 600;
+  font-size: 15.5px;
+  font-weight: 700;
   margin-bottom: 8px;
 }
 
