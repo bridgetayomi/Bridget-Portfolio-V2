@@ -234,58 +234,51 @@ p { margin: 0; }
    ========================================================================== */
 
 .hero {
-  padding: 168px var(--pad) 96px;
+  padding: 168px var(--pad) 110px;
   max-width: var(--max);
   margin: 0 auto;
   position: relative;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
 }
 
 .hero::after {
-  content: "";
-  position: absolute;
-  top: 10%;
-  right: var(--pad);
-  width: min(500px, 45%);
-  height: 80%;
-  background-image: url('hero-bg.jpg');
-  background-repeat: no-repeat;
-  background-position: right center;
-  background-size: contain;
-  opacity: 0.75;
-  mix-blend-mode: multiply;
-  pointer-events: none;
-  z-index: 0;
+  display: none;
 }
 
-.hero__avatar-container,
-.hero__name,
-.hero__role,
-.hero__log,
-.hero__bio,
-.hero__actions,
-.social-row {
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   position: relative;
-  z-index: 1;
-}
-
-.hero__status {
-  margin-bottom: 28px;
+  z-index: 10;
+  max-width: 680px;
 }
 
 .hero__avatar-container {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 52%;
+  max-width: 620px;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
   overflow: hidden;
-  margin-bottom: 28px;
-  border: 1px solid var(--line-strong);
-  background: var(--ink-panel);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.4) 18%, rgba(0, 0, 0, 1) 48%);
+  mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.4) 18%, rgba(0, 0, 0, 1) 48%);
 }
 
 .hero__avatar {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 18%;
+  display: block;
+  opacity: 0.92;
+  border-radius: 28px 0 0 28px;
 }
 
 .hero__name {
@@ -1384,8 +1377,37 @@ font-family: var(--f-body);
 
   .entry { grid-template-columns: 1fr; gap: 8px; }
 
-  .hero { padding-top: 140px; }
-  .hero::after { display: none; }
+  .hero {
+    flex-direction: column;
+    padding-top: 130px;
+    min-height: auto;
+    gap: 32px;
+  }
+
+  .hero__content {
+    max-width: 100%;
+  }
+
+  .hero__avatar-container {
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    width: 100%;
+    max-width: 360px;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    border-radius: 20px;
+    margin: 0 auto;
+    order: -1;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+
+  .hero__avatar {
+    border-radius: 20px;
+    opacity: 1;
+  }
 
   .about-me__grid { grid-template-columns: 1fr; gap: 32px; }
   .about-me__skills { padding-top: 0; margin-left: 0; }
@@ -1958,6 +1980,34 @@ font-family: var(--f-body);
 
 @keyframes cta-border-spin {
   to { --angle: 360deg; }
+}
+
+/* ==========================================================================
+   IMAGE ANIMATIONS & MOUSE HOVER TILT
+   ========================================================================== */
+
+.img-slide-in {
+  opacity: 0;
+  transform: translateY(36px) scale(0.95);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.img-slide-in.is-revealed {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+[data-tilt] {
+  transform-style: preserve-3d;
+  transition: transform 0.15s ease-out;
+  will-change: transform;
+}
+
+[data-tilt] img {
+  transition: transform 0.2s ease-out;
+  will-change: transform;
 }
 
 .t-cta-card__glow {

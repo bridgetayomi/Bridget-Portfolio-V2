@@ -10,6 +10,8 @@ document.addEventListener("DOMContentLoaded", () => {
   initCopyEmail();
   initBackToTop();
   initFooterYear();
+  initImageSlideIn();
+  initImageMouseTilt();
 });
 
 /* ---------------------------------------------------------------------- */
@@ -587,5 +589,84 @@ document.addEventListener('DOMContentLoaded', () => {
     setupChrome();
   }
 });
+
+/* ---------------------------------------------------------------------- */
+/* Image Slide-In Scroll Animation                                        */
+/* ---------------------------------------------------------------------- */
+function initImageSlideIn() {
+  const images = document.querySelectorAll("img, .project-card__frame, .p-frame__inner, .hero__avatar-container");
+  if (!images.length) return;
+
+  images.forEach((img) => {
+    img.classList.add("img-slide-in");
+  });
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-revealed");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.12, rootMargin: "0px 0px -30px 0px" }
+  );
+
+  images.forEach((img) => observer.observe(img));
+}
+
+/* ---------------------------------------------------------------------- */
+/* Interactive 3D Mouse Movement & Hover Tilt Control                     */
+/* ---------------------------------------------------------------------- */
+function initImageMouseTilt() {
+  const tiltTargets = document.querySelectorAll(
+    ".project-card, .hero__avatar-container, .p-frame__inner, .testimonial-card__person, .p-gallery img, .p-block img, .project-card__frame"
+  );
+
+  if (!tiltTargets.length) return;
+
+  tiltTargets.forEach((target) => {
+    target.setAttribute("data-tilt", "true");
+
+    target.addEventListener("mousemove", (e) => {
+      const rect = target.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+
+      // Calculate tilt angle (-7 to +7 degrees)
+      const rotateX = -((y - centerY) / centerY) * 7;
+      const rotateY = ((x - centerX) / centerX) * 7;
+
+      target.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) scale3d(1.025, 1.025, 1.025)`;
+
+      const childImg = target.querySelector("img");
+      if (childImg && childImg !== target) {
+        childImg.style.transform = `translate3d(${-rotateY * 0.5}px, ${rotateX * 0.5}px, 10px) scale(1.04)`;
+      }
+    });
+
+    target.addEventListener("mouseleave", () => {
+      target.style.transition = "transform 0.5s cubic-bezier(0.16, 1, 0.3, 1)";
+      target.style.transform = "perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)";
+
+      const childImg = target.querySelector("img");
+      if (childImg && childImg !== target) {
+        childImg.style.transition = "transform 0.5s cubic-bezier(0.16, 1, 0.3, 1)";
+        childImg.style.transform = "translate3d(0px, 0px, 0px) scale(1)";
+      }
+
+      setTimeout(() => {
+        target.style.transition = "transform 0.15s ease-out";
+        if (childImg && childImg !== target) {
+          childImg.style.transition = "transform 0.2s ease-out";
+        }
+      }, 500);
+    });
+  });
+}
 
 
