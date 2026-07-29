@@ -129,13 +129,13 @@ p { margin: 0; }
 .nav__mark,
 .nav_mark {
   font-family: var(--f-body);
-  font-size: 14px;
-  border: 1px solid var(--line-strong);
-  padding: 6px 10px;
-  border-radius: var(--radius);
-  letter-spacing: 0.04em;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  padding: 0;
+  letter-spacing: 0.02em;
   text-decoration: none !important;
-  color: var(--text-light);
+  color: var(--flag);
 }
 
 .nav__mark:hover,
@@ -143,7 +143,7 @@ p { margin: 0; }
 .nav__mark:focus,
 .nav_mark:focus {
   text-decoration: none !important;
-  color: var(--text-light);
+  color: #478ee6;
 }
 
 .nav__links {
