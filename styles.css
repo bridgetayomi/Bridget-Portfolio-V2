@@ -442,10 +442,26 @@ font-family: var(--f-body);
 section { position: relative; }
 
 .section {
+  width: 100%;
   padding: 96px var(--pad);
-  max-width: var(--max);
-  margin: 0 auto;
   border-top: 1px solid var(--line);
+}
+
+.section__head,
+.about-me__grid,
+.work-grid,
+.changelog,
+.tool-groups,
+.skills-wrap {
+  max-width: var(--max);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#about,
+#work,
+#experience {
+  background-color: #ffffff;
 }
 
 .section__head {
@@ -1234,7 +1250,7 @@ font-family: var(--f-body);
   display: flex;
   flex-direction: column;
   gap: 10px;
-  margin-left: 180px;
+  margin-left: 0;
 }
 
 .about-me__skills-list li {
@@ -1292,21 +1308,67 @@ font-family: var(--f-body);
 
   .p-meta { gap: 24px; }
 
-  .nav__links {
-    position: fixed;
-    inset: 0;
-    top: 64px;
-    background: var(--ink);
-    flex-direction: column;
-    padding: 40px var(--pad);
-    gap: 26px;
-    font-size: 20px;
-    transform: translateX(100%);
-    transition: transform 0.35s var(--ease);
+  .nav__inner {
+    position: relative;
+    padding: 14px var(--pad);
   }
 
-  .nav__links.is-open { transform: translateX(0); }
-  .nav__toggle { display: flex; }
+  .nav__toggle {
+    display: flex;
+    z-index: 1001;
+    margin-left: auto;
+  }
+
+  .nav__links {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: calc(100vh - 60px);
+    background: #ffffff;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 32px var(--pad);
+    gap: 16px;
+    font-size: 18px;
+    font-weight: 500;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-12px);
+    transition: opacity 0.3s var(--ease), transform 0.3s var(--ease), visibility 0.3s var(--ease);
+    z-index: 999;
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+  }
+
+  .nav__links.is-open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .nav__links li {
+    width: 100%;
+  }
+
+  .nav__links a {
+    display: block;
+    width: 100%;
+    padding: 12px 0;
+    font-size: 18px;
+    color: var(--text-light);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .nav__links a.btn-nav-cta {
+    display: inline-block;
+    width: auto;
+    margin-top: 12px;
+    text-align: center;
+    border-bottom: none;
+    padding: 10px 24px !important;
+  }
 
   .section__head { flex-direction: column; align-items: flex-start; }
   .section__note { text-align: left; }

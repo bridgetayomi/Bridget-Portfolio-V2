@@ -27,7 +27,15 @@ function initNav() {
   }
 
   if (toggle && links) {
-    toggle.addEventListener("click", () => {
+    const closeMenu = () => {
+      links.classList.remove("is-open");
+      toggle.classList.remove("is-open");
+      toggle.setAttribute("aria-expanded", "false");
+      document.body.style.overflow = "";
+    };
+
+    toggle.addEventListener("click", (e) => {
+      e.stopPropagation();
       const isOpen = links.classList.toggle("is-open");
       toggle.classList.toggle("is-open", isOpen);
       toggle.setAttribute("aria-expanded", String(isOpen));
@@ -35,11 +43,19 @@ function initNav() {
     });
 
     links.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", () => {
-        links.classList.remove("is-open");
-        toggle.classList.remove("is-open");
-        document.body.style.overflow = "";
-      });
+      link.addEventListener("click", closeMenu);
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && links.classList.contains("is-open")) {
+        closeMenu();
+      }
+    });
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 860 && links.classList.contains("is-open")) {
+        closeMenu();
+      }
     });
   }
 
