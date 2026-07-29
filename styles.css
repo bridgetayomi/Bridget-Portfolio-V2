@@ -126,14 +126,23 @@ p { margin: 0; }
   justify-content: space-between;
 }
 
-.nav__mark {
+.nav__mark,
+.nav_mark {
   font-family: var(--f-body);
   font-size: 14px;
   border: 1px solid var(--line-strong);
   padding: 6px 10px;
   border-radius: var(--radius);
   letter-spacing: 0.04em;
-  text-decoration: none;
+  text-decoration: none !important;
+  color: var(--text-light);
+}
+
+.nav__mark:hover,
+.nav_mark:hover,
+.nav__mark:focus,
+.nav_mark:focus {
+  text-decoration: none !important;
   color: var(--text-light);
 }
 
