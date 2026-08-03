@@ -259,7 +259,8 @@ p { margin: 0; }
 .hero__avatar-container {
   position: absolute;
   top: 0;
-  right: 0;
+  right: -200px;
+ 
   bottom: 0;
   width: 52%;
   max-width: 620px;
