@@ -17,17 +17,106 @@
     href="https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&family=IBM+Plex+Mono:wght@400;500&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
- <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-NW8Z6RFTC2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NW8Z6RFTC2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'G-NW8Z6RFTC2');
-</script>
+    gtag('config', 'G-NW8Z6RFTC2');
+  </script>
 
 </head>
+
+<!-- BRI AI BUTTON -->
+
+<button id="briAiButton" class="bri-ai-button">
+  <span class="bri-ai-icon">✦</span>
+  <span>Ask Bri AI</span>
+</button>
+<!-- BRI AI CHAT WINDOW -->
+
+<div id="briAiChat" class="bri-ai-chat">
+
+  <div class="bri-chat-header">
+
+    <div class="bri-chat-title">
+
+      <div class="bri-chat-avatar">
+        ✦
+      </div>
+
+      <div>
+        <strong>Bri AI</strong>
+        <span>Portfolio assistant</span>
+      </div>
+
+    </div>
+
+    <button id="closeBriChat" class="bri-close-button" aria-label="Close Bri AI">
+      ×
+    </button>
+
+  </div>
+
+
+  <div class="bri-chat-messages" id="briChatMessages">
+
+    <div class="bri-welcome">
+
+      <div class="bri-welcome-icon">
+        ✦
+      </div>
+
+      <h3>Hey there 👋🏽</h3>
+
+      <p>
+        I'm Bri AI. I can tell you about Bri's work,
+        experience, projects and design skills.
+      </p>
+
+      <div class="bri-suggestions">
+
+        <button class="bri-suggestion">
+          Who is Bri?
+        </button>
+
+        <button class="bri-suggestion">
+          Tell me about her work
+        </button>
+
+        <button class="bri-suggestion">
+          What projects has she worked on?
+        </button>
+
+        <button class="bri-suggestion">
+          What does she specialise in?
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <form id="briChatForm" class="bri-chat-form">
+
+    <textarea id="briChatInput" placeholder="Ask Bri anything..." rows="1"></textarea>
+
+    <button type="submit" id="briSendButton" class="bri-send-button" aria-label="Send message">
+      ↑
+    </button>
+
+  </form>
+
+
+  <div class="bri-chat-footer">
+    Powered by Bri AI
+  </div>
+
+</div>
 
 <body>
 
@@ -53,19 +142,89 @@
 
     <!-- ============================== HERO ============================== -->
     <section id="hero" class="hero">
+      <!-- 4 Animated Floating UI Cards -->
+      <div class="hero__cards-container" aria-hidden="true">
+        <!-- Card 1: Top Left - Project Preview (HelpNest Fintech) -->
+        <div class="hero-card hero-card--tl" data-parallax="0.3">
+          <div class="hero-card__inner">
+            <div class="hero-card__tag-row">
+              <span class="hero-card__pill-tag">Pencentral</span>
+              <span class="hero-card__trend">+24.5%</span>
+            </div>
+            <div class="hero-card__subtext">Amount Remitted </div>
+            <div class="hero-card__amount">$14,850.00</div>
+            <div class="hero-card__chart">
+              <svg viewBox="0 0 140 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 32 Q 35 12, 70 24 T 140 6" stroke="var(--flag)" stroke-width="2.5" stroke-linecap="round" />
+                <path d="M0 32 Q 35 12, 70 24 T 140 6 L 140 40 L 0 40 Z" fill="url(#hero-chart-grad)" opacity="0.18" />
+                <defs>
+                  <linearGradient id="hero-chart-grad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="var(--flag)" />
+                    <stop offset="100%" stop-color="var(--flag)" stop-opacity="0" />
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Bottom Left - Experience & Credentials -->
+        <div class="hero-card hero-card--bl" data-parallax="0.2">
+          <div class="hero-card__inner">
+            <div class="hero-card__badge-row">
+              <span class="hero-card__exp-badge">4+ Years Exp</span>
+            </div>
+            <div class="hero-card__title-sm">Product Designer</div>
+            <div class="hero-card__subtext">ChamsAccess • Lagos 🇳🇬</div>
+            <div class="hero-card__pills">
+              <span>Fintech</span>
+              <span>Mobile Apps</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Top Right - Live Availability & Contact -->
+        <div class="hero-card hero-card--tr" data-parallax="0.35">
+          <div class="hero-card__inner">
+            <div class="hero-card__status">
+              <span class="hero-card__live-dot"></span> Open to Work
+            </div>
+            <div class="hero-card__subtext">Full-time & Project Roles</div>
+            <div class="hero-card__btn-mini">
+              <span>Email Bridget</span>
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M3 8h10M9 4l4 4-4 4" />
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4: Bottom Right - Personal Philosophy & Vibe -->
+        <div class="hero-card hero-card--br" data-parallax="0.25">
+          <div class="hero-card__inner">
+            <div class="hero-card__vibe-header">
+              <span class="hero-card__spark-icon">✦</span> Logic + Personality
+            </div>
+            <div class="hero-card__subtext">Clean UX • Movie Buff 🎬</div>
+            <div class="hero-card__pills">
+              <span>Figma</span>
+              <span>Design Systems</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div class="hero__content">
-        <!-- <img src="./Images/bridget fav.png" alt="Bridget Fayomi" class="hero__avatar"> -->
         <h1 class="hero__name">Bridget Fayomi</h1>
         <div class="hero__role">Product Designer</div>
-        <div class="hero__log" data-hero-log='[" I create clean, intuitive digital experiences for all kind of products.", 
-    "I design  dashboards & mobile applications pretty well.", " I always think about the people behind the screen.", 
-    " I genuinely make screens look beautifully."]'></div>
+        <div class="hero__log"
+          data-hero-log='[" I design dashboards & mobile applications pretty well.", " I create clean, intuitive digital experiences.", " I always think about the people behind the screen.", " I genuinely make screens look beautiful."]'>
+        </div>
 
         <p class="hero__bio">
           I'm a Product Designer at <a href="https://www.chamsaccess.com/" target="_blank" rel="noopener noreferrer"
             class="hero__company-link">ChamsAccess</a> with 4+ years of experience creating intuitive web and mobile
-          products.
-          I design experiences that don't just look good, but solve real problems by balancing how
+          products. I design experiences that don't just look good, but solve real problems by balancing how
           they look, behave, and function, always keeping users and purpose in mind.
         </p>
 

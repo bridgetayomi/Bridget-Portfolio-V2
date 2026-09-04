@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initReveals();
   initChecklist();
   initHeroLog();
+  initHeroParallax();
   initCopyEmail();
   initBackToTop();
   initFooterYear();
@@ -177,6 +178,56 @@ function initHeroLog() {
   }
 
   tick();
+}
+
+/* ---------------------------------------------------------------------- */
+/* Hero Cards Mouse Parallax Effect                                       */
+/* ---------------------------------------------------------------------- */
+function initHeroParallax() {
+  const hero = document.getElementById("hero");
+  const cards = document.querySelectorAll(".hero-card");
+  if (!hero || !cards.length) return;
+
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+  let mouseX = 0;
+  let mouseY = 0;
+  let currentX = 0;
+  let currentY = 0;
+  let isHovered = false;
+
+  hero.addEventListener("mousemove", (e) => {
+    if (window.innerWidth < 860) return;
+    const rect = hero.getBoundingClientRect();
+    mouseX = (e.clientX - rect.left - rect.width / 2) / (rect.width / 2);
+    mouseY = (e.clientY - rect.top - rect.height / 2) / (rect.height / 2);
+    isHovered = true;
+  });
+
+  hero.addEventListener("mouseleave", () => {
+    isHovered = false;
+    mouseX = 0;
+    mouseY = 0;
+  });
+
+  function animate() {
+    if (window.innerWidth >= 860) {
+      currentX += (mouseX - currentX) * 0.08;
+      currentY += (mouseY - currentY) * 0.08;
+
+      cards.forEach((card) => {
+        const depth = parseFloat(card.getAttribute("data-parallax") || "0.25");
+        const moveX = currentX * depth * 35;
+        const moveY = currentY * depth * 35;
+        card.style.setProperty("--px", `${moveX}px`);
+        card.style.setProperty("--py", `${moveY}px`);
+        card.style.translate = `${moveX}px ${moveY}px`;
+      });
+    }
+    requestAnimationFrame(animate);
+  }
+
+  animate();
 }
 
 /* ---------------------------------------------------------------------- */
@@ -670,3 +721,200 @@ function initImageMouseTilt() {
 }
 
 
+
+
+const briAiButton =
+  document.getElementById("briAiButton");
+
+const briAiChat =
+  document.getElementById("briAiChat");
+
+const closeBriChat =
+  document.getElementById("closeBriChat");
+
+
+/* OPEN CHAT */
+
+briAiButton.addEventListener("click", function () {
+
+  briAiChat.classList.add("open");
+
+});
+
+
+/* CLOSE CHAT */
+
+closeBriChat.addEventListener("click", function () {
+
+  briAiChat.classList.remove("open");
+
+});
+
+
+/* BRI AI CHAT */
+
+const briChatForm =
+  document.getElementById("briChatForm");
+
+const briChatMessages =
+  document.getElementById("briChatMessages");
+
+const briSendButton =
+  document.getElementById("briSendButton");
+
+
+function addBriMessage(type, text) {
+
+  const message =
+    document.createElement("div");
+
+  message.className =
+    `bri-message ${type}`;
+
+  const content =
+    document.createElement("div");
+
+  content.className =
+    "bri-message-content";
+
+  content.textContent = text;
+
+  message.appendChild(content);
+
+  briChatMessages.appendChild(message);
+
+  briChatMessages.scrollTop =
+    briChatMessages.scrollHeight;
+}
+
+
+function showBriTyping() {
+
+  const typing =
+    document.createElement("div");
+
+  typing.className =
+    "bri-message assistant";
+
+  typing.id =
+    "briTyping";
+
+  typing.innerHTML = `
+
+    <div class="bri-message-content bri-typing">
+
+      <span></span>
+      <span></span>
+      <span></span>
+
+    </div>
+
+  `;
+
+  briChatMessages.appendChild(typing);
+
+  briChatMessages.scrollTop =
+    briChatMessages.scrollHeight;
+}
+
+
+function removeBriTyping() {
+
+  const typing =
+    document.getElementById("briTyping");
+
+  if (typing) {
+    typing.remove();
+  }
+
+}
+
+
+async function sendBriMessage(message) {
+
+  if (!message.trim()) return;
+
+  addBriMessage("user", message);
+
+  briChatInput.value = "";
+
+  briSendButton.disabled = true;
+
+  showBriTyping();
+
+
+  try {
+
+    const response =
+      await fetch("/api/chat", {
+
+        method: "POST",
+
+        headers: {
+          "Content-Type": "application/json"
+        },
+
+        body: JSON.stringify({
+          message: message
+        })
+
+      });
+
+
+    const data =
+      await response.json();
+
+
+    removeBriTyping();
+
+
+    if (!response.ok) {
+
+      throw new Error(
+        data.error ||
+        "Bri couldn't respond right now."
+      );
+
+    }
+
+
+    addBriMessage(
+      "assistant",
+      data.reply
+    );
+
+
+  } catch (error) {
+
+    removeBriTyping();
+
+    addBriMessage(
+      "assistant",
+      error.message
+    );
+
+  } finally {
+
+    briSendButton.disabled = false;
+
+    briChatInput.focus();
+
+  }
+
+}
+
+
+/* FORM SUBMIT */
+
+briChatForm.addEventListener(
+  "submit",
+  function(event) {
+
+    event.preventDefault();
+
+    sendBriMessage(
+      briChatInput.value
+    );
+
+  }
+);
