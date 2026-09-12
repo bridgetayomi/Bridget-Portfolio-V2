@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="./Images/bridget fav.png" />
+    <title>Design Explorations — Bridget Fayomi</title>
+    <meta name="description"
+        content="Design explorations by Bridget Fayomi — a collection of visual design work, concept projects, and UI experiments." />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&family=IBM+Plex+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NW8Z6RFTC2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-NW8Z6RFTC2');
+    </script>
+
+    <style>
+        .de-page {
+            max-width: var(--max);
+            margin: 0 auto;
+            padding: 0 var(--pad);
+        }
+
+        .de-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            text-decoration: none;
+            margin-top: 40px;
+            transition: color 0.2s;
+        }
+
+        .de-back:hover {
+            color: var(--flag);
+        }
+
+        .de-header {
+            padding: 56px 0 72px;
+            border-bottom: 1px solid var(--line-strong);
+        }
+
+        .de-header__eyebrow {
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--flag);
+            margin-bottom: 16px;
+        }
+
+        .de-header h1 {
+            font-size: clamp(2.2rem, 5vw, 3.8rem);
+            font-weight: 700;
+            line-height: 1.1;
+            color: var(--text-light);
+            margin: 0 0 20px;
+            max-width: 640px;
+        }
+
+        .de-header__sub {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            max-width: 520px;
+            line-height: 1.65;
+            margin: 0;
+        }
+
+        .de-project {
+            padding: 80px 0;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .de-project:last-of-type {
+            border-bottom: none;
+        }
+
+        .de-project__header {
+            margin-bottom: 52px;
+        }
+
+        .de-project__category {
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.09em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+        }
+
+        .de-project__name {
+            font-size: clamp(1.8rem, 4vw, 3rem);
+            font-weight: 700;
+            color: var(--text-light);
+            margin: 0;
+            line-height: 1.1;
+        }
+
+        .de-project__context {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px 56px;
+            margin-bottom: 56px;
+        }
+
+        @media (max-width: 640px) {
+            .de-project__context {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+        }
+
+        .de-context-block__label {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--flag);
+            margin-bottom: 10px;
+        }
+
+        .de-context-block__text {
+            font-size: 1rem;
+            color: var(--text-light);
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .de-visuals {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .de-visual--hero {
+            width: 100%;
+            border-radius: 10px;
+            overflow: hidden;
+            background: var(--ink-panel);
+        }
+
+        .de-visual--hero img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 10px;
+            transition: transform 0.55s var(--ease);
+        }
+
+        .de-visual--hero:hover img {
+            transform: scale(1.015);
+        }
+
+        .de-visual-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .de-visual-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .de-visual-grid--3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        @media (max-width: 760px) {
+            .de-visual-grid--3 {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .de-visual-grid--3 {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .de-visual-item {
+            border-radius: 10px;
+            overflow: hidden;
+            background: var(--ink-panel);
+        }
+
+        .de-visual-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 10px;
+            transition: transform 0.55s var(--ease);
+        }
+
+        .de-visual-item:hover img {
+            transform: scale(1.02);
+        }
+
+        .de-visual-caption {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            margin-top: 8px;
+            font-family: 'IBM Plex Mono', monospace;
+        }
+
+        .de-reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.65s var(--ease), transform 0.65s var(--ease);
+        }
+
+        .de-reveal.is-visible {
+            opacity: 1;
+            transform: none;
+        }
+
+        .de-end-spacer {
+            height: 80px;
+        }
+
+        /* Live link badge next to project name */
+        .de-project__name-row {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .de-live-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--flag);
+            border: 1.5px solid var(--flag);
+            border-radius: 100px;
+            padding: 4px 12px;
+            text-decoration: none;
+            transition: background 0.2s, color 0.2s;
+            white-space: nowrap;
+        }
+
+        .de-live-badge::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--flag);
+            animation: de-pulse 1.8s ease-in-out infinite;
+        }
+
+        .de-live-badge:hover {
+            background: var(--flag);
+            color: #fff;
+        }
+
+        .de-live-badge:hover::before {
+            background: #fff;
+        }
+
+        @keyframes de-pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.4;
+                transform: scale(0.7);
+            }
+        }
+
+        /* Inline live link after solution text */
+        .de-live-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 14px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--flag);
+            text-decoration: none;
+            border-bottom: 1.5px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        .de-live-link:hover {
+            border-bottom-color: var(--flag);
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="de-page">
+
+            <a href="index.html#work" class="de-back">← All Projects</a>
+
+            <div class="de-header de-reveal">
+                <div class="de-header__eyebrow">Design Explorations</div>
+                <h1>Visual work &amp; UI concepts</h1>
+                <p class="de-header__sub">
+                    A collection of design explorations — projects where I explored ideas,
+                    tested visual directions, and pushed interfaces beyond the brief.
+                </p>
+            </div>
+
+            <!-- ══════════════════════════════════
+                 PROJECT 6 — Quest ERP
+            ══════════════════════════════════ -->
+            <section class="de-project de-reveal" id="quest-erp">
+
+                <div class="de-project__header">
+                    <div class="de-project__category">Enterprise Software · ERP</div>
+                    <h2 class="de-project__name">Quest ERP</h2>
+                </div>
+
+                <div class="de-project__context">
+                    <div class="de-context-block">
+                        <div class="de-context-block__label">The Problem</div>
+                        <p class="de-context-block__text">
+                            Businesses often rely on separate tools for HR, payroll, expenses, finance, performance, and
+                            other operations, making it harder to manage everything in one place.
+                        </p>
+                    </div>
+                    <div class="de-context-block">
+                        <div class="de-context-block__label">The Solution</div>
+                        <p class="de-context-block__text">
+                            I designed an ERP experience that brings multiple business functions
+                            into one connected platform which includes company setup, expenses, performance, payroll,
+                            and ledger,
+                            alongside a landing page that introduces Quest ERP's wider range of products and industry
+                            solutions.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="de-visuals">
+
+                    <!-- Landing page — full width hero -->
+                    <!-- <div class="de-visual--hero">
+                        <img src="./Images/quest-landing-page.png" alt="Quest ERP — landing page" />
+                    </div>
+                    <p class="de-visual-caption">Landing page</p> -->
+
+                    <!-- Row 1: Company setup · Expenses · Performance -->
+                    <div class="de-visual-grid de-visual-grid--3">
+                        <div>
+                            <div class="de-visual-item">
+                                <img src="./Images/Staff Managemnet.png" alt="Quest ERP — staff management" />
+                            </div>
+                            <p class="de-visual-caption">Staff Management</p>
+                        </div>
+                        <div>
+                            <div class="de-visual-item">
+                                <img src="./Images/expense dashboard.png" alt="Quest ERP — expense management" />
+                            </div>
+                            <p class="de-visual-caption">Expense dashboard</p>
+                        </div>
+                        <div>
+                            <div class="de-visual-item">
+                                <img src="./Images/staff performance.png" alt="Quest ERP — performance" />
+                            </div>
+                            <p class="de-visual-caption">Performance</p>
+                        </div>
+                    </div>
+
+                    <!-- Row 2: Payroll · Ledger · Module / Dashboard -->
+                    <div class="de-visual-grid de-visual-grid--3">
+                        <div>
+                            <div class="de-visual-item">
+                                <img src="./Images/Payroll Dashboard.png" alt="Quest ERP — payroll" />
+                            </div>
+                            <p class="de-visual-caption">Payroll</p>
+                        </div>
+                        <div>
+                            <div class="de-visual-item">
+                                <img src="./Images/Payslip.png" alt="Quest ERP — payslip" />
+                            </div>
+                            <p class="de-visual-caption">Payslip</p>
+                        </div>
+                        <div>
+                            <div class="de-visual-item">
+                                <img src="./Images/Modules Manager.png" alt="Quest ERP —  module" />
+                            </div>
+                            <p class="de-visual-caption">Modules Manager</p>
+                        </div>
+                    </div>
+
+
+
+
+                    <!-- ══════════════════════════════════
+           PROJECT 1 — Argone Pay
+      ══════════════════════════════════ -->
+                    <section class="de-project de-reveal" id="argone-pay">
+
+                        <div class="de-project__header">
+                            <div class="de-project__category">Fintech · Payment Platform</div>
+                            <h2 class="de-project__name">Argone Pay</h2>
+                        </div>
+
+                        <div class="de-project__context">
+                            <div class="de-context-block">
+                                <div class="de-context-block__label">The Problem</div>
+                                <p class="de-context-block__text">
+                                    Sending money across borders is still painful — high fees, confusing
+                                    exchange rates, and interfaces that feel built for banks, not people.
+                                </p>
+                            </div>
+                            <div class="de-context-block">
+                                <div class="de-context-block__label">The Solution</div>
+                                <p class="de-context-block__text">
+                                    A clean, confidence-inspiring payment experience that surfaces the
+                                    right information at the right moment, making international transfers
+                                    feel fast and effortless.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="de-visuals">
+                            <div class="de-visual--hero">
+                                <img src="./Images/Argonepay.png" alt="Argone Pay — main dashboard overview" />
+                            </div>
+                            <div class="de-visual-grid de-visual-grid--3">
+                                <div>
+                                    <div class="de-visual-item">
+                                        <img src="./Images/Merchant Login.png" alt="Argone Pay — card management" />
+                                    </div>
+                                    <p class="de-visual-caption">Login</p>
+                                </div>
+                                <div>
+                                    <div class="de-visual-item">
+                                        <img src="./Images/Business Documents.png" alt="Argone Pay —" />
+                                    </div>
+                                    <p class="de-visual-caption">Business Document</p>
+                                </div>
+                                <div>
+                                    <div class="de-visual-item">
+                                        <img src="./Images/Customer Profile.png" alt="Argone Pay — screen 4" />
+                                    </div>
+                                    <p class="de-visual-caption">Customer Profile</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </section>
+
+
+                    <!-- ══════════════════════════════════
+           PROJECT 2 — Co-spazye
+      ══════════════════════════════════ -->
+                    <section class="de-project de-reveal" id="co-spazye">
+
+                        <div class="de-project__header">
+                            <div class="de-project__category">Real Estate · Room &amp; Space Rental</div>
+                            <div class="de-project__name-row">
+                                <h2 class="de-project__name">Co-spazye</h2>
+                                <a href="https://co-spayze.vercel.app/index.html" target="_blank" rel="noopener"
+                                    class="de-live-badge">Live site</a>
+                            </div>
+                        </div>
+
+                        <div class="de-project__context">
+                            <div class="de-context-block">
+                                <div class="de-context-block__label">The Problem</div>
+                                <p class="de-context-block__text">
+                                    Finding suitable rooms and spaces to rent can be difficult, especially when people
+                                    have to
+                                    search through scattered listings or rely on personal connections.
+                                </p>
+                            </div>
+                            <div class="de-context-block">
+                                <div class="de-context-block__label">The Solution</div>
+                                <p class="de-context-block__text">
+                                    Co-spazye brings available spaces into one platform, making it easier for people to
+                                    discover, compare, and find spaces that fit their needs.
+                                </p>
+                                <a href="https://co-spayze.vercel.app/index.html" target="_blank" rel="noopener"
+                                    class="de-live-link">
+                                    Designed, built &amp; hosted by me — view the live site
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path d="M5 12h14M13 6l6 6-6 6" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="de-visuals">
+                            <!-- <div class="de-visual--hero">
+                        <img src="./Images/co-spazye-hero.png" alt="Co-spazye — main screen" />
+                    </div> -->
+                            <div class="de-visual-grid de-visual-grid--3">
+                                <div>
+                                    <div class="de-visual-item">
+                                        <img src="./Images/co-spayze hero.png" alt="Co-spazye — screen 1" />
+                                    </div>
+                                    <p class="de-visual-caption">Hero image</p>
+                                </div>
+                                <div>
+                                    <div class="de-visual-item">
+                                        <img src="./Images/How it works.png" alt="Co-spazye — screen 2" />
+                                    </div>
+                                    <p class="de-visual-caption">How it works</p>
+                                </div>
+                                <div>
+                                    <div class="de-visual-item">
+                                        <img src="./Images/view houses.png" alt="Co-spazye — screen 3" />
+                                    </div>
+                                    <p class="de-visual-caption">View houses</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </section>
+
+
+                    <!-- ══════════════════════════════════
+                 PROJECT 3 — HealthFusion
+            ══════════════════════════════════ -->
+                    <section class="de-project de-reveal" id="healthfusion">
+
+                        <div class="de-project__header">
+                            <div class="de-project__category">Healthcare · Digital Health · Insurance</div>
+                            <h2 class="de-project__name">HealthFusion</h2>
+                        </div>
+
+                        <div class="de-project__context">
+                            <div class="de-context-block">
+                                <div class="de-context-block__label">The Problem</div>
+                                <p class="de-context-block__text">
+                                    Employers, HR teams, and employees often have to navigate complex health insurance plans, wellness benefits, claims, and healthcare information across different systems.
+                                </p>
+                            </div>
+                            <div class="de-context-block">
+                                <div class="de-context-block__label">The Solution</div>
+                                <p class="de-context-block__text">
+                                  I designed experiences across HealthFusion, from the main landing page to the HR, HMO, Admin, and Employee Admin platforms, bringing key health insurance and benefits workflows into a more connected and easier to use experience.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="de-visuals">
+                            <div class="de-visual--hero">
+                                <img src="./Images/healthfusion.png" alt="HealthFusion — main screen" />
+                            </div>
+                            <div class="de-visual-grid de-visual-grid--3">
+                                <div>
+                                    <div class="de-visual-item">
+                                        <img src="./Images/Home-HealthFusion.png" alt="HealthFusion — screen 1" />
+                                    </div>
+                                    <p class="de-visual-caption">Landing page</p>
+                                </div>
+                                <div>
+                                    <div class="de-visual-item">
+                                        <img src="./Images/Home-healthfusio2.png" alt="HealthFusion — screen 2" />
+                                    </div>
+                                    <p class="de-visual-caption">Landing page</p>
+                                </div>
+                                <div>
+                                    <div class="de-visual-item">
+                                        <img src="./Images/About Us-Healthfusion.png" alt="HealthFusion — screen 3" />
+                                    </div>
+                                    <p class="de-visual-caption">About Us</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </section>
+
+
+                    <!-- ══════════════════════════════════
+                 PROJECT 4 — Bastion Health
+            ══════════════════════════════════ -->
+                    <section class="de-project de-reveal" id="bastion-health">
+
+                        <div class="de-project__header">
+                            <div class="de-project__category">Health Tech · Healthcare</div>
+                            <h2 class="de-project__name">Itura Care </h2>
+                        </div>
+
+                        <div class="de-project__context">
+                            <div class="de-context-block">
+                                <div class="de-context-block__label">The Problem</div>
+                                <p class="de-context-block__text">
+                                    Users and hospitals need an easier way to manage healthcare plans, clients,
+                                    appointments, claims, and other health related information in one place.
+                                </p>
+                            </div>
+                            <div class="de-context-block">
+                                <div class="de-context-block__label">The Solution</div>
+                                <p class="de-context-block__text">
+                                    I designed a healthcare app that helps users manage their health plans,
+                                    appointments, screenings, and claims, while giving healthcare providers a simpler
+                                    way to manage their clients and appointments.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="de-visuals">
+                            <!-- <div class="de-visual--hero">
+                        <img src="./Images/bastion-hero.png" alt="Bastion Health — main screen" />
+                    </div> -->
+                            <div class="de-visual-grid de-visual-grid--3">
+                                <div>
+                                    <div class="de-visual-item">
+                                        <img src="./Images/IturaCareDashboard.png" alt="Bastion Health — screen 1" />
+                                    </div>
+                                    <p class="de-visual-caption">Dashboard</p>
+                                </div>
+
+                                <div>
+                                    <div class="de-visual-item">
+                                        <img src="./Images/Book Appointment.png" alt="Bastion Health — screen 3" />
+                                    </div>
+                                    <p class="de-visual-caption">Book Appointment</p>
+                                </div>
+
+                                <div>
+                                    <div class="de-visual-item">
+                                        <img src="./Images/Notifications.png" alt="Bastion Health — screen 3" />
+                                    </div>
+                                    <p class="de-visual-caption">Notifications</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </section>
+
+
+                    <!-- ══════════════════════════════════
+                 PROJECT 5 — SecureKid
+            ══════════════════════════════════ -->
+                    <section class="de-project de-reveal" id="securekid">
+
+                        <div class="de-project__header">
+                            <div class="de-project__category"> School Safety Platform · Family Tech ·</div>
+                            <h2 class="de-project__name">SecureKid</h2>
+                        </div>
+
+                        <div class="de-project__context">
+                            <div class="de-context-block">
+                                <div class="de-context-block__label">The Problem</div>
+                                <p class="de-context-block__text">
+                                    Schools and parents need an easy way to keep track of children’s safety and stay
+                                    informed without making the experience complicated.
+                                </p>
+                            </div>
+                            <div class="de-context-block">
+                                <div class="de-context-block__label">The Solution</div>
+                                <p class="de-context-block__text">
+                                    I designed a child safety platform that helps schools and parents monitor and
+                                    manage important safety information in one place.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="de-visuals">
+                            <div class="de-visual--hero">
+                                <img src="./Images/secure kid.png" alt="SecureKid — main screen" />
+                            </div>
+                            <div class="de-visual-grid de-visual-grid--3">
+                                <div>
+                                    <div class="de-visual-item">
+                                        <img src="./Images/User MGT - Student 2.png"
+                                            alt="SecureKid — admin dashboard" />
+                                    </div>
+                                    <p class="de-visual-caption">Admin dashboard</p>
+                                </div>
+                                <div>
+                                    <div class="de-visual-item">
+                                        <img src="./Images/Sign in -Securekid.png" alt="SecureKid — admin card view" />
+                                    </div>
+                                    <p class="de-visual-caption">Admin card view</p>
+                                </div>
+                                <div>
+                                    <div class="de-visual-item">
+                                        <img src="./Images/Dashboard- Securekid.png" alt="SecureKid — screen 4" />
+                                    </div>
+                                    <p class="de-visual-caption">Dashboard</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </section>
+
+
+
+            </section>
+
+
+            <div class="de-end-spacer"></div>
+
+
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer__inner">
+            <span>© <span data-year></span> Bridget Fayomi (Designergirloffigma). All rights reserved.</span>
+            <button class="back-to-top" data-back-to-top>↑ Back to top</button>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        const deRevealEls = document.querySelectorAll('.de-reveal');
+        const deObserver = new IntersectionObserver((entries) => {
+            entries.forEach(el => {
+                if (el.isIntersecting) {
+                    el.target.classList.add('is-visible');
+                    deObserver.unobserve(el.target);
+                }
+            });
+        }, { threshold: 0.08 });
+        deRevealEls.forEach(el => deObserver.observe(el));
+    </script>
+</body>
+
+</html>
