@@ -1,716 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="Images/bridget-fav-small.png" />
     <title>Bridget Fayomi — Product Designer</title>
-    <meta name="description"
-        content="Portfolio of Bridget Fayomi, a Product Designer crafting intuitive digital experiences at the intersection of systematic logic and striking aesthetics." />
-
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NW8Z6RFTC2"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-NW8Z6RFTC2');
-    </script>
-
-    <!-- Theme Initialization Script (Anti-FOUC) -->
-    <script>
-        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            document.documentElement.classList.add('dark');
-        } else {
-            document.documentElement.classList.remove('dark');
-        }
-    </script>
-
-    <!-- Fonts & Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
-        rel="stylesheet">
-
-    <!-- External CSS -->
-    <link rel="stylesheet" href="css/styles.css">
-
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-                        mono: ['"IBM Plex Mono"', 'monospace'],
-                    },
-                    colors: {
-                        dark: '#0a0a0a',
-                        card: '#111111',
-                        accent: '#c4f02a',
-                        border: '#222222',
-                        sidebar: '#121212',
-                        sidebarBorder: '#2A2A2A',
-                        sidebarMuted: '#8A8A8A',
-                    }
-                }
-            }
-        }
-    </script>
 
     <style>
-        /* Card Hover Micro-Interactions */
-        .showcase-card {
-            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease, border-color 0.4s ease;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        @media (hover: hover) {
-            .showcase-card:hover {
-                transform: translateY(-6px);
+        body {
+            background: #0a0a0a;
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: Arial, sans-serif;
+            opacity: 1;
+            transition: opacity 0.6s ease;
+        }
+
+        .intro {
+            text-align: center;
+        }
+
+        h1 {
+            font-family: Georgia, serif;
+            font-size: clamp(3rem, 8vw, 7rem);
+            font-weight: 400;
+            margin-bottom: 12px;
+        }
+
+        p {
+            font-size: 1rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .loading {
+            width: 180px;
+            height: 2px;
+            background: #333;
+            margin: 35px auto 0;
+            overflow: hidden;
+        }
+
+        .loading-bar {
+            width: 0;
+            height: 100%;
+            background: #c4f02a;
+            animation: loading 3.5s ease forwards;
+        }
+
+        @keyframes loading {
+            from {
+                width: 0;
             }
-
-            .showcase-card:hover .card-img {
-                transform: scale(1.06);
-                filter: grayscale(0%);
-            }
-
-            .showcase-card:hover .card-overlay {
-                background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.3) 40%, rgba(0, 0, 0, 0.88) 100%);
-            }
-        }
-
-        .card-img {
-            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s ease;
-        }
-
-        .card-badge {
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-        }
-
-        .card-overlay {
-            background: linear-gradient(180deg, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.4) 45%, rgba(0, 0, 0, 0.94) 100%);
-            transition: background 0.5s ease;
-        }
-
-        .social-pill {
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .social-pill:hover {
-            transform: translateY(-2px);
-        }
-
-        /* Sidebar Drawer Styles */
-        #sidebar-overlay {
-            transition: opacity 0.35s ease, visibility 0.35s ease;
-        }
-
-        #sidebar-drawer {
-            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        /* Touch Device Cursor Adjustment */
-        @media (hover: none) and (pointer: coarse) {
-
-            #cursor-dot,
-            #cursor-ring {
-                display: none !important;
-            }
-
-            body.case-study,
-            body.portfolio-main {
-                cursor: auto !important;
+            to {
+                width: 100%;
             }
         }
     </style>
 </head>
 
-<body
-    class="case-study antialiased font-sans selection:bg-accent selection:text-dark min-h-screen flex flex-col justify-between relative bg-pattern overflow-x-hidden">
+<body>
 
-    <!-- Custom Cursor (Desktop Only) -->
-    <div id="cursor-dot"></div>
-    <div id="cursor-ring"></div>
+    <div class="intro">
+        <h1>Bridget Fayomi</h1>
+        <p>Product Designer</p>
 
-    <!-- Navigation Bar -->
-    <nav class="fixed w-full z-40 top-0 transition-all duration-300 backdrop-blur-md bg-white/80 dark:bg-dark/80 border-b border-gray-200 dark:border-border"
-        id="navbar">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 md:py-5 flex justify-between items-center">
-
-            <!-- Left: Circular Avatar Logo (Matching Desktop - 1 reference) -->
-            <a href="Index.html" class="flex items-center gap-3 group hover-trigger">
-                <!-- <div
-                    class="w-9 h-9 sm:w-10 sm:h-10 md:w-11 md:h-11 rounded-full overflow-hidden border border-gray-300 dark:border-border/80 p-0.5 bg-white dark:bg-card shadow-sm group-hover:border-black dark:group-hover:border-accent transition-colors flex-shrink-0">
-                    <img src="Images/bridget-fav-small.png" alt="Bridget Fayomi"
-                        class="w-full h-full rounded-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500">
-                </div> -->
-                <div class="flex items-center gap-1.5">
-                    <span class="text-lg sm:text-xl font-bold tracking-tight text-black dark:text-white">DesignsbyB.</span>
-                    <!-- <span class="w-2 h-2 rounded-full bg-accent inline-block"></span> -->
-                </div>
-            </a>
-
-            <!-- Center Navigation Links -->
-            <div
-                class="hidden md:flex items-center gap-6 lg:gap-8 text-sm font-medium text-gray-600 dark:text-gray-400">
-                <a href="Index.html"
-                    class="text-black dark:text-accent font-semibold transition-colors hover-trigger">Home</a>
-                <a href="pages/projects.html"
-                    class="hover:text-black dark:hover:text-white transition-colors hover-trigger">Projects</a>
-                <a href="pages/explorations.html"
-                    class="hover:text-black dark:hover:text-white transition-colors hover-trigger">Explorations</a>
-                <a href="about.html"
-                    class="hover:text-black dark:hover:text-white transition-colors hover-trigger">About</a>
-                <a href="pages/contact.html"
-                    class="hover:text-black dark:hover:text-white transition-colors hover-trigger">Contact</a>
-            </div>
-
-            <!-- Right Controls: Status, Theme Toggle & Contact Button -->
-            <div class="flex items-center gap-2 sm:gap-3">
-                <!-- Available for Work Status -->
-                <div
-                    class="hidden xl:inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono font-medium bg-black/5 dark:bg-white/5 border border-gray-200 dark:border-border text-gray-700 dark:text-gray-300">
-                    <span class="relative flex h-2 w-2">
-                        <span
-                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                        <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
-                    </span>
-                    <span>Available for work</span>
-                </div>
-
-                <!-- Theme Toggle Button -->
-                <button id="theme-toggle"
-                    class="theme-toggle-btn bg-gray-100 dark:bg-[#1A1A1A] border border-gray-200 dark:border-[#2A2A2A] shadow-sm rounded-full p-2 sm:p-2.5 flex items-center justify-center hover:bg-gray-200 dark:hover:bg-[#2A2A2A] transition-colors duration-300 hover-trigger"
-                    aria-label="Toggle theme">
-                    <svg class="theme-toggle-light-icon hidden w-4 h-4 text-yellow-500 dark:text-gray-300"
-                        fill="currentColor" viewBox="0 0 20 20">
-                        <path
-                            d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
-                            fill-rule="evenodd" clip-rule="evenodd"></path>
-                    </svg>
-                    <svg class="theme-toggle-dark-icon w-4 h-4 text-gray-700 dark:text-gray-300" fill="currentColor"
-                        viewBox="0 0 20 20">
-                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
-                    </svg>
-                </button>
-
-                <!-- Contact CTA Button -->
-                <a href="pages/contact.html"
-                    class="bg-black dark:bg-accent text-white dark:text-dark px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-none font-bold text-xs uppercase tracking-wider flex items-center gap-1.5 sm:gap-2 hover:bg-gray-800 dark:hover:bg-white transition-colors hover-trigger">
-                    <span>Contact</span>
-                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                    </svg>
-                </a>
-
-                <!-- Mobile Menu Button -->
-                <button id="mobile-menu-btn"
-                    class="md:hidden p-2 text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white"
-                    aria-label="Toggle navigation">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M4 6h16M4 12h16m-7 6h7"></path>
-                    </svg>
-                </button>
-            </div>
-        </div>
-
-        <!-- Mobile Navigation Dropdown -->
-        <div id="mobile-menu"
-            class="hidden md:hidden border-t border-gray-200 dark:border-border bg-white/95 dark:bg-dark/95 backdrop-blur-lg px-6 py-6 transition-all duration-300">
-            <div class="flex flex-col gap-4 text-base font-medium">
-                <a href="Index.html" class="text-black dark:text-accent font-semibold">Home</a>
-                <a href="pages/projects.html"
-                    class="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white">Projects</a>
-                <a href="pages/explorations.html"
-                    class="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white">Explorations</a>
-                <a href="about.html"
-                    class="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white">About</a>
-                <a href="pages/contact.html"
-                    class="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white">Contact</a>
-                <div class="pt-4 border-t border-gray-200 dark:border-border flex items-center justify-between">
-                    <button id="open-sidebar-mobile"
-                        class="text-xs font-mono font-bold text-accent uppercase tracking-wider flex items-center gap-1.5">
-                        <span>Open Sidebar Profile</span> &rarr;
-                    </button>
-                    <a href="mailto:bridgetayomi@yahoo.com"
-                        class="text-xs font-mono text-gray-400">bridgetayomi@yahoo.com</a>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Main Content Area: Matching Desktop - 1 Reference Geometry -->
-    <main class="w-full flex-grow pt-24 sm:pt-28 md:pt-32 pb-8 flex flex-col justify-between">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 w-full flex-grow flex flex-col justify-center">
-
-            <!-- Primary Responsive Grid -->
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 xl:gap-14 items-end my-auto py-2 sm:py-4">
-
-                <!-- Left Column: Anchored Bottom Left (Bridget Fayomi. + 3 Sentences + Socials) -->
-                <div class="lg:col-span-5 flex flex-col justify-end space-y-5 sm:space-y-6 md:space-y-7 reveal">
-
-                    <!-- Role Pill: Product Designer (Art Director removed) -->
-                    <div>
-                        <span
-                            class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono font-medium bg-black/5 dark:bg-white/5 border border-gray-200 dark:border-border text-gray-700 dark:text-gray-300">
-                            <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
-                            Product Designer
-                        </span>
-                    </div>
-
-                    <!-- Huge Typography: Bridget Fayomi. -->
-                    <h1
-                        class="text-4xl sm:text-5xl md:text-6xl lg:text-[3.75rem] xl:text-[4.75rem] 2xl:text-[5.25rem] font-extrabold tracking-tight text-black dark:text-white leading-[1.02] sm:leading-[0.98]">
-                        Bridget Fayomi<span
-                            class="text-accent inline-block transition-transform duration-300 hover:scale-125">.</span>
-                    </h1>
-
-                    <!-- Three Sentences Bio (Product Designer) -->
-                    <div
-                        class="space-y-3 text-sm sm:text-base md:text-[1.05rem] text-gray-600 dark:text-gray-300 leading-relaxed font-normal max-w-xl">
-                        <p>
-                            I'm a Product Designer with 4+ years of experience designing digital products across
-                            fintech, healthcare, SaaS, e-commerce, and enterprise.
-                        </p>
-                        <p>
-                            I turn complex ideas into clear, useful experiences, from user flows and wireframes to high
-                            fidelity prototypes and usability testing.
-                        </p>
-                        <p>
-                            Based in Lagos, Nigeria. Open to global opportunities.
-                        </p>
-                    </div>
-
-                    <!-- Social Media Links (Under Bridget Fayomi) -->
-                    <div class="pt-1">
-                        <div class="flex items-center gap-3 mb-3">
-                            <!-- <span
-                                class="text-xs font-mono uppercase tracking-widest text-gray-400 dark:text-gray-500 font-semibold">Connect
-                                &amp; Follow</span> -->
-                            <div class="h-px bg-gray-200 dark:bg-border flex-1 max-w-[80px]"></div>
-                        </div>
-
-                        <div class="flex flex-wrap items-center gap-2.5 sm:gap-3">
-                            <!-- X / Twitter -->
-                            <a href="https://x.com/yebriggy?s=11" target="_blank" rel="noopener noreferrer"
-                                class="social-pill w-10 h-10 md:w-11 md:h-11 rounded-full border border-gray-300 dark:border-border bg-white dark:bg-card flex items-center justify-center text-black dark:text-white hover:border-black dark:hover:border-accent hover:text-black dark:hover:text-accent shadow-sm transition-all duration-300 hover-trigger"
-                                aria-label="X (Twitter)">
-                                <span class="font-bold text-sm">𝕏</span>
-                            </a>
-
-                            <!-- Behance -->
-                            <!-- <a href="https://www.behance.net" target="_blank" rel="noopener noreferrer"
-                                class="social-pill w-10 h-10 md:w-11 md:h-11 rounded-full border border-gray-300 dark:border-border bg-white dark:bg-card flex items-center justify-center text-black dark:text-white hover:border-black dark:hover:border-accent hover:text-black dark:hover:text-accent shadow-sm transition-all duration-300 hover-trigger"
-                                aria-label="Behance">
-                                <span class="font-bold font-serif text-base">Bē</span>
-                            </a> -->
-
-                            <!-- LinkedIn -->
-                            <a href="https://www.linkedin.com/in/bridget-fayomi-07a087157/" target="_blank" rel="noopener noreferrer"
-                                class="social-pill w-10 h-10 md:w-11 md:h-11 rounded-full border border-gray-300 dark:border-border bg-white dark:bg-card flex items-center justify-center text-black dark:text-white hover:border-black dark:hover:border-accent hover:text-black dark:hover:text-accent shadow-sm transition-all duration-300 hover-trigger"
-                                aria-label="LinkedIn">
-                                <span class="font-bold text-xs uppercase font-mono">in</span>
-                            </a>
-
-                            <!-- Email Link: bridgetayomi@yahoo.com -->
-                            <a href="mailto:bridgetayomi@yahoo.com"
-                                class="social-pill inline-flex items-center gap-2 px-3.5 py-2.5 rounded-full border border-gray-300 dark:border-border bg-white
-                                 dark:bg-card text-xs font-mono font-medium text-black dark:text-white hover:border-black dark:hover:border-accent hover:text-black dark:hover:text-accent shadow-sm transition-all duration-300 hover-trigger">
-                                <!-- <span>✉</span> -->
-                                <span>bridgetayomi@yahoo.com</span>
-                            </a>
-
-                            <!-- Sidebar View Button: Trigger Slide-in Sidebar -->
-                            <!-- <button id="open-sidebar-btn"
-                                class="social-pill inline-flex items-center gap-1.5 px-3.5 py-2.5 rounded-full border border-dashed border-gray-400 dark:border-sidebarBorder bg-white/50 dark:bg-card/50 text-xs font-mono font-semibold text-black dark:text-white hover:border-black dark:hover:border-accent hover:text-accent transition-colors hover-trigger"
-                                title="Click to view Bridget Fayomi Product Designer Sidebar">
-                                <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
-                                <span>Sidebar View</span>
-                                <span>&rarr;</span>
-                            </button> -->
-                        </div>
-                    </div>
-
-                </div>
-
-                <!-- Right Column: 3 Vertical Cards Side-by-Side (Matching Desktop - 1 Reference) -->
-                <div class="lg:col-span-7 w-full">
-                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 lg:gap-4 xl:gap-5">
-
-                        <!-- Card 1: BILLA (Fintech) -->
-                        <a href="Case-studies/mybilla.html"
-                            class="showcase-card group relative block min-h-[380px] sm:min-h-[440px] md:h-[480px] lg:h-[510px] xl:h-[560px] rounded-2xl overflow-hidden border border-gray-200 dark:border-border/70 bg-white dark:bg-card shadow-sm hover:border-gray-400 dark:hover:border-accent/60 reveal hover-trigger"
-                            style="transition-delay: 100ms;">
-
-                            <!-- Background Image with Grayscale & Zoom on Hover -->
-                            <img src="Images/billa-cover.png" alt="Billa Platform"
-                                class="card-img absolute inset-0 w-full h-full object-cover object-center grayscale"
-                                loading="lazy">
-
-                            <!-- Gradient Protection Overlay -->
-                            <div class="card-overlay absolute inset-0"></div>
-
-                            <!-- Card Content: Header & Bottom Details -->
-                            <div class="relative z-10 h-full flex flex-col justify-between p-5 sm:p-6 text-white">
-
-                                <!-- Top: Number & Category Badge -->
-                                <div class="flex items-center justify-between">
-                                    <span
-                                        class="card-badge px-3 py-1 rounded-full text-[11px] font-mono font-semibold title case tracking-wider bg-black/50 text-white border border-white/20 flex items-center gap-2">
-                                        <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
-                                        01 / Fintech
-                                    </span>
-
-                                    <div
-                                        class="w-8 h-8 rounded-full bg-white/10 card-badge border border-white/20 flex items-center justify-center text-white group-hover:bg-accent group-hover:text-dark transition-all duration-300 group-hover:rotate-45">
-                                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
-                                                d="M7 17L17 7M17 7H7M17 7V17"></path>
-                                        </svg>
-                                    </div>
-                                </div>
-
-                                <!-- Bottom: Title, Brief, and Callout -->
-                                <div class="space-y-1.5 sm:space-y-2 mt-auto pt-16">
-                                    <span
-                                        class="text-[11px] font-mono tracking-widest text-accent title case font-semibold block">Case
-                                        Study</span>
-                                    <h2
-                                        class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight leading-tight group-hover:text-accent transition-colors duration-300">
-                                        BILLA
-                                    </h2>
-                                    <p class="text-xs sm:text-sm text-gray-300 leading-snug line-clamp-2">
-                                        Unified digital bills payment and everyday financial transactions platform.
-                                    </p>
-                                    <div
-                                        class="pt-2 flex items-center gap-1.5 text-xs font-mono font-bold text-accent title case tracking-wider opacity-90 group-hover:opacity-100 group-hover:translate-x-1 transition-all">
-                                        <span>View Case Study</span>
-                                        <span>&rarr;</span>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </a>
-
-                        <!-- Card 2: HEALTHFUSION (Healthtech) -->
-                        <a href="Case-studies/healthfusion.html"
-                            class="showcase-card group relative block min-h-[380px] sm:min-h-[440px] md:h-[480px] lg:h-[510px] xl:h-[560px] 
-                            rounded-2xl overflow-hidden border border-gray-200 dark:border-border/70 bg-white dark:bg-card shadow-sm 
-                            hover:border-gray-400 dark:hover:border-accent/60 reveal hover-trigger"
-                            style="transition-delay: 200ms;">
-
-                            <!-- Background Image with Grayscale & Zoom on Hover -->
-                            <img src="Images/Healthfusion cover.png" alt="HealthFusion Platform"
-                                class="card-img absolute inset-0 w-full h-full object-cover object-center grayscale"
-                                loading="lazy">
-
-                            <!-- Gradient Protection Overlay -->
-                            <div class="card-overlay absolute inset-0"></div>
-
-                            <!-- Card Content: Header & Bottom Details -->
-                            <div class="relative z-10 h-full flex flex-col justify-between p-5 sm:p-6 text-white">
-
-                                <!-- Top: Number & Category Badge -->
-                                <div class="flex items-center justify-between">
-                                    <span
-                                        class="card-badge px-3 py-1 rounded-full text-[11px] font-mono font-semibold title case tracking-wider bg-black/50 text-white border border-white/20 flex items-center gap-2">
-                                        <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
-                                        02 / Health
-                                    </span>
-
-                                    <div
-                                        class="w-8 h-8 rounded-full bg-white/10 card-badge border border-white/20 flex items-center justify-center text-white group-hover:bg-accent group-hover:text-dark transition-all duration-300 group-hover:rotate-45">
-                                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
-                                                d="M7 17L17 7M17 7H7M17 7V17"></path>
-                                        </svg>
-                                    </div>
-                                </div>
-
-                                <!-- Bottom: Title, Brief, and Callout -->
-                                <div class="space-y-1.5 sm:space-y-2 mt-auto pt-16">
-                                    <span
-                                        class="text-[11px] font-mono tracking-widest text-accent title case font-semibold block">Case
-                                        Study</span>
-                                    <h2
-                                        class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight leading-tight group-hover:text-accent transition-colors duration-300">
-                                        HealthFusion
-                                    </h2>
-                                    <p class="text-xs sm:text-sm text-gray-300 leading-snug line-clamp-2">
-                                        Integrated employee healthcare portal connecting HMOs, teams, and wellness
-                                        services.
-                                    </p>
-                                    <div
-                                        class="pt-2 flex items-center gap-1.5 text-xs font-mono font-bold text-accent title case tracking-wider opacity-90 group-hover:opacity-100 group-hover:translate-x-1 transition-all">
-                                        <span>View Case Study</span>
-                                        <span>&rarr;</span>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </a>
-
-                        <!-- Card 3: PENCENTRAL (AI Automation) -->
-                        <a href="Case-studies/pencentral.html"
-                            class="showcase-card group relative block min-h-[380px] sm:min-h-[440px] md:h-[480px] lg:h-[510px] xl:h-[560px] rounded-2xl overflow-hidden border border-gray-200 dark:border-border/70 bg-white dark:bg-card shadow-sm hover:border-gray-400 dark:hover:border-accent/60 reveal hover-trigger sm:col-span-2 md:col-span-1"
-                            style="transition-delay: 300ms;">
-
-                            <!-- Background Image with Grayscale & Zoom on Hover -->
-                            <img src="Images/Pencentral.png" alt="PenCentral Platform"
-                                class="card-img absolute inset-0 w-full h-full object-cover object-center grayscale"
-                                loading="lazy">
-
-                            <!-- Gradient Protection Overlay -->
-                            <div class="card-overlay absolute inset-0"></div>
-
-                            <!-- Card Content: Header & Bottom Details -->
-                            <div class="relative z-10 h-full flex flex-col justify-between p-5 sm:p-6 text-white">
-
-                                <!-- Top: Number & Category Badge -->
-                                <div class="flex items-center justify-between">
-                                    <span
-                                        class="card-badge px-3 py-1 rounded-full text-[11px] font-mono font-semibold title case tracking-wider bg-black/50 text-white border border-white/20 flex items-center gap-2">
-                                        <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
-                                        03 / Pension 
-                                    </span>
-
-                                    <div
-                                        class="w-8 h-8 rounded-full bg-white/10 card-badge border border-white/20 flex items-center justify-center 
-                                        text-white group-hover:bg-accent group-hover:text-dark transition-all duration-300 group-hover:rotate-45">
-                                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
-                                                d="M7 17L17 7M17 7H7M17 7V17"></path>
-                                        </svg>
-                                    </div>
-                                </div>
-
-                                <!-- Bottom: Title, Brief, and Callout -->
-                                <div class="space-y-1.5 sm:space-y-2 mt-auto pt-16">
-                                    <span
-                                        class="text-[11px] font-mono tracking-widest text-accent title case font-semibold block">Case
-                                        Study</span>
-                                    <h2
-                                        class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight leading-tight group-hover:text-accent transition-colors duration-300">
-                                        PenCentral
-                                    </h2>
-                                    <p class="text-xs sm:text-sm text-gray-300 leading-snug line-clamp-2">
-                                        Intelligent AI bot collaboration and automated customer support orchestration.
-                                    </p>
-                                    <div
-                                        class="pt-2 flex items-center gap-1.5 text-xs font-mono font-bold text-accent title case tracking-wider opacity-90 group-hover:opacity-100 group-hover:translate-x-1 transition-all">
-                                        <span>View Case Study</span>
-                                        <span>&rarr;</span>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </a>
-
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-    </main>
-
-    <!-- Footer Bar -->
-    <footer
-        class="w-full border-t border-gray-200 dark:border-border py-6 px-4 sm:px-6 relative z-10 transition-colors duration-300">
-        <div
-            class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-gray-500 dark:text-gray-400">
-            <p>&copy; 2026 Bridget Fayomi. Product Designer.</p>
-            <div class="flex items-center gap-6">
-                <a href="mailto:bridgetayomi@yahoo.com"
-                    class="hover:text-black dark:hover:text-accent transition-colors hover-trigger">bridgetayomi@yahoo.com</a>
-                <a href="pages/projects.html"
-                    class="hover:text-black dark:hover:text-accent transition-colors hover-trigger">All Projects
-                    &rarr;</a>
-                <a href="#navbar" class="hover:text-black dark:hover:text-accent transition-colors hover-trigger">Back
-                    to top &uarr;</a>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Interactive Sidebar Drawer Overlay (Triggered by "Sidebar View") -->
-    <div id="sidebar-overlay"
-        class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300 flex justify-start">
-        <div id="sidebar-drawer"
-            class="w-full max-w-[390px] h-full bg-white dark:bg-sidebar text-black dark:text-white shadow-2xl border-r border-gray-200 dark:border-sidebarBorder flex flex-col justify-between overflow-y-auto transform -translate-x-full relative p-6 sm:p-8">
-
-            <!-- Close Button -->
-            <button id="close-sidebar-btn"
-                class="absolute top-5 right-5 w-9 h-9 rounded-full bg-gray-100 dark:bg-card border border-gray-200 dark:border-border flex items-center justify-center text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors"
-                aria-label="Close sidebar">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
-                    </path>
-                </svg>
-            </button>
-
-            <!-- Profile & Header Graphic -->
-            <div>
-                <div class="h-32 rounded-2xl sidebar-header-bg relative w-full mb-6 flex items-end p-4">
-                    <div class="p-1 bg-white dark:bg-sidebar rounded-full shadow-lg absolute -bottom-6 left-4">
-                        <img src="Images/bridget-fav-small.png" alt="Bridget Fayomi"
-                            class="w-16 h-16 rounded-full object-cover grayscale">
-                    </div>
-                </div>
-
-                <div class="pt-4">
-                    <!-- Name -->
-                    <h2 class="text-2xl font-bold tracking-tight text-black dark:text-white flex items-center gap-2">
-                        Bridget Fayomi
-                        <span class="w-2 h-2 rounded-full bg-accent"></span>
-                    </h2>
-
-                    <!-- Role Badge: Product Designer (Every Art Director removed) -->
-                    <div class="mt-1.5 mb-4">
-                        <span
-                            class="text-xs font-mono border border-gray-300 dark:border-sidebarBorder text-gray-700 dark:text-gray-300 py-1 px-3 rounded-full inline-block">
-                            Product Designer
-                        </span>
-                    </div>
-
-                    <hr class="border-gray-200 dark:border-sidebarBorder border-dashed mb-5">
-
-                    <!-- About Me Section Directly Under Bridget Fayomi -->
-                    <div class="space-y-2.5 mb-6">
-                        <h3
-                            class="text-xs font-mono uppercase tracking-widest text-accent font-semibold flex items-center gap-2">
-                            <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
-                            About Me
-                        </h3>
-                        <p class="text-gray-600 dark:text-sidebarMuted text-xs sm:text-sm leading-relaxed">
-                            Every day, I am a product designer who cares about both appearance and functionality. I
-                            design digital experiences that are simple and easy to understand, combining logic and
-                            personality in just the right way.
-                        </p>
-                        <p class="text-gray-600 dark:text-sidebarMuted text-xs leading-relaxed">
-                            Right now, I am in Lagos, Nigeria, and I've worked on products in fintech, healthcare,
-                            e-commerce, and security—partnering with developers, PMs, and everyday users to turn ideas
-                            into reality.
-                        </p>
-                        <p class="text-gray-500 dark:text-gray-400 text-xs italic pt-1">
-                            Outside of work, you'll probably find me watching movies, making TikTok videos, or reading a
-                            book.
-                        </p>
-                    </div>
-
-                    <!-- Quick Navigation -->
-                    <nav class="flex flex-col gap-2 mb-6 text-sm">
-                        <a href="Index.html"
-                            class="flex items-center gap-3 py-2 text-black dark:text-accent font-semibold">
-                            <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
-                            <span>Cards View (Main)</span>
-                        </a>
-                        <a href="pages/projects.html"
-                            class="flex items-center gap-3 py-2 text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors">
-                            <span>Projects</span>
-                        </a>
-                        <a href="pages/explorations.html"
-                            class="flex items-center gap-3 py-2 text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors">
-                            <span>Explorations</span>
-                        </a>
-                        <a href="about.html"
-                            class="flex items-center gap-3 py-2 text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors">
-                            <span>About Full Page</span>
-                        </a>
-                        <a href="pages/contact.html"
-                            class="flex items-center gap-3 py-2 text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors">
-                            <span>Contact</span>
-                        </a>
-                    </nav>
-                </div>
-            </div>
-
-            <!-- Footer of Drawer -->
-            <div class="pt-4 border-t border-gray-200 dark:border-sidebarBorder">
-                <!-- Socials -->
-                <div class="flex items-center gap-3 mb-4">
-                    <a href="https://x.com" target="_blank" rel="noopener noreferrer"
-                        class="w-9 h-9 rounded-full border border-gray-300 dark:border-sidebarBorder flex items-center justify-center hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors font-bold text-xs">𝕏</a>
-                    <a href="https://www.behance.net" target="_blank" rel="noopener noreferrer"
-                        class="w-9 h-9 rounded-full border border-gray-300 dark:border-sidebarBorder flex items-center justify-center hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors font-serif font-bold text-sm">Bē</a>
-                    <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer"
-                        class="w-9 h-9 rounded-full border border-gray-300 dark:border-sidebarBorder flex items-center justify-center hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors font-mono font-bold text-xs uppercase">in</a>
-                    <a href="sidebar.html"
-                        class="text-xs font-mono text-gray-400 hover:text-black dark:hover:text-accent ml-auto">Full
-                        Page &rarr;</a>
-                </div>
-
-                <!-- Email CTA -->
-                <a href="mailto:bridgetayomi@yahoo.com"
-                    class="w-full bg-black text-white dark:bg-accent dark:text-dark font-bold rounded-full py-3 text-center text-xs uppercase tracking-wider block hover:bg-gray-800 dark:hover:bg-white transition-colors shadow-md">
-                    bridgetayomi@yahoo.com
-                </a>
-            </div>
-
+        <div class="loading">
+            <div class="loading-bar"></div>
         </div>
     </div>
 
-    <!-- Scripts -->
     <script>
-        // Mobile Navigation Menu Toggle
-        const mobileBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        if (mobileBtn && mobileMenu) {
-            mobileBtn.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-            });
-        }
+        setTimeout(() => {
+            document.body.style.opacity = '0';
 
-        // Sidebar Drawer Interactions
-        const openSidebarBtn = document.getElementById('open-sidebar-btn');
-        const openSidebarMobile = document.getElementById('open-sidebar-mobile');
-        const closeSidebarBtn = document.getElementById('close-sidebar-btn');
-        const sidebarOverlay = document.getElementById('sidebar-overlay');
-        const sidebarDrawer = document.getElementById('sidebar-drawer');
+            setTimeout(() => {
+                window.location.href = 'portfolio.html';
+            }, 600);
 
-        function openSidebar() {
-            if (!sidebarOverlay || !sidebarDrawer) return;
-            sidebarOverlay.classList.remove('opacity-0', 'pointer-events-none');
-            sidebarOverlay.classList.add('opacity-100');
-            sidebarDrawer.classList.remove('-translate-x-full');
-            sidebarDrawer.classList.add('translate-x-0');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeSidebar() {
-            if (!sidebarOverlay || !sidebarDrawer) return;
-            sidebarOverlay.classList.add('opacity-0', 'pointer-events-none');
-            sidebarOverlay.classList.remove('opacity-100');
-            sidebarDrawer.classList.add('-translate-x-full');
-            sidebarDrawer.classList.remove('translate-x-0');
-            document.body.style.overflow = '';
-        }
-
-        if (openSidebarBtn) openSidebarBtn.addEventListener('click', openSidebar);
-        if (openSidebarMobile) openSidebarMobile.addEventListener('click', () => {
-            if (mobileMenu) mobileMenu.classList.add('hidden');
-            openSidebar();
-        });
-        if (closeSidebarBtn) closeSidebarBtn.addEventListener('click', closeSidebar);
-        if (sidebarOverlay) {
-            sidebarOverlay.addEventListener('click', (e) => {
-                if (e.target === sidebarOverlay) closeSidebar();
-            });
-        }
-
-        // ESC key to close sidebar
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') closeSidebar();
-        });
+        }, 3500);
     </script>
 
-    <!-- External Unified JS (Theme toggle, Custom Cursor, Scroll Reveal) -->
-    <script src="js/scripts.js"></script>
 </body>
-
 </html>
