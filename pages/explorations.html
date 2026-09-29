@@ -1,98 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../Images/bridget-fav-small.png" />
     <title>Explorations | Bridget Fayomi</title>
+    <meta name="description" content="A collection of UI challenges, concepts, and visual experiments." />
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Link to your existing styles.css -->
+    <link rel="stylesheet" href="../css/styles.css">
 
-    <!-- Theme Initialization Script (Anti-FOUC) -->
+    <!-- Tailwind Config for Dark Mode and Custom Colors -->
     <script>
-        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        // Check local storage for theme preference before loading to prevent flash
+        if(localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             document.documentElement.classList.add('dark');
         } else {
             document.documentElement.classList.remove('dark');
         }
-    </script>
 
-    <!-- Fonts & Tailwind -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
-
-    <!-- External CSS -->
-    <link rel="stylesheet" href="../css/styles.css">
-
-    <script>
         tailwind.config = {
             darkMode: 'class',
             theme: {
                 extend: {
-                    fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        mono: ['"IBM Plex Mono"', 'monospace']
+                    },
                     colors: {
                         dark: '#0a0a0a',
                         card: '#111111',
                         accent: '#c4f02a',
-                        border: '#222222',
+                        border: '#222222'
                     }
                 }
             }
         }
     </script>
 </head>
-
-<body class="case-study antialiased font-sans selection:bg-accent selection:text-dark">
+<body class="case-study antialiased selection:bg-accent selection:text-dark">
 
     <!-- Custom Cursor -->
     <div id="cursor-dot"></div>
     <div id="cursor-ring"></div>
 
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 top-0 transition-all duration-300 backdrop-blur-md bg-white/80 dark:bg-dark/80 border-b border-gray-200 dark:border-border"
-        id="navbar">
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300 backdrop-blur-md bg-white/80 dark:bg-dark/80 border-b border-gray-200 dark:border-border" id="navbar">
         <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
-            <a href="../Index.html"
-                class="text-2xl font-bold tracking-tighter flex items-center gap-2 text-black dark:text-white hover-trigger">
-                <div class="w-4 h-4 bg-black dark:bg-accent rounded-sm rotate-45"></div>
-                DesignsbyB.
+            <a href="../Index.html" class="text-2xl font-bold tracking-tighter flex items-center gap-2 text-black dark:text-white hover-trigger">
+                <div class="w-4 h-4 bg-black dark:bg-accent rounded-sm rotate-45"></div>Bridget.
             </a>
-
+            
             <div class="hidden md:flex gap-8 text-sm font-medium text-gray-600 dark:text-gray-400">
-                <a href="../index.html"
-                    class="hover:text-black dark:hover:text-white transition-colors hover-trigger">Home</a>
-                <a href="projects.html"
-                    class="hover:text-black dark:hover:text-white transition-colors hover-trigger">Projects</a>
-                <a href="explorations.html"
-                    class="text-black dark:text-accent font-semibold hover-trigger">Explorations</a>
-                <a href="../about.html"
-                    class="hover:text-black dark:hover:text-white transition-colors hover-trigger">About</a>
-                <a href="contact.html"
-                    class="hover:text-black dark:hover:text-white transition-colors hover-trigger">Contact</a>
+                <a href="../Index.html" class="hover:text-black dark:hover:text-white transition-colors hover-trigger">Home</a>
+                <a href="../pages/projects.html" class="hover:text-black dark:hover:text-white transition-colors hover-trigger">Projects</a>
+                <a href="../pages/about.html" class="hover:text-black dark:hover:text-white transition-colors hover-trigger">About</a>
+                <a href="#" class="text-black dark:text-accent font-semibold hover-trigger">Explorations</a>
             </div>
 
-            <!-- Right Controls: Theme Toggle & Contact Button -->
             <div class="flex items-center gap-3">
-                <button id="theme-toggle"
-                    class="theme-toggle-btn bg-gray-100 dark:bg-[#1A1A1A] border border-gray-200 dark:border-[#2A2A2A] shadow-sm rounded-full p-2.5 flex items-center justify-center hover:bg-gray-200 dark:hover:bg-[#2A2A2A] transition-colors duration-300 hover-trigger"
-                    aria-label="Toggle theme">
-                    <svg class="theme-toggle-light-icon hidden w-4 h-4 text-yellow-500 dark:text-gray-300"
-                        fill="currentColor" viewBox="0 0 20 20">
-                        <path
-                            d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
-                            fill-rule="evenodd" clip-rule="evenodd"></path>
-                    </svg>
-                    <svg class="theme-toggle-dark-icon w-4 h-4 text-gray-700 dark:text-gray-300" fill="currentColor"
-                        viewBox="0 0 20 20">
-                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
-                    </svg>
+                <!-- Theme Toggle Button -->
+                <button id="theme-toggle" class="theme-toggle-btn bg-gray-100 dark:bg-[#1A1A1A] border border-gray-200 dark:border-[#2A2A2A] shadow-sm rounded-full p-2.5 flex items-center justify-center hover:bg-gray-200 dark:hover:bg-[#2A2A2A] transition-colors duration-300 hover-trigger" aria-label="Toggle theme">
+                    <svg class="theme-toggle-light-icon hidden w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+                    <svg class="theme-toggle-dark-icon w-4 h-4 text-gray-700 dark:text-gray-300" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
                 </button>
 
-                <a href="contact.html"
-                    class="bg-black dark:bg-accent text-white dark:text-dark px-6 py-2.5 rounded-none font-bold text-sm flex items-center gap-2 hover:bg-gray-800 dark:hover:bg-white transition-colors hover-trigger">
-                    Contact <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                    </svg>
+                <a href="../pages/contact.html" class="bg-black dark:bg-accent text-white dark:text-dark px-6 py-2.5 rounded-none font-bold text-sm flex items-center gap-2 hover:bg-gray-800 dark:hover:bg-white transition-colors hover-trigger">
+                    CONTACT <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                 </a>
             </div>
         </div>
@@ -100,191 +82,137 @@
 
     <main class="pt-32">
         <!-- Hero Section -->
-        <section class="max-w-7xl mx-auto px-6 pt-20 pb-16">
-            <div class="flex items-center gap-4 mb-6 reveal">
-                <span class="text-sm uppercase tracking-widest text-gray-500 dark:text-gray-400">Creative Lab</span>
-                <div class="h-px bg-gray-300 dark:bg-gray-700 flex-1 max-w-[100px]"></div>
+        <section class="max-w-[1400px] mx-auto px-6 pt-12 md:pt-16 pb-12">
+            <div class="flex flex-wrap items-center gap-4 mb-8 reveal">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-medium bg-black/5 dark:bg-white/5 border border-gray-200 dark:border-border text-gray-700 dark:text-gray-300">
+                    <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>Playground
+                </span>
             </div>
-
-            <h1 class="hero-text uppercase reveal delay-100 text-black dark:text-white">
-                Design <br>
-                <span class="flex items-center gap-6">
-                    <svg class="w-16 h-16 md:w-32 md:h-32 text-black dark:text-accent hover-trigger"
-                        viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="30" cy="50" r="25" />
-                        <circle cx="70" cy="50" r="25" />
-                    </svg>
-                    Explorations
+            
+            <h1 class="hero-text uppercase reveal delay-100 text-black dark:text-white leading-[1.1]">
+                DESIGN<br>
+                <span class="flex items-center gap-4 md:gap-6">
+                    <svg class="w-14 h-14 md:w-28 md:h-28 text-black dark:text-accent hover-trigger flex-shrink-0" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2"><circle cx="30" cy="50" r="25"/><circle cx="70" cy="50" r="25"/></svg>
+                    EXPLORATIONS
                 </span>
             </h1>
+            <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 max-w-3xl mt-8 font-normal leading-relaxed reveal delay-150">
+                A collection of UI challenges, concepts, visual experiments, and unreleased screens where I play with typography, layout, and interaction.
+            </p>
         </section>
 
-        <!-- Grid of Explorations -->
-        <section class="max-w-7xl mx-auto px-6 pb-32">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Item 1 -->
-                <div
-                    class="group bg-white dark:bg-card border border-gray-200 dark:border-border rounded-xl overflow-hidden shadow-sm reveal">
-                    <div class="aspect-[4/3] overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                            alt="Generative UI"
-                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                    </div>
-                    <div class="p-6">
-                        <span class="text-xs uppercase tracking-wider text-gray-500 dark:text-gray-400 block mb-2">3D /
-                            Motion</span>
-                        <h3 class="text-lg font-bold text-black dark:text-white mb-2">Chromal Dynamics</h3>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm">Exploration in fluid motion typography and
-                            procedural shaders.</p>
-                    </div>
+        <!-- Gallery Section -->
+        <section class="max-w-[1600px] mx-auto px-6 py-12 md:py-20">
+            
+            <!-- Web / Desktop Explorations -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 reveal mb-16">
+                
+                <!-- Desktop Item 1 -->
+                <div class="group relative overflow-hidden bg-gray-100 dark:bg-card border border-gray-200 dark:border-border hover-trigger shadow-sm hover:shadow-lg transition-all duration-500 cursor-crosshair">
+                    <img src="../Images/Healthfusion header.avif" alt="Desktop UI Exploration 1" class="w-full h-auto block transition-transform duration-700 group-hover:scale-105">
                 </div>
 
-                <!-- Item 2 -->
-                <div
-                    class="group bg-white dark:bg-card border border-gray-200 dark:border-border rounded-xl overflow-hidden shadow-sm reveal delay-100">
-                    <div class="aspect-[4/3] overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                            alt="Abstract Forms"
-                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                    </div>
-                    <div class="p-6">
-                        <span
-                            class="text-xs uppercase tracking-wider text-gray-500 dark:text-gray-400 block mb-2">Identity</span>
-                        <h3 class="text-lg font-bold text-black dark:text-white mb-2">Monochrome Systems</h3>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm">Experimental architectural grid layouts and
-                            editorial spreads.</p>
-                    </div>
+                <!-- Desktop Item 2 -->
+                <div class="group relative overflow-hidden bg-gray-100 dark:bg-card border border-gray-200 dark:border-border hover-trigger shadow-sm hover:shadow-lg transition-all duration-500 cursor-crosshair">
+                    <img src="../Images/Healthfusion header.avif" alt="Desktop UI Exploration 2" class="w-full h-auto block transition-transform duration-700 group-hover:scale-105">
                 </div>
 
-                <!-- Item 3 -->
-                <div
-                    class="group bg-white dark:bg-card border border-gray-200 dark:border-border rounded-xl overflow-hidden shadow-sm reveal delay-200">
-                    <div class="aspect-[4/3] overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                            alt="Hardware"
-                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                    </div>
-                    <div class="p-6">
-                        <span
-                            class="text-xs uppercase tracking-wider text-gray-500 dark:text-gray-400 block mb-2">Interaction</span>
-                        <h3 class="text-lg font-bold text-black dark:text-white mb-2">Cybernetic Tactility</h3>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm">Tactile sound and micro-haptic web interface
-                            experiments.</p>
-                    </div>
+                <!-- Desktop Item 3 -->
+                <div class="group relative overflow-hidden bg-gray-100 dark:bg-card border border-gray-200 dark:border-border hover-trigger shadow-sm hover:shadow-lg transition-all duration-500 cursor-crosshair">
+                    <img src="../Images/gscs.jpg" alt="Desktop UI Exploration 3" class="w-full h-auto block transition-transform duration-700 group-hover:scale-105">
                 </div>
+
+                <!-- Desktop Item 4 -->
+                <div class="group relative overflow-hidden bg-gray-100 dark:bg-card border border-gray-200 dark:border-border hover-trigger shadow-sm hover:shadow-lg transition-all duration-500 cursor-crosshair">
+                    <img src="../Images/placeholder-desk-4.png" alt="Desktop UI Exploration 4" class="w-full h-auto block transition-transform duration-700 group-hover:scale-105">
+                </div>
+
+                <!-- Desktop Item 5 -->
+                <div class="group relative overflow-hidden bg-gray-100 dark:bg-card border border-gray-200 dark:border-border hover-trigger shadow-sm hover:shadow-lg transition-all duration-500 cursor-crosshair">
+                    <img src="../Images/placeholder-desk-5.png" alt="Desktop UI Exploration 5" class="w-full h-auto block transition-transform duration-700 group-hover:scale-105">
+                </div>
+
+                <!-- Desktop Item 6 -->
+                <div class="group relative overflow-hidden bg-gray-100 dark:bg-card border border-gray-200 dark:border-border hover-trigger shadow-sm hover:shadow-lg transition-all duration-500 cursor-crosshair">
+                    <img src="../Images/placeholder-desk-6.png" alt="Desktop UI Exploration 6" class="w-full h-auto block transition-transform duration-700 group-hover:scale-105">
+                </div>
+
             </div>
+
+            <!-- Mobile Explorations (Currently Commented Out as requested) -->
+            <!-- <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-4 md:gap-6 reveal"> -->
+                
+                <!-- Mobile Item 1 -->
+                <!-- <div class="group relative overflow-hidden bg-gray-100 dark:bg-card border-4 border-gray-200 dark:border-border hover-trigger shadow-md hover:shadow-xl transition-all duration-500 cursor-crosshair">
+                    <img src="../Images/placeholder-mob-1.png" alt="Mobile UI Exploration 1" class="w-full h-auto block transition-transform duration-700 group-hover:scale-105">
+                </div> -->
+
+                <!-- Mobile Item 2 -->
+                <!-- <div class="group relative overflow-hidden bg-gray-100 dark:bg-card border-4 border-gray-200 dark:border-border hover-trigger shadow-md hover:shadow-xl transition-all duration-500 cursor-crosshair">
+                    <img src="../Images/placeholder-mob-2.png" alt="Mobile UI Exploration 2" class="w-full h-auto block transition-transform duration-700 group-hover:scale-105">
+                </div> -->
+
+                <!-- Mobile Item 3 -->
+                <!-- <div class="group relative overflow-hidden bg-gray-100 dark:bg-card border-4 border-gray-200 dark:border-border hover-trigger shadow-md hover:shadow-xl transition-all duration-500 cursor-crosshair">
+                    <img src="../Images/placeholder-mob-3.png" alt="Mobile UI Exploration 3" class="w-full h-auto block transition-transform duration-700 group-hover:scale-105">
+                </div> -->
+
+                <!-- Mobile Item 4 -->
+                <!-- <div class="group relative overflow-hidden bg-gray-100 dark:bg-card border-4 border-gray-200 dark:border-border hover-trigger shadow-md hover:shadow-xl transition-all duration-500 cursor-crosshair">
+                    <img src="../Images/placeholder-mob-4.png" alt="Mobile UI Exploration 4" class="w-full h-auto block transition-transform duration-700 group-hover:scale-105">
+                </div> -->
+
+                <!-- Mobile Item 5 -->
+                <!-- <div class="group relative overflow-hidden bg-gray-100 dark:bg-card border-4 border-gray-200 dark:border-border hover-trigger shadow-md hover:shadow-xl transition-all duration-500 cursor-crosshair">
+                    <img src="../Images/placeholder-mob-5.png" alt="Mobile UI Exploration 5" class="w-full h-auto block transition-transform duration-700 group-hover:scale-105">
+                </div> -->
+
+                <!-- Mobile Item 6 -->
+                <!-- <div class="group relative overflow-hidden bg-gray-100 dark:bg-card border-4 border-gray-200 dark:border-border hover-trigger shadow-md hover:shadow-xl transition-all duration-500 cursor-crosshair">
+                    <img src="../Images/placeholder-mob-6.png" alt="Mobile UI Exploration 6" class="w-full h-auto block transition-transform duration-700 group-hover:scale-105">
+                </div> -->
+
+                <!-- Mobile Item 7 -->
+                <!-- <div class="group relative overflow-hidden bg-gray-100 dark:bg-card border-4 border-gray-200 dark:border-border hover-trigger shadow-md hover:shadow-xl transition-all duration-500 cursor-crosshair">
+                    <img src="../Images/placeholder-mob-7.png" alt="Mobile UI Exploration 7" class="w-full h-auto block transition-transform duration-700 group-hover:scale-105">
+                </div> -->
+
+                <!-- Mobile Item 8 -->
+                <!-- <div class="group relative overflow-hidden bg-gray-100 dark:bg-card border-4 border-gray-200 dark:border-border hover-trigger shadow-md hover:shadow-xl transition-all duration-500 cursor-crosshair">
+                    <img src="../Images/placeholder-mob-8.png" alt="Mobile UI Exploration 8" class="w-full h-auto block transition-transform duration-700 group-hover:scale-105">
+                </div> -->
+
+            <!-- </div> -->
+
         </section>
 
         <!-- Footer -->
-        <footer class="mt-20 border-t border-gray-200 dark:border-border pt-20 pb-12 relative overflow-hidden">
-            <!-- Decorative Spinning Star -->
-            <div
-                class="absolute top-12 right-8 md:right-16 text-black dark:text-accent opacity-40 hover:opacity-100 transition-opacity animate-[spin_12s_linear_infinite] pointer-events-none">
-                <svg width="44" height="44" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 0l2.5 9.5L24 12l-9.5 2.5L12 24l-2.5-9.5L0 12l9.5-2.5z" />
-                </svg>
+        <footer class="mt-12 border-t border-gray-200 dark:border-border pt-20 pb-12 relative overflow-hidden">
+            <div class="absolute top-12 right-8 md:right-16 text-black dark:text-accent opacity-40 hover:opacity-100 transition-opacity animate-[spin_12s_linear_infinite] pointer-events-none">
+                <svg width="44" height="44" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l2.5 9.5L24 12l-9.5 2.5L12 24l-2.5-9.5L0 12l9.5-2.5z"/></svg>
             </div>
-
             <div class="max-w-7xl mx-auto px-6 reveal">
-                <!-- 1. Hero CTA Block -->
                 <div class="mb-20 text-center flex flex-col items-center">
-                    <span
-                        class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400 font-semibold mb-4 block">Have
-                        a project in mind?</span>
-                    <h2
-                        class="text-5xl sm:text-6xl md:text-8xl font-black leading-none tracking-tight text-black dark:text-accent mb-6">
-                        Let's Talk
-                    </h2>
-                    <a href="mailto:bridgetayomi@yahoo.com"
-                        class="group inline-flex items-center gap-3 text-xl sm:text-2xl md:text-3xl font-bold tracking-tight text-gray-900 dark:text-white hover:text-black dark:hover:text-accent transition-colors hover-trigger">
+                    <span class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400 font-semibold mb-4 block">Have a project in mind?</span>
+                    <h2 class="text-5xl sm:text-6xl md:text-8xl font-black leading-none tracking-tight text-black dark:text-accent mb-6">LET'S TALK</h2>
+                    <a href="mailto:bridgetayomi@yahoo.com" class="group inline-flex items-center gap-3 text-xl sm:text-2xl md:text-3xl font-bold tracking-tight text-gray-900 dark:text-white hover:text-black dark:hover:text-accent transition-colors hover-trigger">
                         <span>bridgetayomi@yahoo.com</span>
-                        <span
-                            class="w-8 h-8 rounded-full border border-gray-300 dark:border-gray-700 group-hover:border-black dark:group-hover:border-accent flex items-center justify-center text-xs transition-colors">&rarr;</span>
+                        <span class="w-8 h-8 rounded-full border border-gray-300 dark:border-gray-700 group-hover:border-black dark:group-hover:border-accent flex items-center justify-center text-xs transition-colors">&rarr;</span>
                     </a>
                 </div>
-
-                <!-- 2. Balanced 3-Column Personal Grid (No Newsletter) -->
-                <div
-                    class="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12 py-12 border-y border-gray-200 dark:border-border text-sm">
-                    <!-- Column 1: Personal Bio & Socials -->
-                    <div class="md:col-span-5 space-y-4">
-                        <div class="flex items-center gap-2">
-                            <div class="w-3 h-3 bg-black dark:bg-accent rounded-sm rotate-45"></div>
-                            <span class="font-bold text-base text-black dark:text-white">Bridget Fayomi</span>
-                        </div>
-                        <p class="text-gray-600 dark:text-gray-400 leading-relaxed text-sm max-w-sm">
-                            Product Designer crafting bold digital products, intuitive UX flows, and intentional visual systems.
-                        </p>
-                        <div class="flex items-center gap-3 pt-2">
-                            <a href="#"
-                                class="w-9 h-9 rounded-full border border-gray-200 dark:border-border flex items-center justify-center hover:border-black dark:hover:border-accent hover:text-black dark:hover:text-accent text-gray-700 dark:text-gray-300 transition-colors hover-trigger font-bold text-xs">𝕏</a>
-                            <a href="#"
-                                class="w-9 h-9 rounded-full border border-gray-200 dark:border-border flex items-center justify-center hover:border-black dark:hover:border-accent hover:text-black dark:hover:text-accent text-gray-700 dark:text-gray-300 transition-colors hover-trigger font-serif font-bold text-xs">Bē</a>
-                            <a href="#"
-                                class="w-9 h-9 rounded-full border border-gray-200 dark:border-border flex items-center justify-center hover:border-black dark:hover:border-accent hover:text-black dark:hover:text-accent text-gray-700 dark:text-gray-300 transition-colors hover-trigger font-bold text-xs">in</a>
-                        </div>
-                    </div>
-
-                    <!-- Column 2: Navigation Links -->
-                    <div class="md:col-span-3 md:col-start-7">
-                        <h4 class="font-bold text-xs uppercase tracking-wider text-gray-400 dark:text-gray-500 mb-4">
-                            Navigation</h4>
-                        <ul class="space-y-3 text-sm text-gray-600 dark:text-gray-400">
-                            <li><a href="../Index.html"
-                                    class="hover:text-black dark:hover:text-white transition-colors hover-trigger">Home</a>
-                            </li>
-                            <li><a href="projects.html"
-                                    class="hover:text-black dark:hover:text-white transition-colors hover-trigger">Projects</a>
-                            </li>
-                            <li><a href="explorations.html"
-                                    class="hover:text-black dark:hover:text-white transition-colors hover-trigger">Explorations</a>
-                            </li>
-                            <li><a href="contact.html"
-                                    class="hover:text-black dark:hover:text-white transition-colors hover-trigger">Contact</a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <!-- Column 3: Focus & Availability -->
-                    <div class="md:col-span-3">
-                        <h4 class="font-bold text-xs uppercase tracking-wider text-gray-400 dark:text-gray-500 mb-4">
-                            Availability</h4>
-                        <div class="space-y-3 text-sm text-gray-600 dark:text-gray-400">
-                            <div class="flex items-center gap-2">
-                                <span class="relative flex h-2 w-2">
-                                    <span
-                                        class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                                    <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
-                                </span>
-                                <span class="text-black dark:text-white font-medium">Available for new projects</span>
-                            </div>
-                            <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
-                            Available for Product Design and UI/UX roles, working with teams building thoughtful digital products.
-                            </p>
-                        </div>
-                    </div>
+                
+                <div class="py-12 text-center overflow-hidden border-t border-gray-200 dark:border-border">
+                    <div class="text-[13vw] font-black leading-none tracking-tighter outline-text hover:text-black dark:hover:text-white transition-colors duration-500 cursor-default select-none">BRIDGET</div>
                 </div>
-
-                <!-- 3. Giant Signature Watermark -->
-                <div class="py-12 text-center overflow-hidden">
-                    <div
-                        class="text-[13vw] font-black leading-none tracking-tighter outline-text hover:text-black dark:hover:text-white transition-colors duration-500 cursor-default select-none">
-                        BRIDGET
-                    </div>
-                </div>
-
-                <!-- 4. Bottom Alignment Row -->
-                <div
-                    class="flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-gray-500 dark:text-gray-400">
+                <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-gray-500 dark:text-gray-400">
                     <p>&copy; 2026 Bridget Fayomi. All rights reserved.</p>
-                    <!-- <p>Art Direction &amp; Visual Design</p> -->
+                    <p>Product Designer &bull; Digital Experiences</p>
                 </div>
             </div>
         </footer>
     </main>
 
-    <!-- External JS -->
+    <!-- Connect your javascript file -->
     <script src="../js/scripts.js"></script>
 </body>
-
 </html>
