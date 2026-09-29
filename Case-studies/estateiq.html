@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../Images/bridget-fav-small.png" />
+    <title>EstateIQ — Case Study | Bridget Fayomi</title>
+    <meta name="description" content="Case study: EstateIQ, a platform created to improve security and convenience in gated communities." />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NW8Z6RFTC2"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-NW8Z6RFTC2');</script>
+    <script>if(localStorage.getItem('color-theme')==='dark'||(!('color-theme' in localStorage)&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.classList.add('dark');}else{document.documentElement.classList.remove('dark');}</script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{sans:['"Plus Jakarta Sans"','sans-serif'],mono:['"IBM Plex Mono"','monospace']},colors:{dark:'#0a0a0a',card:'#111111',accent:'#c4f02a',border:'#222222'}}}}</script>
+</head>
+<body class="case-study antialiased font-sans selection:bg-accent selection:text-dark">
+    <div id="cursor-dot"></div>
+    <div id="cursor-ring"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300 backdrop-blur-md bg-white/80 dark:bg-dark/80 border-b border-gray-200 dark:border-border" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+            <a href="../Index.html" class="text-2xl font-bold tracking-tighter flex items-center gap-2 text-black dark:text-white hover-trigger">
+                <div class="w-4 h-4 bg-black dark:bg-accent rounded-sm rotate-45"></div>Bridget.
+            </a>
+            <div class="hidden md:flex gap-8 text-sm font-medium text-gray-600 dark:text-gray-400">
+                <a href="../Index.html" class="hover:text-black dark:hover:text-white transition-colors hover-trigger">Home</a>
+                <a href="../pages/projects.html" class="hover:text-black dark:hover:text-white transition-colors hover-trigger">Projects</a>
+                <a href="../pages/explorations.html" class="hover:text-black dark:hover:text-white transition-colors hover-trigger">Explorations</a>
+                <a href="#" class="text-black dark:text-accent font-semibold hover-trigger">EstateIQ</a>
+            </div>
+            <div class="flex items-center gap-3">
+                <button id="theme-toggle" class="theme-toggle-btn bg-gray-100 dark:bg-[#1A1A1A] border border-gray-200 dark:border-[#2A2A2A] shadow-sm rounded-full p-2.5 flex items-center justify-center hover:bg-gray-200 dark:hover:bg-[#2A2A2A] transition-colors duration-300 hover-trigger" aria-label="Toggle theme">
+                    <svg class="theme-toggle-light-icon hidden w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+                    <svg class="theme-toggle-dark-icon w-4 h-4 text-gray-700 dark:text-gray-300" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                </button>
+                <a href="../pages/contact.html" class="bg-black dark:bg-accent text-white dark:text-dark px-6 py-2.5 rounded-none font-bold text-sm flex items-center gap-2 hover:bg-gray-800 dark:hover:bg-white transition-colors hover-trigger">Contact <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg></a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-32">
+        <!-- Hero Section -->
+        <section class="max-w-7xl mx-auto px-6 pt-12 md:pt-16 pb-12">
+            <div class="flex flex-wrap items-center justify-between gap-4 mb-8 reveal">
+                <a href="../pages/projects.html" class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-accent transition-colors hover-trigger">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>All Projects
+                </a>
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-medium bg-black/5 dark:bg-white/5 border border-gray-200 dark:border-border text-gray-700 dark:text-gray-300">
+                    <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>Case Study &bull; Property Tech
+                </span>
+            </div>
+            <h1 class="hero-text uppercase reveal delay-100 text-black dark:text-white">
+                EstateIQ<br>
+                <span class="flex items-center gap-4 md:gap-6">
+                    <svg class="w-14 h-14 md:w-28 md:h-28 text-black dark:text-accent hover-trigger flex-shrink-0" viewBox="0 0 100 100" 
+                    fill="none" stroke="currentColor" stroke-width="2"><circle cx="30" cy="50" r="25"/><circle cx="70" cy="50" r="25"/></svg>
+                    COMMUNITY
+                </span>
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 max-w-4xl mt-8 font-normal leading-relaxed reveal delay-150">
+                A platform created to improve security and convenience in gated communities. Tailored for estate managers, security, and residents.
+            </p>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-10 pt-8 border-t border-gray-200 dark:border-border reveal delay-200 text-sm">
+                <div><span class="text-xs uppercase tracking-wider text-gray-400 dark:text-gray-500 block mb-1 font-mono">Role</span><span class="font-bold text-black dark:text-white">UI/UX Designer</span></div>
+                <div><span class="text-xs uppercase tracking-wider text-gray-400 dark:text-gray-500 block mb-1 font-mono">Duration</span><span class="font-bold text-black dark:text-white">8 Weeks</span></div>
+                <div><span class="text-xs uppercase tracking-wider text-gray-400 dark:text-gray-500 block mb-1 font-mono">Year</span><span class="font-bold text-black dark:text-white">2024</span></div>
+                <div><span class="text-xs uppercase tracking-wider text-gray-400 dark:text-gray-500 block mb-1 font-mono">Platform</span><span class="font-bold text-black dark:text-white">Mobile App</span></div>
+            </div>
+        </section>
+
+        <!-- Hero Image -->
+        <section class="max-w-7xl mx-auto px-6 reveal delay-200">
+            <div class="w-full bg-[#0f1117] border border-gray-200 dark:border-border/60 rounded-3xl overflow-hidden shadow-2xl relative group">
+                <img src="../Images/estateiq-cover.png" alt="EstateIQ platform mockup" class="w-full h-auto object-cover transform group-hover:scale-[1.01] transition-transform duration-700">
+            </div>
+        </section>
+
+        <!-- Content + Sidebar -->
+        <section class="max-w-7xl mx-auto px-6 py-20 md:py-28">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+
+                <!-- LEFT COLUMN -->
+                <div class="lg:col-span-8 space-y-20">
+
+                    <!-- Overview -->
+                    <div class="reveal space-y-6">
+                        <div class="flex items-center gap-3"><span class="w-2 h-2 bg-accent rounded-full"></span><span class="text-xs font-mono uppercase tracking-widest text-gray-500 dark:text-gray-400 font-semibold">Overview</span></div>
+                        <h2 class="text-3xl md:text-4xl font-bold text-black dark:text-white tracking-tight">Security and Convenience in One App</h2>
+                        <p class="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">The client wanted me to design a mobile application for their existing website, EstateIQ. EstateIQ is a platform created to improve security and convenience in gated communities. Tailored for estate managers, security, and residents, the app simplifies access management, communication, billing, and overall community coordination.</p>
+                    </div>
+
+                    <!-- Problem / Goal / Solution -->
+                    <div class="space-y-6 reveal">
+                        <div class="p-8 rounded-2xl bg-white dark:bg-card border border-gray-200 dark:border-border shadow-sm">
+                            <span class="px-2.5 py-1 text-[11px] font-mono font-bold uppercase rounded bg-red-500/10 text-red-600 dark:text-red-400 border border-red-500/20 inline-block mb-4">The Problem</span>
+                            <h3 class="text-xl font-bold text-black dark:text-white mb-4">Fragmented Community Management</h3>
+                            <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4">Managing a gated community can be complex. Current systems often face issues such as:</p>
+                            <ul class="space-y-2.5">
+                                <li class="flex items-start gap-3 text-gray-600 dark:text-gray-300 text-sm leading-relaxed"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-red-400 flex-shrink-0"></span>Difficulty controlling secure entry and exit</li>
+                                <li class="flex items-start gap-3 text-gray-600 dark:text-gray-300 text-sm leading-relaxed"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-red-400 flex-shrink-0"></span>Fragmented communication between residents and estate management</li>
+                                <li class="flex items-start gap-3 text-gray-600 dark:text-gray-300 text-sm leading-relaxed"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-red-400 flex-shrink-0"></span>Inefficient safety protocols and coordination</li>
+                            </ul>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="p-8 rounded-2xl bg-blue-500/5 border border-blue-500/20 shadow-sm">
+                                <span class="px-2.5 py-1 text-[11px] font-mono font-bold uppercase rounded bg-blue-500/15 text-blue-600 dark:text-blue-400 border border-blue-500/30 inline-block mb-4">The Goal</span>
+                                <h3 class="text-lg font-bold text-black dark:text-white mb-2">Design an Intuitive App</h3>
+                                <ul class="space-y-2.5 mt-2">
+                                    <li class="flex items-start gap-3 text-gray-600 dark:text-gray-400 text-sm leading-relaxed"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0"></span>Make access control simple and secure</li>
+                                    <li class="flex items-start gap-3 text-gray-600 dark:text-gray-400 text-sm leading-relaxed"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0"></span>Improve communication between all parties</li>
+                                    <li class="flex items-start gap-3 text-gray-600 dark:text-gray-400 text-sm leading-relaxed"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0"></span>Strengthen safety via clear workflows</li>
+                                </ul>
+                            </div>
+                            <div class="p-8 rounded-2xl bg-green-500/5 border border-green-500/20 shadow-sm">
+                                <span class="px-2.5 py-1 text-[11px] font-mono font-bold uppercase rounded bg-green-500/15 text-green-600 dark:text-green-400 border border-green-500/30 inline-block mb-4">The Solution</span>
+                                <h3 class="text-lg font-bold text-black dark:text-white mb-2">A Unified Hub</h3>
+                                <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-2">A user-friendly, structured platform focusing on:</p>
+                                <ul class="space-y-1.5 text-xs text-gray-600 dark:text-gray-400">
+                                    <li>&bull; Access Control & Secure Entry Codes</li>
+                                    <li>&bull; Billing & Payment Tracking</li>
+                                    <li>&bull; Community Collaboration & Reporting</li>
+                                    <li>&bull; Estate Secretariat & Board Tools</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Users -->
+                    <div class="reveal space-y-6">
+                        <div class="flex items-center gap-3"><span class="w-2 h-2 bg-accent rounded-full"></span><span class="text-xs font-mono uppercase tracking-widest text-gray-500 dark:text-gray-400 font-semibold">Target Audience</span></div>
+                        <h2 class="text-3xl md:text-4xl font-bold text-black dark:text-white tracking-tight">Users</h2>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
+                            <div class="p-5 rounded-2xl bg-white dark:bg-card border border-gray-200 dark:border-border shadow-sm">
+                                <div class="w-10 h-10 rounded-xl bg-gray-100 dark:bg-[#1A1A1A] flex items-center justify-center mb-4"><span class="text-xl">🏠</span></div>
+                                <h4 class="font-bold text-black dark:text-white mb-2 text-sm">Residents</h4>
+                                <p class="text-gray-500 dark:text-gray-400 text-xs leading-relaxed">Manage access codes, pay bills, and stay updated.</p>
+                            </div>
+                            <div class="p-5 rounded-2xl bg-white dark:bg-card border border-gray-200 dark:border-border shadow-sm">
+                                <div class="w-10 h-10 rounded-xl bg-gray-100 dark:bg-[#1A1A1A] flex items-center justify-center mb-4"><span class="text-xl">🏢</span></div>
+                                <h4 class="font-bold text-black dark:text-white mb-2 text-sm">Estate Managers</h4>
+                                <p class="text-gray-500 dark:text-gray-400 text-xs leading-relaxed">Oversee communication, finances, and security.</p>
+                            </div>
+                            <div class="p-5 rounded-2xl bg-white dark:bg-card border border-gray-200 dark:border-border shadow-sm">
+                                <div class="w-10 h-10 rounded-xl bg-gray-100 dark:bg-[#1A1A1A] flex items-center justify-center mb-4"><span class="text-xl">🛡️</span></div>
+                                <h4 class="font-bold text-black dark:text-white mb-2 text-sm">Security Personnel</h4>
+                                <p class="text-gray-500 dark:text-gray-400 text-xs leading-relaxed">Monitor entries and exits in real time.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Responsibilities -->
+                    <div class="reveal p-8 rounded-2xl bg-white dark:bg-card border border-gray-200 dark:border-border shadow-sm">
+                        <div class="flex items-center gap-3 mb-6"><span class="w-2 h-2 bg-accent rounded-full"></span><span class="text-xs font-mono uppercase tracking-widest text-gray-500 dark:text-gray-400 font-semibold">Scope of Work</span></div>
+                        <h3 class="text-2xl font-bold text-black dark:text-white mb-6">My Responsibilities</h3>
+                        <div class="flex flex-wrap gap-2.5">
+                            <span class="px-4 py-2 bg-gray-50 dark:bg-dark border border-gray-200 dark:border-border rounded-xl text-sm text-black dark:text-white font-medium">Design system</span>
+                            <span class="px-4 py-2 bg-gray-50 dark:bg-dark border border-gray-200 dark:border-border rounded-xl text-sm text-black dark:text-white font-medium">User flows</span>
+                            <span class="px-4 py-2 bg-gray-50 dark:bg-dark border border-gray-200 dark:border-border rounded-xl text-sm text-black dark:text-white font-medium">Wireframes</span>
+                            <span class="px-4 py-2 bg-gray-50 dark:bg-dark border border-gray-200 dark:border-border rounded-xl text-sm text-black dark:text-white font-medium">High fidelity UI</span>
+                            <span class="px-4 py-2 bg-gray-50 dark:bg-dark border border-gray-200 dark:border-border rounded-xl text-sm text-black dark:text-white font-medium">Prototyping</span>
+                            <span class="px-4 py-2 bg-gray-50 dark:bg-dark border border-gray-200 dark:border-border rounded-xl text-sm text-black dark:text-white font-medium">Developer handoff</span>
+                        </div>
+                    </div>
+
+                    <!-- Design Process Setup -->
+                    <div class="reveal space-y-12">
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-3"><span class="w-2 h-2 bg-accent rounded-full"></span><span class="text-xs font-mono uppercase tracking-widest text-gray-500 dark:text-gray-400 font-semibold">The Process</span></div>
+                            <h2 class="text-3xl md:text-4xl font-bold text-black dark:text-white">Design Process</h2>
+                        </div>
+                        
+                        <!-- Information Architecture -->
+                        <div class="space-y-4">
+                            <h3 class="text-xl font-bold text-black dark:text-white">Information Architecture</h3>
+                            <p class="text-gray-600 dark:text-gray-300 text-base leading-relaxed">Since the client had already provided a Product Requirements Document (PRD), I began by creating the information architecture. This helped me translate the requirements into a clear structure for the app. I mapped out the main modules and user flows, then refined the architecture with feedback from the client to ensure it aligned with both user needs and project goals.</p>
+                            <!-- Placeholder for IA Image -->
+                            <div class="rounded-2xl overflow-hidden border border-gray-200 dark:border-border bg-white dark:bg-card p-3 shadow-md mt-4">
+                                <div class="overflow-hidden rounded-xl bg-gray-100 dark:bg-dark">
+                                    <img src="../Images/estateiq-ia.png" alt="Information Architecture" class="w-full h-auto object-cover opacity-60">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Wireframe -->
+                        <div class="space-y-4">
+                            <h3 class="text-xl font-bold text-black dark:text-white">Wireframes</h3>
+                            <p class="text-gray-600 dark:text-gray-300 text-base leading-relaxed">After finalizing the information architecture, I created low-fidelity wireframes to visualize the layout and user flows. These wireframes helped me quickly test different ideas, refine navigation, and ensure the design aligned with the client's requirements before moving into high-fidelity screens.</p>
+                            <!-- Placeholder for Wireframe Image -->
+                            <div class="rounded-2xl overflow-hidden border border-gray-200 dark:border-border bg-white dark:bg-card p-3 shadow-md mt-4">
+                                <div class="overflow-hidden rounded-xl bg-gray-100 dark:bg-dark">
+                                    <img src="../Images/estateiq-wireframes.png" alt="Low Fidelity Wireframes" class="w-full h-auto object-cover opacity-60">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Deep Dive Screens Sections (High Fidelity) -->
+                    <div class="reveal space-y-8">
+                        <div class="flex items-center gap-3"><span class="w-2 h-2 bg-accent rounded-full"></span><span class="text-xs font-mono uppercase tracking-widest text-gray-500 dark:text-gray-400 font-semibold">Interface Design</span></div>
+                        <div class="border-b border-gray-200 dark:border-border pb-3">
+                            <h2 class="text-3xl md:text-4xl font-bold text-black dark:text-white">High Fidelity Designs</h2>
+                            <p class="text-gray-600 dark:text-gray-300 text-base leading-relaxed mt-4">These final screens bring the core flows to life, translating research and wireframes into a clear, functional product.</p>
+                        </div>
+                        
+                        <!-- High Fidelity (1 Image) -->
+                        <div class="space-y-4 group">
+                            <div class="rounded-2xl overflow-hidden border border-gray-200 dark:border-border bg-white dark:bg-card p-3 shadow-md group mt-6">
+                                <div class="overflow-hidden rounded-xl bg-gray-100 dark:bg-dark">
+                                    <img src="../Images/estateiq-hifi.png" alt="EstateIQ High Fidelity Interfaces" class="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-500">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Outcome & Reflection -->
+                    <div class="reveal p-8 md:p-10 rounded-2xl bg-white dark:bg-card border border-gray-200 dark:border-border shadow-sm space-y-6 mt-16">
+                        <div class="flex items-center gap-3"><span class="w-2 h-2 bg-green-500 rounded-full"></span><span class="text-xs font-mono uppercase tracking-widest text-green-600 dark:text-green-400 font-bold">Results &amp; Impact</span></div>
+                        <h3 class="text-2xl md:text-3xl font-bold text-black dark:text-white">Outcome</h3>
+                        
+                        <ul class="space-y-2.5 mt-2">
+                            <li class="flex items-start gap-3 text-gray-700 dark:text-gray-200 text-base leading-relaxed"><span class="mt-2 w-2 h-2 rounded-full bg-green-400 flex-shrink-0"></span>Reduced the number of manual steps required for visitor access.</li>
+                            <li class="flex items-start gap-3 text-gray-700 dark:text-gray-200 text-base leading-relaxed"><span class="mt-2 w-2 h-2 rounded-full bg-green-400 flex-shrink-0"></span>Improved the efficiency of the visitor check-in process.</li>
+                            <li class="flex items-start gap-3 text-gray-700 dark:text-gray-200 text-base leading-relaxed"><span class="mt-2 w-2 h-2 rounded-full bg-green-400 flex-shrink-0"></span>Simplified access code generation for residents and security personnel.</li>
+                            <li class="flex items-start gap-3 text-gray-700 dark:text-gray-200 text-base leading-relaxed"><span class="mt-2 w-2 h-2 rounded-full bg-green-400 flex-shrink-0"></span>Received positive stakeholder feedback.</li>
+                        </ul>
+                        
+                        <!-- Challenges & Reflection Blocks -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                            <div class="p-6 rounded-xl bg-gray-50 dark:bg-[#151515] border border-gray-200 dark:border-border">
+                                <h4 class="font-bold text-lg text-black dark:text-white mb-2">Challenges</h4>
+                                <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                                    One challenge I faced was the client's familiarity with UI/UX design. He suggested added elements from other apps he had seen, which led to frequent requests for new features. Instead, I had an open conversation with him about the impact of adding too many features on usability and delivery. I also introduced regular check-ins and feedback sessions so we could align early, avoid scope creep, and stay focused on the project goals.
+                                </p>
+                            </div>
+                            <div class="p-6 rounded-xl bg-gray-50 dark:bg-[#151515] border border-gray-200 dark:border-border">
+                                <h4 class="font-bold text-lg text-black dark:text-white mb-2">Reflection</h4>
+                                <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                                    This project helped me strengthen my time management and boosted my confidence in communicating design decisions. I learned the value of setting boundaries, explaining design choices clearly, and balancing creativity with practical needs. Overall, this experience made me more confident in managing expectations and delivering quality designs on time.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Next Steps -->
+                        <div class="pt-6 border-t border-gray-200 dark:border-border mt-6">
+                            <h4 class="font-bold text-lg text-black dark:text-white mb-2">Next Steps</h4>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                                As the platform evolves, the client plans to expand EstateIQ beyond estate management by introducing additional convenience services. Future updates will include airtime and data purchases, allowing residents to access everyday digital services directly within the app. These additions aim to make EstateIQ a more comprehensive platform for both community management and daily utilities.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- RIGHT SIDEBAR -->
+                <div class="lg:col-span-4 space-y-8 lg:sticky lg:top-28 mt-16 lg:mt-0">
+                    <div class="bg-white dark:bg-card border border-gray-200 dark:border-border p-8 rounded-2xl reveal shadow-sm">
+                        <h3 class="text-xs font-mono font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-6">Project Information</h3>
+                        <div class="space-y-5 text-sm">
+                            <div class="pb-4 border-b border-gray-100 dark:border-border"><p class="text-gray-400 text-xs font-mono uppercase mb-1">Product</p><p class="font-bold text-black dark:text-white text-base">EstateIQ</p></div>
+                            <div class="pb-4 border-b border-gray-100 dark:border-border"><p class="text-gray-400 text-xs font-mono uppercase mb-1">Domain</p><p class="font-bold text-black dark:text-white">Property Tech</p></div>
+                            <div class="pb-4 border-b border-gray-100 dark:border-border"><p class="text-gray-400 text-xs font-mono uppercase mb-1">Role</p><p class="font-bold text-black dark:text-white">UI/UX Designer</p></div>
+                            <div class="pb-4 border-b border-gray-100 dark:border-border"><p class="text-gray-400 text-xs font-mono uppercase mb-1">Duration</p><p class="font-semibold text-gray-800 dark:text-gray-200">8 Weeks</p></div>
+                            <div>
+                                <p class="text-gray-400 text-xs font-mono uppercase mb-2">Core Deliverables</p>
+                                <div class="flex flex-wrap gap-1.5">
+                                    <span class="px-2 py-1 bg-gray-100 dark:bg-dark border border-gray-200 dark:border-border rounded text-[10px] text-gray-600 dark:text-gray-400 font-mono">Design System</span>
+                                    <span class="px-2 py-1 bg-gray-100 dark:bg-dark border border-gray-200 dark:border-border rounded text-[10px] text-gray-600 dark:text-gray-400 font-mono">User Flows</span>
+                                    <span class="px-2 py-1 bg-gray-100 dark:bg-dark border border-gray-200 dark:border-border rounded text-[10px] text-gray-600 dark:text-gray-400 font-mono">Wireframing</span>
+                                    <span class="px-2 py-1 bg-gray-100 dark:bg-dark border border-gray-200 dark:border-border rounded text-[10px] text-gray-600 dark:text-gray-400 font-mono">Prototyping</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white dark:bg-card border border-gray-200 dark:border-border p-8 rounded-2xl reveal shadow-sm">
+                        <h3 class="text-xs font-mono font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-6">Prototypes &amp; Links</h3>
+                        <div class="space-y-3">
+                            <!-- Resident Prototype Link -->
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between p-3.5 rounded-xl bg-black text-white dark:bg-accent dark:text-dark font-bold text-xs uppercase tracking-wider transition-all hover:bg-gray-800 dark:hover:bg-white hover-trigger">
+                                <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>Resident</span>
+                                <svg class="w-4 h-4 transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                            </a>
+                            
+                            <!-- Security Prototype Link -->
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between p-3.5 rounded-xl border border-gray-200 dark:border-border bg-gray-50 dark:bg-dark text-black dark:text-white font-semibold text-xs transition-all hover:border-black dark:hover:border-accent hover-trigger">
+                                <span>Security</span>
+                                <svg class="w-3.5 h-3.5 text-gray-400 group-hover:text-black dark:group-hover:text-accent transform group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                            </a>
+                        </div>
+                    </div>                
+                </div>
+            </div>
+        </section>
+
+        <!-- Next Project -->
+        <section class="max-w-7xl mx-auto px-6 pb-20 reveal">
+            <div class="p-8 md:p-12 rounded-3xl bg-white dark:bg-card border border-gray-200 dark:border-border flex flex-col md:flex-row justify-between items-start md:items-center gap-6 shadow-sm">
+                <div>
+                    <span class="text-xs uppercase tracking-widest text-gray-400 font-mono block mb-2">Next Case Study</span>
+                    <h3 class="text-3xl md:text-4xl font-bold text-black dark:text-white">Bluwox</h3>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm mt-1">An all-in-one platform connecting users with local artisans for home-based tasks.</p>
+                </div>
+                <a href="../Case-studies/bluwox.html" class="inline-flex items-center gap-3 bg-black dark:bg-accent text-white dark:text-dark px-8 py-3.5 rounded-full font-bold text-xs uppercase tracking-wider hover:bg-gray-800 dark:hover:bg-white transition-all hover-trigger flex-shrink-0">
+                    View Project <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                </a>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="mt-20 border-t border-gray-200 dark:border-border pt-20 pb-12 relative overflow-hidden">
+            <div class="absolute top-12 right-8 md:right-16 text-black dark:text-accent opacity-40 hover:opacity-100 transition-opacity animate-[spin_12s_linear_infinite] pointer-events-none">
+                <svg width="44" height="44" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l2.5 9.5L24 12l-9.5 2.5L12 24l-2.5-9.5L0 12l9.5-2.5z"/></svg>
+            </div>
+            <div class="max-w-7xl mx-auto px-6 reveal">
+                <div class="mb-20 text-center flex flex-col items-center">
+                    <span class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400 font-semibold mb-4 block">Have a project in mind?</span>
+                    <h2 class="text-5xl sm:text-6xl md:text-8xl font-black leading-none tracking-tight text-black dark:text-accent mb-6">Let's Talk</h2>
+                    <a href="mailto:hello@bridgetfayomi.com" class="group inline-flex items-center gap-3 text-xl sm:text-2xl md:text-3xl font-bold tracking-tight text-gray-900 dark:text-white hover:text-black dark:hover:text-accent transition-colors hover-trigger">
+                        <span>hello@bridgetfayomi.com</span>
+                        <span class="w-8 h-8 rounded-full border border-gray-300 dark:border-gray-700 group-hover:border-black dark:group-hover:border-accent flex items-center justify-center text-xs transition-colors">&rarr;</span>
+                    </a>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12 py-12 border-y border-gray-200 dark:border-border text-sm">
+                    <div class="md:col-span-5 space-y-4">
+                        <div class="flex items-center gap-2"><div class="w-3 h-3 bg-black dark:bg-accent rounded-sm rotate-45"></div><span class="font-bold text-base text-black dark:text-white">Bridget Fayomi</span></div>
+                        <p class="text-gray-600 dark:text-gray-400 leading-relaxed text-sm max-w-sm">Product Designer crafting bold digital products, intuitive UX flows, and intentional visual systems.</p>
+                        <div class="flex items-center gap-3 pt-2">
+                            <a href="#" class="w-9 h-9 rounded-full border border-gray-200 dark:border-border flex items-center justify-center hover:border-black dark:hover:border-accent hover:text-black dark:hover:text-accent text-gray-700 dark:text-gray-300 transition-colors hover-trigger font-bold text-xs">&#120143;</a>
+                            <a href="#" class="w-9 h-9 rounded-full border border-gray-200 dark:border-border flex items-center justify-center hover:border-black dark:hover:border-accent hover:text-black dark:hover:text-accent text-gray-700 dark:text-gray-300 transition-colors hover-trigger font-serif font-bold text-xs">B&#275;</a>
+                            <a href="#" class="w-9 h-9 rounded-full border border-gray-200 dark:border-border flex items-center justify-center hover:border-black dark:hover:border-accent hover:text-black dark:hover:text-accent text-gray-700 dark:text-gray-300 transition-colors hover-trigger font-bold text-xs">in</a>
+                        </div>
+                    </div>
+                    <div class="md:col-span-3 md:col-start-7">
+                        <h4 class="font-bold text-xs uppercase tracking-wider text-gray-400 dark:text-gray-500 mb-4">Navigation</h4>
+                        <ul class="space-y-3 text-sm text-gray-600 dark:text-gray-400">
+                            <li><a href="../Index.html" class="hover:text-black dark:hover:text-white transition-colors hover-trigger">Home</a></li>
+                            <li><a href="../pages/projects.html" class="hover:text-black dark:hover:text-white transition-colors hover-trigger">Projects</a></li>
+                            <li><a href="../pages/explorations.html" class="hover:text-black dark:hover:text-white transition-colors hover-trigger">Explorations</a></li>
+                            <li><a href="../pages/contact.html" class="hover:text-black dark:hover:text-white transition-colors hover-trigger">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="md:col-span-3">
+                        <h4 class="font-bold text-xs uppercase tracking-wider text-gray-400 dark:text-gray-500 mb-4">Availability</h4>
+                        <div class="space-y-3 text-sm text-gray-600 dark:text-gray-400">
+                            <div class="flex items-center gap-2">
+                                <span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span></span>
+                                <span class="text-black dark:text-white font-medium">Available for new projects</span>
+                            </div>
+                            <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">Open for product design, design systems, and visual design worldwide.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="py-12 text-center overflow-hidden">
+                    <div class="text-[13vw] font-black leading-none tracking-tighter outline-text hover:text-black dark:hover:text-white transition-colors duration-500 cursor-default select-none">BRIDGET</div>
+                </div>
+                <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-gray-500 dark:text-gray-400">
+                    <p>&copy; 2026 Bridget Fayomi. All rights reserved.</p>
+                    <p>Product Designer &bull; Digital Experiences</p>
+                </div>
+            </div>
+        </footer>
+    </main>
+    <script src="../js/scripts.js"></script>
+</body>
+</html>

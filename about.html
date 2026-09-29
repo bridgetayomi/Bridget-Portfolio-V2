@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="Images/bridget-fav-small.png" />
+    <title>About Me | Bridget Fayomi</title>
+    <meta name="description" content="Product designer crafting experiences people actually enjoy." />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NW8Z6RFTC2"></script>
+    <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'G-NW8Z6RFTC2');</script>
+    <script>if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) { document.documentElement.classList.add('dark'); } else { document.documentElement.classList.remove('dark'); }</script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <script>tailwind.config = { darkMode: 'class', theme: { extend: { fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'], mono: ['"IBM Plex Mono"', 'monospace'] }, colors: { dark: '#0a0a0a', card: '#111111', accent: '#c4f02a', border: '#222222' } } } }</script>
+</head>
+
+<body class="case-study antialiased font-sans selection:bg-accent selection:text-dark">
+    <div id="cursor-dot"></div>
+    <div id="cursor-ring"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300 backdrop-blur-md bg-white/80 dark:bg-dark/80 border-b border-gray-200 dark:border-border"
+        id="navbar">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+            <a href="index.html"
+                class="text-2xl font-bold tracking-tighter flex items-center gap-2 text-black dark:text-white hover-trigger">
+                <div class="w-4 h-4 bg-black dark:bg-accent rounded-sm rotate-45"></div>DesignsbyB.
+            </a>
+            <div class="hidden md:flex gap-8 text-sm font-medium text-gray-600 dark:text-gray-400">
+                <a href="index.html"
+                    class="hover:text-black dark:hover:text-white transition-colors hover-trigger">Home</a>
+                <a href="pages/projects.html"
+                    class="hover:text-black dark:hover:text-white transition-colors hover-trigger">Projects</a>
+                <a href="pages/explorations.html"
+                    class="hover:text-black dark:hover:text-white transition-colors hover-trigger">Explorations</a>
+                <a href="about.html" class="text-black dark:text-accent font-semibold hover-trigger">About</a>
+                <a href="pages/contact.html"
+                    class="hover:text-black dark:hover:text-white transition-colors hover-trigger">Contact</a>
+            </div>
+            <div class="flex items-center gap-3">
+                <button id="theme-toggle"
+                    class="theme-toggle-btn bg-gray-100 dark:bg-[#1A1A1A] border border-gray-200 dark:border-[#2A2A2A] shadow-sm rounded-full p-2.5 flex items-center justify-center hover:bg-gray-200 dark:hover:bg-[#2A2A2A] transition-colors duration-300 hover-trigger"
+                    aria-label="Toggle theme">
+                    <svg class="theme-toggle-light-icon hidden w-4 h-4 text-yellow-500" fill="currentColor"
+                        viewBox="0 0 20 20">
+                        <path
+                            d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                            fill-rule="evenodd" clip-rule="evenodd"></path>
+                    </svg>
+                    <svg class="theme-toggle-dark-icon w-4 h-4 text-gray-700 dark:text-gray-300" fill="currentColor"
+                        viewBox="0 0 20 20">
+                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                    </svg>
+                </button>
+                <a href="pages/contact.html"
+                    class="bg-black dark:bg-accent text-white dark:text-dark px-6 py-2.5 rounded-none font-bold text-sm flex items-center gap-2 hover:bg-gray-800 dark:hover:bg-white transition-colors hover-trigger">Contact
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg></a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-32">
+        <!-- Hero Section -->
+        <section class="max-w-7xl mx-auto px-6 pt-12 md:pt-16 pb-12">
+            <div class="flex flex-wrap items-center gap-4 mb-8 reveal">
+                <span
+                    class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-medium bg-black/5 dark:bg-white/5 border border-gray-200 dark:border-border text-gray-700 dark:text-gray-300">
+                    <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>About Me
+                </span>
+
+                <!-- Open to Work Blinking Red Tag -->
+                <span
+                    class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-medium bg-red-50 dark:bg-red-500/10 border border-red-200 dark:border-red-500/20 text-red-600 dark:text-red-400">
+                    <span class="relative flex h-2 w-2">
+                        <span
+                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
+                    </span>
+                    Open to Work
+                </span>
+            </div>
+
+            <h1 class="hero-text uppercase reveal delay-100 text-black dark:text-white leading-[1.1]">
+                <span class="flex items-center gap-4 md:gap-6 mb-2 md:mb-4">
+                    BRIDGET
+                    <!-- Small Circular Profile Image Beside Name -->
+                    <div
+                        class="w-14 h-14 md:w-24 md:h-24 lg:w-28 lg:h-28 rounded-full overflow-hidden border border-gray-200 dark:border-border/60 shadow-md flex-shrink-0 group hover-trigger">
+                        <!-- Replace with your actual portrait image -->
+                        <img src="../Images/bridgetsmall.avif" alt="Bridget Fayomi"
+                            class="w-full h-full object-cover object-center grayscale group-hover:grayscale-0 transition-transform duration-500">
+                    </div>
+                </span>
+                FAYOMI
+            </h1>
+            <p
+                class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 max-w-4xl mt-8 font-normal leading-relaxed reveal delay-150">
+                Product designer crafting experiences people actually enjoy.
+            </p>
+        </section>
+
+        <!-- Content + Sidebar -->
+        <section class="max-w-7xl mx-auto px-6 py-12 md:py-20">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+
+                <!-- LEFT COLUMN -->
+                <div class="lg:col-span-8 space-y-24">
+
+                    <!-- Shortened About Me -->
+                    <div class="reveal space-y-6">
+                        <div class="flex items-center gap-3"><span class="w-2 h-2 bg-accent rounded-full"></span><span
+                                class="text-xs font-mono uppercase tracking-widest text-gray-500 dark:text-gray-400 font-semibold">The
+                                Designer</span></div>
+                        <h2 class="text-3xl md:text-4xl font-bold text-black dark:text-white tracking-tight">Balancing
+                            Logic and Personality</h2>
+                        <div class="space-y-4 text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
+                            <p>I am a product designer who cares about both appearance and functionality. I design
+                                digital experiences that are simple and easy to understand, combining logic and
+                                personality in just the right way.</p>
+                            <p> Whether I'm creating wireframes for dashboards, improving mobile user flows, or
+                                explaining that tooltips aren't intended to contain full paragraphs , I'm always keeping
+                                the end users in mind.</p>
+                            <p>Right now, I am in Lagos, Nigeria, and I've worked on products across fintech,
+                                healthcare, e-commerce, and security, collaborating with developers, product managers,
+                                and everyday users to turn ideas into reality.</p>
+                            <p>I think good design is less about making things look attractive and more about making
+                                them function beautifully.</p>
+                            <p>I'm big on communication, fast feedback, and making sure no user is left confused.</p>
+                            <p class="pt-2 text-base text-gray-500 dark:text-gray-400 font-normal italic">Outside of
+                                work, you’ll probably find me watching movies, making TikToks, or getting lost in a good
+                                book.<br><br>
+
+                                Lately, I’ve also been exploring QA testing because I’m curious about what happens after
+                                the designs are handed off and how products can be tested to make sure they actually
+                                work as intended.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Work Experience Timeline -->
+                    <div class="reveal">
+
+                        <!-- Header matching your image -->
+                        <div class="flex items-center gap-4 mb-6">
+                            <span
+                                class="text-sm font-mono uppercase tracking-widest text-gray-500 dark:text-gray-400 font-bold whitespace-nowrap">Teams
+                                I Worked With</span>
+                            <div class="h-px bg-gray-200 dark:bg-border w-24"></div>
+                        </div>
+
+                        <!-- Massive Professional Experience Title -->
+                        <h2
+                            class="text-[3.5rem] md:text-7xl lg:text-[5.5rem] font-bold text-black dark:text-white tracking-tight leading-[1] mb-16">
+                            My Professional<br>Experiences
+                        </h2>
+
+                        <div class="relative space-y-6 pt-4">
+                            <!-- Connecting Line -->
+                            <div
+                                class="hidden sm:block absolute left-[15px] top-8 bottom-8 w-px bg-gray-200 dark:bg-border -z-10">
+                            </div>
+
+                            <!-- Job 1: ChamsAccess -->
+                            <div
+                                class="group relative flex flex-col sm:flex-row items-start sm:items-center gap-6 sm:gap-6 w-full p-6 sm:p-8 bg-white dark:bg-[#0c0c0c] border border-gray-200 dark:border-[#1a1a1a] rounded-2xl hover:bg-accent dark:hover:bg-accent transition-all duration-300 shadow-sm hover-trigger cursor-pointer">
+
+                                <!-- Timeline Dot -->
+                                <div
+                                    class="hidden sm:flex w-8 h-8 rounded-full border border-gray-300 dark:border-[#333] bg-white dark:bg-[#0c0c0c] items-center justify-center absolute -left-4 z-10 group-hover:border-black dark:group-hover:border-black transition-colors duration-300">
+                                    <div
+                                        class="w-2 h-2 rounded-full bg-gray-300 dark:bg-[#333] group-hover:bg-black dark:group-hover:bg-black transition-colors duration-300">
+                                    </div>
+                                </div>
+
+                                <!-- Colored Icon Box -->
+                                <div
+                                    class="w-12 h-12 rounded-full bg-blue-100 dark:bg-[#1a1a1a] group-hover:bg-white/40 dark:group-hover:bg-black/10 flex items-center justify-center flex-shrink-0 transition-colors duration-300">
+                                    <span
+                                        class="text-xl font-bold text-blue-600 dark:text-white group-hover:text-black dark:group-hover:text-black">C</span>
+                                </div>
+
+                                <!-- Details -->
+                                <div class="flex-grow">
+                                    <h3
+                                        class="text-xl md:text-2xl font-bold text-black dark:text-white group-hover:text-black dark:group-hover:text-black transition-colors duration-300 mb-1">
+                                        Product Designer</h3>
+                                    <p
+                                        class="text-gray-500 dark:text-gray-400 group-hover:text-gray-800 dark:group-hover:text-gray-800 transition-colors duration-300 text-sm font-medium">
+                                        ChamsAccess &bull; Full Time</p>
+                                </div>
+
+                                <!-- Date & Arrow -->
+                                <div
+                                    class="flex items-center justify-between sm:justify-end w-full sm:w-auto gap-6 pt-4 sm:pt-0 border-t sm:border-none border-gray-100 dark:border-border group-hover:border-black/20 dark:group-hover:border-black/20 transition-colors duration-300">
+                                    <div
+                                        class="flex items-center gap-2 text-sm font-mono text-gray-500 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-gray-900 transition-colors duration-300 whitespace-nowrap">
+                                        <svg class="w-4 h-4 text-gray-400 dark:text-gray-500 group-hover:text-black dark:group-hover:text-black transition-colors duration-300"
+                                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                            </path>
+                                        </svg>
+                                        Nov 2023 — Present
+                                    </div>
+                                    <div
+                                        class="w-10 h-10 rounded-full border border-gray-200 dark:border-[#333] group-hover:border-black dark:group-hover:border-black flex items-center justify-center text-gray-400 dark:text-gray-500 group-hover:text-black dark:group-hover:text-black transition-colors duration-300">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M9 5l7 7-7 7"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Job 2: Health Fusion -->
+                            <div
+                                class="group relative flex flex-col sm:flex-row items-start sm:items-center gap-6 sm:gap-6 w-full p-6 sm:p-8 bg-white dark:bg-[#0c0c0c] border border-gray-200 dark:border-[#1a1a1a] rounded-2xl hover:bg-accent dark:hover:bg-accent transition-all duration-300 shadow-sm hover-trigger cursor-pointer">
+
+                                <!-- Timeline Dot -->
+                                <div
+                                    class="hidden sm:flex w-8 h-8 rounded-full border border-gray-300 dark:border-[#333] bg-white dark:bg-[#0c0c0c] items-center justify-center absolute -left-4 z-10 group-hover:border-black dark:group-hover:border-black transition-colors duration-300">
+                                    <div
+                                        class="w-2 h-2 rounded-full bg-gray-300 dark:bg-[#333] group-hover:bg-black dark:group-hover:bg-black transition-colors duration-300">
+                                    </div>
+                                </div>
+
+                                <!-- Colored Icon Box -->
+                                <div
+                                    class="w-12 h-12 rounded-full bg-red-100 dark:bg-[#1a1a1a] group-hover:bg-white/40 dark:group-hover:bg-black/10 flex items-center justify-center flex-shrink-0 transition-colors duration-300">
+                                    <span
+                                        class="text-xl font-bold text-red-600 dark:text-white group-hover:text-black dark:group-hover:text-black">H</span>
+                                </div>
+
+                                <!-- Details -->
+                                <div class="flex-grow">
+                                    <h3
+                                        class="text-xl md:text-2xl font-bold text-black dark:text-white group-hover:text-black dark:group-hover:text-black transition-colors duration-300 mb-1">
+                                        Product Designer</h3>
+                                    <p
+                                        class="text-gray-500 dark:text-gray-400 group-hover:text-gray-800 dark:group-hover:text-gray-800 transition-colors duration-300 text-sm font-medium">
+                                        Health Fusion &bull; Contract</p>
+                                </div>
+
+                                <!-- Date & Arrow -->
+                                <div
+                                    class="flex items-center justify-between sm:justify-end w-full sm:w-auto gap-6 pt-4 sm:pt-0 border-t sm:border-none border-gray-100 dark:border-border group-hover:border-black/20 dark:group-hover:border-black/20 transition-colors duration-300">
+                                    <div
+                                        class="flex items-center gap-2 text-sm font-mono text-gray-500 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-gray-900 transition-colors duration-300 whitespace-nowrap">
+                                        <svg class="w-4 h-4 text-gray-400 dark:text-gray-500 group-hover:text-black dark:group-hover:text-black transition-colors duration-300"
+                                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                            </path>
+                                        </svg>
+                                        Aug 2024 — Apr 2026
+                                    </div>
+                                    <div
+                                        class="w-10 h-10 rounded-full border border-gray-200 dark:border-[#333] group-hover:border-black dark:group-hover:border-black flex items-center justify-center text-gray-400 dark:text-gray-500 group-hover:text-black dark:group-hover:text-black transition-colors duration-300">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M9 5l7 7-7 7"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Job 3: EstateIQ -->
+                            <div
+                                class="group relative flex flex-col sm:flex-row items-start sm:items-center gap-6 sm:gap-6 w-full p-6 sm:p-8 bg-white dark:bg-[#0c0c0c] border border-gray-200 dark:border-[#1a1a1a] rounded-2xl hover:bg-accent dark:hover:bg-accent transition-all duration-300 shadow-sm hover-trigger cursor-pointer">
+
+                                <!-- Timeline Dot -->
+                                <div
+                                    class="hidden sm:flex w-8 h-8 rounded-full border border-gray-300 dark:border-[#333] bg-white dark:bg-[#0c0c0c] items-center justify-center absolute -left-4 z-10 group-hover:border-black dark:group-hover:border-black transition-colors duration-300">
+                                    <div
+                                        class="w-2 h-2 rounded-full bg-gray-300 dark:bg-[#333] group-hover:bg-black dark:group-hover:bg-black transition-colors duration-300">
+                                    </div>
+                                </div>
+
+                                <!-- Colored Icon Box -->
+                                <div
+                                    class="w-12 h-12 rounded-full bg-purple-100 dark:bg-[#1a1a1a] group-hover:bg-white/40 dark:group-hover:bg-black/10 flex items-center justify-center flex-shrink-0 transition-colors duration-300">
+                                    <span
+                                        class="text-xl font-bold text-purple-600 dark:text-white group-hover:text-black dark:group-hover:text-black">E</span>
+                                </div>
+
+                                <!-- Details -->
+                                <div class="flex-grow">
+                                    <h3
+                                        class="text-xl md:text-2xl font-bold text-black dark:text-white group-hover:text-black dark:group-hover:text-black transition-colors duration-300 mb-1">
+                                        UI/UX Designer</h3>
+                                    <p
+                                        class="text-gray-500 dark:text-gray-400 group-hover:text-gray-800 dark:group-hover:text-gray-800 transition-colors duration-300 text-sm font-medium">
+                                        EstateIQ &bull; Freelance</p>
+                                </div>
+
+                                <!-- Date & Arrow -->
+                                <div
+                                    class="flex items-center justify-between sm:justify-end w-full sm:w-auto gap-6 pt-4 sm:pt-0 border-t sm:border-none border-gray-100 dark:border-border group-hover:border-black/20 dark:group-hover:border-black/20 transition-colors duration-300">
+                                    <div
+                                        class="flex items-center gap-2 text-sm font-mono text-gray-500 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-gray-900 transition-colors duration-300 whitespace-nowrap">
+                                        <svg class="w-4 h-4 text-gray-400 dark:text-gray-500 group-hover:text-black dark:group-hover:text-black transition-colors duration-300"
+                                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                            </path>
+                                        </svg>
+                                        Sep 2023 — Dec 2023
+                                    </div>
+                                    <div
+                                        class="w-10 h-10 rounded-full border border-gray-200 dark:border-[#333] group-hover:border-black dark:group-hover:border-black flex items-center justify-center text-gray-400 dark:text-gray-500 group-hover:text-black dark:group-hover:text-black transition-colors duration-300">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M9 5l7 7-7 7"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Job 4: Paelyt Solutions Limited -->
+                            <div
+                                class="group relative flex flex-col sm:flex-row items-start sm:items-center gap-6 sm:gap-6 w-full p-6 sm:p-8 bg-white dark:bg-[#0c0c0c] border border-gray-200 dark:border-[#1a1a1a] rounded-2xl hover:bg-accent dark:hover:bg-accent transition-all duration-300 shadow-sm hover-trigger cursor-pointer">
+
+                                <!-- Timeline Dot -->
+                                <div
+                                    class="hidden sm:flex w-8 h-8 rounded-full border border-gray-300 dark:border-[#333] bg-white dark:bg-[#0c0c0c] items-center justify-center absolute -left-4 z-10 group-hover:border-black dark:group-hover:border-black transition-colors duration-300">
+                                    <div
+                                        class="w-2 h-2 rounded-full bg-gray-300 dark:bg-[#333] group-hover:bg-black dark:group-hover:bg-black transition-colors duration-300">
+                                    </div>
+                                </div>
+
+                                <!-- Colored Icon Box -->
+                                <div
+                                    class="w-12 h-12 rounded-full bg-green-100 dark:bg-[#1a1a1a] group-hover:bg-white/40 dark:group-hover:bg-black/10 flex items-center justify-center flex-shrink-0 transition-colors duration-300">
+                                    <span
+                                        class="text-xl font-bold text-green-600 dark:text-white group-hover:text-black dark:group-hover:text-black">P</span>
+                                </div>
+
+                                <!-- Details -->
+                                <div class="flex-grow">
+                                    <h3
+                                        class="text-xl md:text-2xl font-bold text-black dark:text-white group-hover:text-black dark:group-hover:text-black transition-colors duration-300 mb-1">
+                                        Lead UI/UX Designer</h3>
+                                    <p
+                                        class="text-gray-500 dark:text-gray-400 group-hover:text-gray-800 dark:group-hover:text-gray-800 transition-colors duration-300 text-sm font-medium mb-1">
+                                        Paelyt Solutions Limited &bull; Full Time</p>
+                                    <p
+                                        class="text-xs text-gray-400 dark:text-gray-500 group-hover:text-gray-700 dark:group-hover:text-gray-700 font-mono mt-2 pt-2 border-t border-gray-100 dark:border-[#222] group-hover:border-black/20 dark:group-hover:border-black/20 transition-colors duration-300">
+                                        Promoted from UI/UX Intern (Apr 2022 – Feb 2023)</p>
+                                </div>
+
+                                <!-- Date & Arrow -->
+                                <div
+                                    class="flex items-center justify-between sm:justify-end w-full sm:w-auto gap-6 pt-4 sm:pt-0 border-t sm:border-none border-gray-100 dark:border-border group-hover:border-black/20 dark:group-hover:border-black/20 transition-colors duration-300">
+                                    <div
+                                        class="flex items-center gap-2 text-sm font-mono text-gray-500 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-gray-900 transition-colors duration-300 whitespace-nowrap">
+                                        <svg class="w-4 h-4 text-gray-400 dark:text-gray-500 group-hover:text-black dark:group-hover:text-black transition-colors duration-300"
+                                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                            </path>
+                                        </svg>
+                                        Apr 2022 — Oct 2024
+                                    </div>
+                                    <div
+                                        class="w-10 h-10 rounded-full border border-gray-200 dark:border-[#333] group-hover:border-black dark:group-hover:border-black flex items-center justify-center text-gray-400 dark:text-gray-500 group-hover:text-black dark:group-hover:text-black transition-colors duration-300">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M9 5l7 7-7 7"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- RIGHT SIDEBAR -->
+                <div class="lg:col-span-4 space-y-8 lg:sticky lg:top-28 mt-12 lg:mt-0">
+
+                    <!-- Core Skills Box -->
+                    <div
+                        class="bg-white dark:bg-card border border-gray-200 dark:border-border p-8 rounded-2xl reveal shadow-sm">
+                        <h3
+                            class="text-xs font-mono font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-6">
+                            Core Skills</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span
+                                class="px-3 py-1.5 bg-gray-100 dark:bg-[#1A1A1A] border border-gray-200 dark:border-[#2A2A2A] rounded-full text-xs font-mono text-gray-700 dark:text-gray-300">Product
+                                Design</span>
+                            <span
+                                class="px-3 py-1.5 bg-gray-100 dark:bg-[#1A1A1A] border border-gray-200 dark:border-[#2A2A2A] rounded-full text-xs font-mono text-gray-700 dark:text-gray-300">Userflow</span>
+                            <span
+                                class="px-3 py-1.5 bg-gray-100 dark:bg-[#1A1A1A] border border-gray-200 dark:border-[#2A2A2A] rounded-full text-xs font-mono text-gray-700 dark:text-gray-300">Wireframes</span>
+                            <span
+                                class="px-3 py-1.5 bg-gray-100 dark:bg-[#1A1A1A] border border-gray-200 dark:border-[#2A2A2A] rounded-full text-xs font-mono text-gray-700 dark:text-gray-300">Interaction
+                                Design</span>
+                            <span
+                                class="px-3 py-1.5 bg-gray-100 dark:bg-[#1A1A1A] border border-gray-200 dark:border-[#2A2A2A] rounded-full text-xs font-mono text-gray-700 dark:text-gray-300">User
+                                Research</span>
+                            <span
+                                class="px-3 py-1.5 bg-gray-100 dark:bg-[#1A1A1A] border border-gray-200 dark:border-[#2A2A2A] rounded-full text-xs font-mono text-gray-700 dark:text-gray-300">Prototyping</span>
+                            <span
+                                class="px-3 py-1.5 bg-gray-100 dark:bg-[#1A1A1A] border border-gray-200 dark:border-[#2A2A2A] rounded-full text-xs font-mono text-gray-700 dark:text-gray-300">Usability
+                                Testing</span>
+                            <span
+                                class="px-3 py-1.5 bg-gray-100 dark:bg-[#1A1A1A] border border-gray-200 dark:border-[#2A2A2A] rounded-full text-xs font-mono text-gray-700 dark:text-gray-300">Design
+                                Systems</span>
+                            <span
+                                class="px-3 py-1.5 bg-gray-100 dark:bg-[#1A1A1A] border border-gray-200 dark:border-[#2A2A2A] rounded-full text-xs font-mono text-gray-700 dark:text-gray-300">Product
+                                Strategy</span>
+                            <span
+                                class="px-3 py-1.5 bg-gray-100 dark:bg-[#1A1A1A] border border-gray-200 dark:border-[#2A2A2A] rounded-full text-xs font-mono text-gray-700 dark:text-gray-300">HTML
+                                & CSS</span>
+                            <span
+                                class="px-3 py-1.5 bg-gray-100 dark:bg-[#1A1A1A] border border-gray-200 dark:border-[#2A2A2A] rounded-full text-xs font-mono text-gray-700 dark:text-gray-300">Collaboration</span>
+                        </div>
+                    </div>
+
+                    <!-- CV / Resume Download Box -->
+                    <div
+    class="bg-white dark:bg-card border border-gray-200 dark:border-border p-8 rounded-2xl reveal shadow-sm">
+    <h3
+        class="text-xs font-mono font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-6">
+        Resume</h3>
+
+    <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
+        Looking for a detailed breakdown of my experience, education, and technical capabilities?
+    </p>
+
+    <a href="../Images/mycv.pdf" download="Bridget-Fayomi-CV.pdf"
+        class="group flex items-center justify-between p-4 rounded-xl bg-black text-white dark:bg-accent dark:text-dark font-bold text-xs uppercase tracking-wider transition-all hover:bg-gray-800 dark:hover:bg-white hover-trigger">
+        <span class="flex items-center gap-2">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4">
+                </path>
+            </svg>
+            Download CV
+        </span>
+    </a>
+</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="mt-20 border-t border-gray-200 dark:border-border pt-20 pb-12 relative overflow-hidden">
+            <div
+                class="absolute top-12 right-8 md:right-16 text-black dark:text-accent opacity-40 hover:opacity-100 transition-opacity animate-[spin_12s_linear_infinite] pointer-events-none">
+                <svg width="44" height="44" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0l2.5 9.5L24 12l-9.5 2.5L12 24l-2.5-9.5L0 12l9.5-2.5z" />
+                </svg>
+            </div>
+            <div class="max-w-7xl mx-auto px-6 reveal">
+                <div class="mb-20 text-center flex flex-col items-center">
+                    <span
+                        class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400 font-semibold mb-4 block">Have
+                        a project in mind?</span>
+                    <h2
+                        class="text-5xl sm:text-6xl md:text-8xl font-black leading-none tracking-tight text-black dark:text-accent mb-6">
+                        Let's Talk</h2>
+                    <a href="mailto:hello@bridgetfayomi.com"
+                        class="group inline-flex items-center gap-3 text-xl sm:text-2xl md:text-3xl font-bold tracking-tight text-gray-900 dark:text-white hover:text-black dark:hover:text-accent transition-colors hover-trigger">
+                        <span>bridgetayomi@yahoo.com</span>
+                        <span
+                            class="w-8 h-8 rounded-full border border-gray-300 dark:border-gray-700 group-hover:border-black dark:group-hover:border-accent flex items-center justify-center text-xs transition-colors">&rarr;</span>
+                    </a>
+                </div>
+                <div
+                    class="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12 py-12 border-y border-gray-200 dark:border-border text-sm">
+                    <div class="md:col-span-5 space-y-4">
+                        <div class="flex items-center gap-2">
+                            <div class="w-3 h-3 bg-black dark:bg-accent rounded-sm rotate-45"></div><span
+                                class="font-bold text-base text-black dark:text-white">Bridget Fayomi</span>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-400 leading-relaxed text-sm max-w-sm">Product Designer
+                            crafting bold digital products, intuitive UX flows, and intentional
+                            visual systems.</p>
+                        <div class="flex items-center gap-3 pt-2">
+                            <a href="https://x.com/yebriggy?s=11"
+                                class="w-9 h-9 rounded-full border border-gray-200 dark:border-border flex items-center justify-center hover:border-black dark:hover:border-accent hover:text-black dark:hover:text-accent text-gray-700 dark:text-gray-300 transition-colors hover-trigger font-bold text-xs">&#120143;</a>
+                         
+                            <a href="https://www.linkedin.com/in/bridget-fayomi-07a087157/"
+                                class="w-9 h-9 rounded-full border border-gray-200 dark:border-border flex items-center justify-center hover:border-black dark:hover:border-accent hover:text-black dark:hover:text-accent text-gray-700 dark:text-gray-300 transition-colors hover-trigger font-bold text-xs">in</a>
+                        </div>
+                    </div>
+                    <div class="md:col-span-3 md:col-start-7">
+                        <h4 class="font-bold text-xs uppercase tracking-wider text-gray-400 dark:text-gray-500 mb-4">
+                            Navigation</h4>
+                        <ul class="space-y-3 text-sm text-gray-600 dark:text-gray-400">
+                            <li><a href="index.html"
+                                    class="hover:text-black dark:hover:text-white transition-colors hover-trigger">Home</a>
+                            </li>
+                            <li><a href="pages/projects.html"
+                                    class="hover:text-black dark:hover:text-white transition-colors hover-trigger">Projects</a>
+                            </li>
+                            <li><a href="pages/explorations.html"
+                                    class="hover:text-black dark:hover:text-white transition-colors hover-trigger">Explorations</a>
+                            </li>
+                            <li><a href="pages/contact.html"
+                                    class="hover:text-black dark:hover:text-white transition-colors hover-trigger">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="md:col-span-3">
+                        <h4 class="font-bold text-xs uppercase tracking-wider text-gray-400 dark:text-gray-500 mb-4">
+                            Availability</h4>
+                        <div class="space-y-3 text-sm text-gray-600 dark:text-gray-400">
+                            <div class="flex items-center gap-2">
+                                <span class="relative flex h-2 w-2"><span
+                                        class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span><span
+                                        class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span></span>
+                                <span class="text-black dark:text-white font-medium">Available for new projects</span>
+                            </div>
+                            <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">Available for Product Design and UI/UX roles, working with teams building thoughtful digital products.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="py-12 text-center overflow-hidden">
+                    <div
+                        class="text-[13vw] font-black leading-none tracking-tighter outline-text hover:text-black dark:hover:text-white transition-colors duration-500 cursor-default select-none">
+                        BRIDGET</div>
+                </div>
+                <div
+                    class="flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-gray-500 dark:text-gray-400">
+                    <p>&copy; 2026 Bridget Fayomi. All rights reserved.</p>
+                    <p>Product Designer &bull; Digital Experiences</p>
+                </div>
+            </div>
+        </footer>
+    </main>
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>

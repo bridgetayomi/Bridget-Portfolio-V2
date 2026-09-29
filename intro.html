@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bridget Fayomi | Loading...</title>
+
+    <!-- Fonts & Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Italiana (High-Fashion Serif) and Manrope (Clean Geometric Sans) -->
+    <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Manrope:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['"Italiana"', 'serif'],
+                        sans: ['"Manrope"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #0a0a0a;
+            color: #ffffff;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            cursor: none;
+            transition: opacity 0.6s ease-in-out;
+        }
+
+        /* Custom Cursor */
+        #cursor-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #c4f02a;
+            border-radius: 50%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+        }
+
+        /* Animations */
+        .reveal-text {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .delay-100 {
+            animation-delay: 0.2s;
+        }
+
+        .delay-200 {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px) scale(0.95);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* Progress Bar container */
+        .progress-container {
+            width: 240px;
+            height: 1px;
+            /* Made slightly thinner for elegance */
+            background-color: #222;
+            margin-top: 3rem;
+            overflow: hidden;
+            position: relative;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* The loading line */
+        .progress-bar {
+            width: 0%;
+            height: 100%;
+            background-color: #c4f02a;
+            /* Accent lime green */
+            animation: fillProgress 2.5s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+            animation-delay: 0.6s;
+        }
+
+        @keyframes fillProgress {
+            0% {
+                width: 0%;
+            }
+
+            40% {
+                width: 50%;
+            }
+
+            100% {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body class="font-sans antialiased">
+
+    <!-- Custom Cursor -->
+    <div id="cursor-dot"></div>
+
+    <div class="flex flex-col items-center justify-center text-center">
+        <!-- Logo / Name in Italiana -->
+        <h1 class="text-6xl md:text-8xl lg:text-[7rem] font-serif tracking-normal reveal-text text-[#f5f5f5]">
+            Bridget Fayomi
+        </h1>
+
+        <!-- Subtitle in Manrope -->
+        <p class="text-gray-400 mt-6 tracking-[0.4em] uppercase text-[11px] font-medium reveal-text delay-100">
+        Product Designer
+        </p>
+
+        <!-- Loading Bar -->
+        <div class="progress-container reveal-text delay-200">
+            <div class="progress-bar"></div>
+        </div>
+    </div>
+
+    <script>
+        // Custom Cursor Logic 
+        const cursorDot = document.getElementById('cursor-dot');
+        document.addEventListener('mousemove', (e) => {
+            cursorDot.style.left = e.clientX + 'px';
+            cursorDot.style.top = e.clientY + 'px';
+        });
+
+        // Redirect Logic
+        setTimeout(() => {
+            // Fade out the body for a smooth transition
+            document.body.style.opacity = '0';
+
+            // Wait 600ms for the fade out to finish, then redirect
+            setTimeout(() => {
+                window.location.href = 'index.html';
+            }, 600);
+
+        }, 3500);
+    </script>
+</body>
+
+</html>

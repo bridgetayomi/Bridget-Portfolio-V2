@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="Images/bridget-fav-small.png" />
+    <title>Bridget Fayomi — Product Designer | Sidebar View</title>
+    <meta name="description" content="Bridget Fayomi — Product Designer creating intuitive digital experiences and user-centered products." />
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NW8Z6RFTC2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-NW8Z6RFTC2');
+    </script>
+
+    <!-- Theme Initialization Script (Anti-FOUC) -->
+    <script>
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+
+    <!-- Fonts & Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        mono: ['"IBM Plex Mono"', 'monospace'],
+                    },
+                    colors: {
+                        dark: '#0a0a0a',
+                        card: '#111111',
+                        accent: '#c4f02a',
+                        border: '#222222',
+                        sidebar: '#121212',
+                        sidebarBorder: '#2A2A2A',
+                        sidebarMuted: '#8A8A8A',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="portfolio-main antialiased selection:bg-accent selection:text-dark">
+
+    <!-- Custom Cursor Elements -->
+    <div id="cursor-dot"></div>
+    <div id="cursor-ring"></div>
+
+    <div class="flex flex-col lg:flex-row min-h-screen relative">
+
+        <!-- Left Sidebar (Fixed) -->
+        <aside class="w-full lg:w-[380px] lg:fixed lg:h-screen p-4 lg:p-6 z-40">
+            <div class="bg-white dark:bg-sidebar rounded-[2rem] h-full w-full flex flex-col text-black dark:text-white shadow-2xl border border-gray-200 dark:border-sidebarBorder overflow-y-auto relative transition-colors duration-300 hover-trigger">
+
+                <!-- Sidebar Top Graphic & Profile -->
+                <div class="h-36 sidebar-header-bg relative w-full rounded-t-[2rem] shrink-0">
+                    <div class="absolute -bottom-8 left-8 p-1 bg-white dark:bg-sidebar rounded-full transition-colors duration-300">
+                        <img src="Images/bridget-fav-small.png" alt="Bridget Fayomi" class="w-16 h-16 rounded-full object-cover grayscale">
+                    </div>
+                </div>
+
+                <div class="px-8 pt-12 pb-8 flex-grow flex flex-col">
+                    <!-- Name -->
+                    <h1 class="text-2xl font-bold mb-1.5 text-black dark:text-white flex items-center gap-2">
+                        Bridget Fayomi
+                        <span class="w-2 h-2 rounded-full bg-accent"></span>
+                    </h1>
+                    
+                    <!-- Role: Product Designer (Every Art Director removed) -->
+                    <span class="text-xs font-mono border border-gray-300 dark:border-sidebarBorder text-gray-700 dark:text-gray-300 py-1 px-3 rounded-full w-max mb-5 transition-colors duration-300">
+                        Product Designer
+                    </span>
+
+                    <hr class="border-gray-200 dark:border-sidebarBorder border-dashed mb-5 transition-colors duration-300">
+
+                    <!-- About Me Under Bridget Fayomi -->
+                    <div class="mb-6 space-y-2.5">
+                        <h2 class="text-xs font-mono uppercase tracking-widest text-accent font-semibold">About Me</h2>
+                        <p class="text-gray-600 dark:text-sidebarMuted text-xs sm:text-sm leading-relaxed">
+                            Every day, I am a product designer who cares about both appearance and functionality. I design digital experiences that are simple and easy to understand, combining logic and personality in just the right way.
+                        </p>
+                        <p class="text-gray-600 dark:text-sidebarMuted text-xs leading-relaxed">
+                            Right now, I am in Lagos, Nigeria, and I've worked on products in fintech, healthcare, e-commerce, and security—partnering with developers, PMs, and everyday users to turn ideas into reality.
+                        </p>
+                        <p class="text-gray-500 dark:text-gray-400 text-xs italic pt-1">
+                            Outside of work, you'll probably find me watching movies, making TikTok videos, or reading a book.
+                        </p>
+                    </div>
+
+                    <!-- Navigation Links -->
+                    <nav class="flex-grow flex flex-col gap-2 mb-6">
+                        <a href="Index.html" class="group flex items-center gap-3.5 text-black dark:text-accent font-semibold py-2 transition-colors hover-trigger">
+                            <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
+                            <span class="transform group-hover:translate-x-1 transition-transform duration-300 text-sm">Cards View (Main)</span>
+                        </a>
+                        <a href="pages/projects.html" class="group flex items-center gap-3.5 text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors py-2 hover-trigger">
+                            <svg class="w-4 h-4 text-gray-400 dark:text-sidebarMuted group-hover:text-black dark:group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                            </svg>
+                            <span class="transform group-hover:translate-x-1 transition-transform duration-300 text-sm">Projects</span>
+                        </a>
+                        <a href="pages/explorations.html" class="group flex items-center gap-3.5 text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors py-2 hover-trigger">
+                            <svg class="w-4 h-4 text-gray-400 dark:text-sidebarMuted group-hover:text-black dark:group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                            </svg>
+                            <span class="transform group-hover:translate-x-1 transition-transform duration-300 text-sm">Explorations</span>
+                        </a>
+                        <a href="about.html" class="group flex items-center gap-3.5 text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors py-2 hover-trigger">
+                            <svg class="w-4 h-4 text-gray-400 dark:text-sidebarMuted group-hover:text-black dark:group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                            </svg>
+                            <span class="transform group-hover:translate-x-1 transition-transform duration-300 text-sm">About Full Story</span>
+                        </a>
+                        <a href="pages/contact.html" class="group flex items-center gap-3.5 text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors py-2 hover-trigger">
+                            <svg class="w-4 h-4 text-gray-400 dark:text-sidebarMuted group-hover:text-black dark:group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                            <span class="transform group-hover:translate-x-1 transition-transform duration-300 text-sm">Contact</span>
+                        </a>
+                    </nav>
+
+                    <!-- Social Media Links -->
+                    <div class="flex items-center gap-3 mb-5">
+                        <a href="https://x.com" target="_blank" rel="noopener noreferrer"
+                           class="w-10 h-10 rounded-full border border-gray-300 dark:border-sidebarBorder flex items-center justify-center hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors font-bold text-sm hover-trigger"
+                           aria-label="X (Twitter)">𝕏</a>
+                        <a href="https://www.behance.net" target="_blank" rel="noopener noreferrer"
+                           class="w-10 h-10 rounded-full border border-gray-300 dark:border-sidebarBorder flex items-center justify-center hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors font-bold font-serif hover-trigger"
+                           aria-label="Behance">Bē</a>
+                        <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer"
+                           class="w-10 h-10 rounded-full border border-gray-300 dark:border-sidebarBorder flex items-center justify-center hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors font-bold text-xs uppercase font-mono hover-trigger"
+                           aria-label="LinkedIn">in</a>
+                    </div>
+
+                    <!-- Email Button with user email: bridgetayomi@yahoo.com -->
+                    <a href="mailto:bridgetayomi@yahoo.com"
+                       class="w-full bg-black text-white dark:bg-accent dark:text-dark font-bold rounded-full py-3 text-center text-sm hover:bg-gray-800 dark:hover:bg-white transition-colors shadow-lg hover-trigger block">
+                        Email Me &rarr;
+                    </a>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="w-full lg:ml-[380px] min-h-screen bg-pattern flex-grow p-4 md:p-8 lg:p-12 relative">
+            <div class="max-w-[1200px] mx-auto w-full">
+
+                <!-- Top Header, Navigation & Theme Toggle -->
+                <header class="flex flex-col sm:flex-row justify-between items-center gap-6 mb-16 reveal-up w-full">
+                    <!-- Switch to Cards View Button -->
+                    <a href="Index.html" class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-mono font-semibold bg-white/80 dark:bg-[#1A1A1A]/80 backdrop-blur-md border border-gray-200 dark:border-[#2A2A2A] text-black dark:text-white hover:border-black dark:hover:border-accent hover-trigger">
+                        <span>&larr; Switch to Cards View</span>
+                    </a>
+
+                    <!-- Nav Links -->
+                    <nav class="hidden md:flex items-center gap-6 bg-white/80 dark:bg-[#1A1A1A]/80 backdrop-blur-md border border-gray-200 dark:border-[#2A2A2A] shadow-sm rounded-full px-8 py-3 transition-colors duration-300">
+                        <a href="Index.html" class="text-sm font-semibold text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors hover-trigger">Home</a>
+                        <a href="pages/projects.html" class="text-sm font-semibold text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors hover-trigger">Projects</a>
+                        <a href="pages/explorations.html" class="text-sm font-semibold text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors hover-trigger">Explorations</a>
+                        <a href="about.html" class="text-sm font-semibold text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors hover-trigger">About</a>
+                        <a href="pages/contact.html" class="text-sm font-semibold text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors hover-trigger">Contact</a>
+                    </nav>
+
+                    <!-- Theme Toggle -->
+                    <div class="flex items-center gap-3">
+                        <div class="bg-white/80 dark:bg-[#1A1A1A]/80 backdrop-blur-md border border-gray-200 dark:border-[#2A2A2A] shadow-sm rounded-full px-4 py-2 flex items-center gap-2 transition-colors duration-300">
+                            <span class="w-2 h-2 rounded-full bg-green-500 relative flex h-2 w-2">
+                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                                <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                            </span>
+                            <span class="text-xs font-mono font-medium text-gray-700 dark:text-gray-300">Available</span>
+                        </div>
+                        <button id="theme-toggle" class="theme-toggle-btn bg-white/80 dark:bg-[#1A1A1A]/80 backdrop-blur-md border border-gray-200 dark:border-[#2A2A2A] shadow-sm rounded-full p-2.5 flex items-center justify-center hover:bg-gray-100 dark:hover:bg-[#2A2A2A] transition-colors duration-300 hover-trigger" aria-label="Toggle theme">
+                            <svg class="theme-toggle-light-icon hidden w-4 h-4 text-yellow-500 dark:text-gray-300" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+                            </svg>
+                            <svg class="theme-toggle-dark-icon w-4 h-4 text-gray-700 dark:text-gray-300" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </header>
+
+                <!-- Hero Statement -->
+                <section class="flex flex-col items-center justify-center text-center mb-16 relative reveal-up">
+                    <div class="animate-float hover-trigger mb-6 inline-flex items-center gap-3 bg-black dark:bg-white text-white dark:text-black px-5 py-2 rounded-full shadow-xl transition-colors duration-300">
+                        <span class="text-xs font-mono font-medium">Product Design &bull; Systems &bull; Craft</span>
+                    </div>
+
+                    <h2 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 text-black dark:text-white">
+                        Hi, I'm Bridget Fayomi<br>
+                        Product Designer
+                    </h2>
+                    <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl">
+                        Crafting digital products that people love. Balancing logical workflows with striking visual personality.
+                    </p>
+                </section>
+
+                <!-- Featured Selected Works Grid -->
+                <section class="w-full pb-16">
+                    <div class="flex items-center gap-4 mb-8 reveal-up">
+                        <h3 class="text-xl font-bold text-black dark:text-white">Selected Case Studies</h3>
+                        <div class="flex-grow h-px bg-gray-200 dark:border-sidebarBorder"></div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <!-- Project 1 -->
+                        <a href="Case-studies/mybilla.html" class="group reveal-up block bg-white dark:bg-card border border-gray-200 dark:border-border rounded-2xl overflow-hidden hover:border-black dark:hover:border-accent transition-all duration-300 hover-trigger">
+                            <div class="aspect-[4/3] overflow-hidden">
+                                <img src="Images/billa-cover.png" alt="Billa" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500">
+                            </div>
+                            <div class="p-5">
+                                <span class="text-xs font-mono text-accent uppercase font-semibold">Fintech</span>
+                                <h4 class="text-xl font-bold text-black dark:text-white mt-1">BILLA</h4>
+                                <p class="text-xs text-gray-500 dark:text-gray-400 mt-1 line-clamp-2">Unified digital bills payment and everyday transactions.</p>
+                            </div>
+                        </a>
+
+                        <!-- Project 2 -->
+                        <a href="Case-studies/healthfusion.html" class="group reveal-up block bg-white dark:bg-card border border-gray-200 dark:border-border rounded-2xl overflow-hidden hover:border-black dark:hover:border-accent transition-all duration-300 hover-trigger" style="transition-delay: 100ms;">
+                            <div class="aspect-[4/3] overflow-hidden">
+                                <img src="Images/Healthfusion cover.png" alt="HealthFusion" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500">
+                            </div>
+                            <div class="p-5">
+                                <span class="text-xs font-mono text-accent uppercase font-semibold">Healthcare</span>
+                                <h4 class="text-xl font-bold text-black dark:text-white mt-1">HealthFusion</h4>
+                                <p class="text-xs text-gray-500 dark:text-gray-400 mt-1 line-clamp-2">Integrated employee healthcare portal and HMO services.</p>
+                            </div>
+                        </a>
+
+                        <!-- Project 3 -->
+                        <a href="Case-studies/pencentral.html" class="group reveal-up block bg-white dark:bg-card border border-gray-200 dark:border-border rounded-2xl overflow-hidden hover:border-black dark:hover:border-accent transition-all duration-300 hover-trigger" style="transition-delay: 200ms;">
+                            <div class="aspect-[4/3] overflow-hidden">
+                                <img src="Images/Pencentral.png" alt="PenCentral" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500">
+                            </div>
+                            <div class="p-5">
+                                <span class="text-xs font-mono text-accent uppercase font-semibold">AI Platform</span>
+                                <h4 class="text-xl font-bold text-black dark:text-white mt-1">PenCentral</h4>
+                                <p class="text-xs text-gray-500 dark:text-gray-400 mt-1 line-clamp-2">AI-driven pension remittance and automated customer support.</p>
+                            </div>
+                        </a>
+                    </div>
+                </section>
+
+                <footer class="mt-8 py-8 border-t border-gray-200 dark:border-sidebarBorder flex flex-col sm:flex-row justify-between items-center gap-4 text-xs font-mono text-gray-500 dark:text-gray-400 reveal-up transition-colors duration-300">
+                    <p>&copy; 2026 Bridget Fayomi. All rights reserved.</p>
+                    <a href="mailto:bridgetayomi@yahoo.com" class="hover:text-black dark:hover:text-accent transition-colors">bridgetayomi@yahoo.com</a>
+                </footer>
+            </div>
+        </main>
+    </div>
+
+    <!-- External JS -->
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>

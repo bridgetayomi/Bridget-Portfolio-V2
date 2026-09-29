@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../Images/bridget-fav-small.png" />
+    <title>Argon — Case Study | Bridget Fayomi</title>
+    <meta name="description" content="Case study: Argon, a complete e-commerce marketplace from product discovery to checkout and order tracking." />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NW8Z6RFTC2"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-NW8Z6RFTC2');</script>
+    <script>if(localStorage.getItem('color-theme')==='dark'||(!('color-theme' in localStorage)&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.classList.add('dark');}else{document.documentElement.classList.remove('dark');}</script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{sans:['"Plus Jakarta Sans"','sans-serif'],mono:['"IBM Plex Mono"','monospace']},colors:{dark:'#0a0a0a',card:'#111111',accent:'#c4f02a',border:'#222222'}}}}</script>
+</head>
+<body class="case-study antialiased font-sans selection:bg-accent selection:text-dark">
+    <div id="cursor-dot"></div>
+    <div id="cursor-ring"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300 backdrop-blur-md bg-white/80 dark:bg-dark/80 border-b border-gray-200 dark:border-border" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+            <a href="../Index.html" class="text-2xl font-bold tracking-tighter flex items-center gap-2 text-black dark:text-white hover-trigger">
+                <div class="w-4 h-4 bg-black dark:bg-accent rounded-sm rotate-45"></div>Bridget.
+            </a>
+            <div class="hidden md:flex gap-8 text-sm font-medium text-gray-600 dark:text-gray-400">
+                <a href="../Index.html" class="hover:text-black dark:hover:text-white transition-colors hover-trigger">Home</a>
+                <a href="../pages/projects.html" class="hover:text-black dark:hover:text-white transition-colors hover-trigger">Projects</a>
+                <a href="../pages/design dump.html" class="hover:text-black dark:hover:text-white transition-colors hover-trigger">Explorations</a>
+                <a href="#" class="text-black dark:text-accent font-semibold hover-trigger">Argone</a>
+            </div>
+            <div class="flex items-center gap-3">
+                <button id="theme-toggle" class="theme-toggle-btn bg-gray-100 dark:bg-[#1A1A1A] border border-gray-200 dark:border-[#2A2A2A] shadow-sm rounded-full p-2.5 flex items-center justify-center hover:bg-gray-200 dark:hover:bg-[#2A2A2A] transition-colors duration-300 hover-trigger" aria-label="Toggle theme">
+                    <svg class="theme-toggle-light-icon hidden w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+                    <svg class="theme-toggle-dark-icon w-4 h-4 text-gray-700 dark:text-gray-300" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                </button>
+                <a href="../pages/contact.html" class="bg-black dark:bg-accent text-white dark:text-dark px-6 py-2.5 rounded-none font-bold text-sm flex items-center gap-2 hover:bg-gray-800 dark:hover:bg-white transition-colors hover-trigger">Contact <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg></a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-32">
+        <!-- Hero Section -->
+        <section class="max-w-7xl mx-auto px-6 pt-12 md:pt-16 pb-12">
+            <div class="flex flex-wrap items-center justify-between gap-4 mb-8 reveal">
+                <a href="../pages/projects.html" class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-accent transition-colors hover-trigger">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>All Projects
+                </a>
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-medium bg-black/5 dark:bg-white/5 border border-gray-200 dark:border-border text-gray-700 dark:text-gray-300">
+                    <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>Case Study &bull; E-commerce &bull; Marketplace
+                </span>
+            </div>
+            <h1 class="hero-text uppercase reveal delay-100 text-black dark:text-white">
+                Argone<br>
+                <span class="flex items-center gap-4 md:gap-6">
+                    <svg class="w-14 h-14 md:w-28 md:h-28 text-black dark:text-accent hover-trigger flex-shrink-0" viewBox="0 0 100 100" 
+                    fill="none" stroke="currentColor" stroke-width="2"><circle cx="30" cy="50" r="25"/><circle cx="70" cy="50" r="25"/></svg>
+                    MARKETPLACE
+                </span>
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 max-w-4xl mt-8 font-normal leading-relaxed reveal delay-150">
+                Designing a complete e-commerce marketplace from product discovery to checkout and order tracking.
+            </p>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-10 pt-8 border-t border-gray-200 dark:border-border reveal delay-200 text-sm">
+                <div><span class="text-xs uppercase tracking-wider text-gray-400 dark:text-gray-500 block mb-1 font-mono">Role</span><span class="font-bold text-black dark:text-white">Product Designer</span></div>
+                <div><span class="text-xs uppercase tracking-wider text-gray-400 dark:text-gray-500 block mb-1 font-mono">Duration</span><span class="font-bold text-black dark:text-white">Continuous</span></div>
+                <div><span class="text-xs uppercase tracking-wider text-gray-400 dark:text-gray-500 block mb-1 font-mono">Year</span><span class="font-bold text-black dark:text-white">2024</span></div>
+                <div><span class="text-xs uppercase tracking-wider text-gray-400 dark:text-gray-500 block mb-1 font-mono">Platform</span><span class="font-bold text-black dark:text-white">Web & Mobile App</span></div>
+            </div>
+        </section>
+
+        <!-- Hero Image -->
+        <section class="max-w-7xl mx-auto px-6 reveal delay-200">
+            <div class="w-full bg-[#0f1117] border border-gray-200 dark:border-border/60 rounded-3xl overflow-hidden shadow-2xl relative group">
+                
+                <!-- [INSERT HERO IMAGE HERE] -->
+                <img src="../Images/placeholder-hero.png" alt="Argon platform mockup" class="w-full h-auto object-cover transform group-hover:scale-[1.01] transition-transform duration-700">
+                
+            </div>
+        </section>
+
+        <!-- Content + Sidebar -->
+        <section class="max-w-7xl mx-auto px-6 py-20 md:py-28">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+
+                <!-- LEFT COLUMN -->
+                <div class="lg:col-span-8 space-y-20">
+
+                    <!-- Overview -->
+                    <div class="reveal space-y-6">
+                        <div class="flex items-center gap-3"><span class="w-2 h-2 bg-accent rounded-full"></span><span class="text-xs font-mono uppercase tracking-widest text-gray-500 dark:text-gray-400 font-semibold">Overview</span></div>
+                        <h2 class="text-3xl md:text-4xl font-bold text-black dark:text-white tracking-tight">The Complete Shopping Journey</h2>
+                        <p class="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">Argon is an e-commerce marketplace that allows customers to discover products from different stores, compare products, review sellers and complete purchases through multiple payment options. I worked on the customer experience across the shopping journey, from discovering a product to completing checkout and tracking an order after purchase.</p>
+                        <p class="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">The experience includes product discovery, store pages, product comparison, reviews and ratings, cart, checkout, bank transfer, KoraPay, Buy Now Pay Later, order tracking and email notifications.</p>
+                    </div>
+
+                    <!-- Problem / Goal / Solution -->
+                    <div class="space-y-6 reveal">
+                        <div class="p-8 rounded-2xl bg-white dark:bg-card border border-gray-200 dark:border-border shadow-sm">
+                            <span class="px-2.5 py-1 text-[11px] font-mono font-bold uppercase rounded bg-red-500/10 text-red-600 dark:text-red-400 border border-red-500/20 inline-block mb-4">The Challenge</span>
+                            <h3 class="text-xl font-bold text-black dark:text-white mb-4">Navigating Choice & Building Trust</h3>
+                            <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4">The marketplace needed a shopping experience that could help customers confidently move from discovering a product to completing a purchase. Customers needed to be able to:</p>
+                            <ul class="space-y-2.5">
+                                <li class="flex items-start gap-3 text-gray-600 dark:text-gray-300 text-sm leading-relaxed"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-red-400 flex-shrink-0"></span>Understand the product and evaluate the seller.</li>
+                                <li class="flex items-start gap-3 text-gray-600 dark:text-gray-300 text-sm leading-relaxed"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-red-400 flex-shrink-0"></span>Compare multiple options before committing.</li>
+                                <li class="flex items-start gap-3 text-gray-600 dark:text-gray-300 text-sm leading-relaxed"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-red-400 flex-shrink-0"></span>Choose how they wanted to pay (BNPL, Bank Transfer, Card).</li>
+                                <li class="flex items-start gap-3 text-gray-600 dark:text-gray-300 text-sm leading-relaxed"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-red-400 flex-shrink-0"></span>Know exactly what was happening with their order post-purchase.</li>
+                            </ul>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="p-8 rounded-2xl bg-blue-500/5 border border-blue-500/20 shadow-sm">
+                                <span class="px-2.5 py-1 text-[11px] font-mono font-bold uppercase rounded bg-blue-500/15 text-blue-600 dark:text-blue-400 border border-blue-500/30 inline-block mb-4">The Goal</span>
+                                <h3 class="text-lg font-bold text-black dark:text-white mb-2">A Confident Marketplace</h3>
+                                <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">Design a complete marketplace experience that makes it easy for customers to discover products, evaluate sellers, read reviews, use multiple payment methods (including BNPL), and accurately track their orders.</p>
+                            </div>
+                            <div class="p-8 rounded-2xl bg-green-500/5 border border-green-500/20 shadow-sm">
+                                <span class="px-2.5 py-1 text-[11px] font-mono font-bold uppercase rounded bg-green-500/15 text-green-600 dark:text-green-400 border border-green-500/30 inline-block mb-4">The Solution</span>
+                                <h3 class="text-lg font-bold text-black dark:text-white mb-2">End-to-End Shopping</h3>
+                                <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-2">A structured journey connecting:</p>
+                                <ul class="space-y-1.5 text-xs text-gray-600 dark:text-gray-400">
+                                    <li>&bull; Discovery & Smart Comparisons</li>
+                                    <li>&bull; Transparent Store & Review Pages</li>
+                                    <li>&bull; Flexible Payment (KoraPay, BNPL)</li>
+                                    <li>&bull; Real-time Post-Purchase Tracking</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Persona -->
+                    <div class="reveal space-y-6">
+                        <div class="flex items-center gap-3"><span class="w-2 h-2 bg-accent rounded-full"></span><span class="text-xs font-mono uppercase tracking-widest text-gray-500 dark:text-gray-400 font-semibold">Target Audience</span></div>
+                        <h2 class="text-3xl md:text-4xl font-bold text-black dark:text-white tracking-tight">User Persona</h2>
+                        <p class="text-gray-600 dark:text-gray-300 text-base leading-relaxed">Before designing the interface, I mapped out what customers need at each stage of their shopping journey. A customer does not simply need a button that says "Buy". They need answers to several questions ranging from "Is this product right for me?" to "Can I trust this seller?".</p>
+                        
+                        <div class="p-6 rounded-2xl bg-white dark:bg-card border border-gray-200 dark:border-border shadow-sm mt-4">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="w-16 h-16 rounded-full bg-gray-100 dark:bg-[#1A1A1A] flex items-center justify-center text-3xl">👩🏽‍💻</div>
+                                <div>
+                                    <h4 class="font-bold text-black dark:text-white text-lg">Tolu, 29</h4>
+                                    <p class="text-gray-500 dark:text-gray-400 text-sm">Young Professional &bull; Shops online several times a month</p>
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6">
+                                <div>
+                                    <h5 class="text-xs font-mono font-bold text-gray-400 uppercase tracking-wider mb-2">Goals & Needs</h5>
+                                    <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-1.5 list-disc pl-4">
+                                        <li>Find and compare products quickly</li>
+                                        <li>Buy from trustworthy sellers</li>
+                                        <li>Have flexible payment options (BNPL)</li>
+                                        <li>Easily track purchases</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h5 class="text-xs font-mono font-bold text-gray-400 uppercase tracking-wider mb-2">Frustrations</h5>
+                                    <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-1.5 list-disc pl-4">
+                                        <li>Too many similar products & confusing comparisons</li>
+                                        <li>Not enough information about sellers</li>
+                                        <li>Complicated checkout & limited payment options</li>
+                                        <li>Not knowing what happens after placing an order</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Responsibilities -->
+                    <div class="reveal p-8 rounded-2xl bg-white dark:bg-card border border-gray-200 dark:border-border shadow-sm">
+                        <div class="flex items-center gap-3 mb-6"><span class="w-2 h-2 bg-accent rounded-full"></span><span class="text-xs font-mono uppercase tracking-widest text-gray-500 dark:text-gray-400 font-semibold">Scope of Work</span></div>
+                        <h3 class="text-2xl font-bold text-black dark:text-white mb-6">My Responsibilities</h3>
+                        <div class="flex flex-wrap gap-2.5">
+                            <span class="px-4 py-2 bg-gray-50 dark:bg-dark border border-gray-200 dark:border-border rounded-xl text-sm text-black dark:text-white font-medium">User Journey Mapping</span>
+                            <span class="px-4 py-2 bg-gray-50 dark:bg-dark border border-gray-200 dark:border-border rounded-xl text-sm text-black dark:text-white font-medium">Information Architecture</span>
+                            <span class="px-4 py-2 bg-gray-50 dark:bg-dark border border-gray-200 dark:border-border rounded-xl text-sm text-black dark:text-white font-medium">Wireframes</span>
+                            <span class="px-4 py-2 bg-gray-50 dark:bg-dark border border-gray-200 dark:border-border rounded-xl text-sm text-black dark:text-white font-medium">High Fidelity UI Design</span>
+                            <span class="px-4 py-2 bg-gray-50 dark:bg-dark border border-gray-200 dark:border-border rounded-xl text-sm text-black dark:text-white font-medium">Product Comparison</span>
+                            <span class="px-4 py-2 bg-gray-50 dark:bg-dark border border-gray-200 dark:border-border rounded-xl text-sm text-black dark:text-white font-medium">Payment & BNPL Flows</span>
+                            <span class="px-4 py-2 bg-gray-50 dark:bg-dark border border-gray-200 dark:border-border rounded-xl text-sm text-black dark:text-white font-medium">Design System</span>
+                            <span class="px-4 py-2 bg-gray-50 dark:bg-dark border border-gray-200 dark:border-border rounded-xl text-sm text-black dark:text-white font-medium">Prototyping</span>
+                        </div>
+                    </div>
+
+                    <!-- Design Process Setup -->
+                    <div class="reveal space-y-12">
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-3"><span class="w-2 h-2 bg-accent rounded-full"></span><span class="text-xs font-mono uppercase tracking-widest text-gray-500 dark:text-gray-400 font-semibold">The Process</span></div>
+                            <h2 class="text-3xl md:text-4xl font-bold text-black dark:text-white">Setting the Foundation</h2>
+                        </div>
+                        
+                        <!-- User Journey & Info Architecture -->
+                        <div class="space-y-4">
+                            <h3 class="text-xl font-bold text-black dark:text-white">User Journey & Info Architecture</h3>
+                            <p class="text-gray-600 dark:text-gray-300 text-base leading-relaxed">I mapped the customer's journey from discovering a product to receiving the order: <strong>Discover → Explore → Evaluate → Compare → Cart → Checkout → Payment → Confirmation → Tracking → Delivery</strong>. I then structured the main areas of the marketplace including Home, Product Details, Shopping, Orders, and Account configurations.</p>
+                            
+                            <!-- [INSERT USER JOURNEY / IA IMAGE HERE] -->
+                            <div class="rounded-2xl overflow-hidden border border-gray-200 dark:border-border bg-white dark:bg-card p-3 shadow-md mt-4">
+                                <div class="overflow-hidden rounded-xl bg-gray-100 dark:bg-dark">
+                                    <img src="../Images/placeholder-ia.png" alt="User Journey and IA" class="w-full h-auto object-cover opacity-60">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- User Flow -->
+                        <div class="space-y-4">
+                            <h3 class="text-xl font-bold text-black dark:text-white">User Flow</h3>
+                            <p class="text-gray-600 dark:text-gray-300 text-base leading-relaxed">The main shopping flow starts with product discovery and ends with order delivery, ensuring customers seamlessly transition from viewing a product, evaluating the seller, comparing options, and securely checking out with their preferred payment method.</p>
+                            
+                            <!-- [INSERT USER FLOW IMAGE HERE] -->
+                            <div class="rounded-2xl overflow-hidden border border-gray-200 dark:border-border bg-white dark:bg-card p-3 shadow-md mt-4">
+                                <div class="overflow-hidden rounded-xl bg-gray-100 dark:bg-dark">
+                                    <img src="../Images/placeholder-flow.png" alt="User Flow Diagram" class="w-full h-auto object-cover opacity-60">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Deep Dive Screens Sections (High Fidelity) -->
+                    <div class="reveal space-y-16 mt-12">
+                        <div class="flex items-center gap-3"><span class="w-2 h-2 bg-accent rounded-full"></span><span class="text-xs font-mono uppercase tracking-widest text-gray-500 dark:text-gray-400 font-semibold">Interface Design</span></div>
+                        <div class="border-b border-gray-200 dark:border-border pb-3">
+                            <h2 class="text-3xl md:text-4xl font-bold text-black dark:text-white">High Fidelity Designs</h2>
+                            <p class="text-gray-600 dark:text-gray-300 text-base leading-relaxed mt-4">Instead of showing every screen individually, I have grouped the interfaces by journey to illustrate how the user effortlessly moves through the Argon marketplace ecosystem.</p>
+                        </div>
+                        
+                        <!-- Product Discovery & Details (1 Image) -->
+                        <div class="space-y-4 group">
+                            <h3 class="text-2xl font-bold text-black dark:text-white">Product Discovery & Details</h3>
+                            <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-base">Focusing on helping customers find products through clear hierarchy, search filters, and comprehensive detail pages showing availability, seller info, and related products.</p>
+                            
+                            <div class="rounded-2xl overflow-hidden border border-gray-200 dark:border-border bg-white dark:bg-card p-3 shadow-md group mt-4">
+                                <div class="overflow-hidden rounded-xl bg-gray-100 dark:bg-dark">
+                                    <!-- [INSERT PRODUCT DISCOVERY & DETAILS IMAGE HERE] -->
+                                    <img src="../Images/placeholder-hifi-1.png" alt="Product Discovery Interfaces" class="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-500">
+                                </div>
+                            </div>
+                            
+                            <div class="flex flex-wrap gap-2 pt-2">
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-[#1A1A1A] border border-gray-200 dark:border-[#2A2A2A] rounded-full text-[11px] font-mono text-gray-600 dark:text-gray-400">Homepage</span>
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-[#1A1A1A] border border-gray-200 dark:border-[#2A2A2A] rounded-full text-[11px] font-mono text-gray-600 dark:text-gray-400">Search & Filters</span>
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-[#1A1A1A] border border-gray-200 dark:border-[#2A2A2A] rounded-full text-[11px] font-mono text-gray-600 dark:text-gray-400">Product Details</span>
+                            </div>
+                        </div>
+
+                        <!-- Store, Reviews & Comparison (1 Image) -->
+                        <div class="space-y-4 group">
+                            <h3 class="text-2xl font-bold text-black dark:text-white">Store Experience & Comparison</h3>
+                            <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-base">Customers are not only evaluating the product, but the seller. Store pages provide credibility, while the comparison tool allows customers to evaluate products side-by-side before making a decision.</p>
+                            
+                            <div class="rounded-2xl overflow-hidden border border-gray-200 dark:border-border bg-white dark:bg-card p-3 shadow-md group mt-4">
+                                <div class="overflow-hidden rounded-xl bg-gray-100 dark:bg-dark">
+                                    <!-- [INSERT STORE & COMPARISON IMAGE HERE] -->
+                                    <img src="../Images/placeholder-hifi-2.png" alt="Store and Comparison Interfaces" class="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-500">
+                                </div>
+                            </div>
+                            
+                            <div class="flex flex-wrap gap-2 pt-2">
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-[#1A1A1A] border border-gray-200 dark:border-[#2A2A2A] rounded-full text-[11px] font-mono text-gray-600 dark:text-gray-400">Store Profile</span>
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-[#1A1A1A] border border-gray-200 dark:border-[#2A2A2A] rounded-full text-[11px] font-mono text-gray-600 dark:text-gray-400">Reviews & Ratings</span>
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-[#1A1A1A] border border-gray-200 dark:border-[#2A2A2A] rounded-full text-[11px] font-mono text-gray-600 dark:text-gray-400">Side-by-side Comparison</span>
+                            </div>
+                        </div>
+
+                        <!-- Checkout & Payment / BNPL (1 Image) -->
+                        <div class="space-y-4 group">
+                            <h3 class="text-2xl font-bold text-black dark:text-white">Checkout & Buy Now, Pay Later</h3>
+                            <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-base">The checkout flow keeps the customer aware of exactly what they are paying. The BNPL experience is a separate, dedicated flow allowing customers to select plans, view installment breakdowns, and manage verifications.</p>
+                            
+                            <div class="rounded-2xl overflow-hidden border border-gray-200 dark:border-border bg-white dark:bg-card p-3 shadow-md group mt-4">
+                                <div class="overflow-hidden rounded-xl bg-gray-100 dark:bg-dark">
+                                    <!-- [INSERT CHECKOUT & BNPL IMAGE HERE] -->
+                                    <img src="../Images/placeholder-hifi-3.png" alt="Checkout and Payment Interfaces" class="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-500">
+                                </div>
+                            </div>
+                            
+                            <div class="flex flex-wrap gap-2 pt-2">
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-[#1A1A1A] border border-gray-200 dark:border-[#2A2A2A] rounded-full text-[11px] font-mono text-gray-600 dark:text-gray-400">Cart & Summary</span>
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-[#1A1A1A] border border-gray-200 dark:border-[#2A2A2A] rounded-full text-[11px] font-mono text-gray-600 dark:text-gray-400">Payment Selection</span>
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-[#1A1A1A] border border-gray-200 dark:border-[#2A2A2A] rounded-full text-[11px] font-mono text-gray-600 dark:text-gray-400">BNPL Installments</span>
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-[#1A1A1A] border border-gray-200 dark:border-[#2A2A2A] rounded-full text-[11px] font-mono text-gray-600 dark:text-gray-400">Verification</span>
+                            </div>
+                        </div>
+
+                        <!-- Post-Purchase & Tracking (1 Image) -->
+                        <div class="space-y-4 group">
+                            <h3 class="text-2xl font-bold text-black dark:text-white">Post-Purchase & Order Tracking</h3>
+                            <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-base">The experience continues after checkout. Customers can access their orders, see current status (Pending, Processing, Shipped, Delivered), and receive matching email notifications at every touchpoint.</p>
+                            
+                            <div class="rounded-2xl overflow-hidden border border-gray-200 dark:border-border bg-white dark:bg-card p-3 shadow-md group mt-4">
+                                <div class="overflow-hidden rounded-xl bg-gray-100 dark:bg-dark">
+                                    <!-- [INSERT TRACKING & NOTIFICATIONS IMAGE HERE] -->
+                                    <img src="../Images/placeholder-hifi-4.png" alt="Tracking and Email Notifications" class="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-500">
+                                </div>
+                            </div>
+                            
+                            <div class="flex flex-wrap gap-2 pt-2">
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-[#1A1A1A] border border-gray-200 dark:border-[#2A2A2A] rounded-full text-[11px] font-mono text-gray-600 dark:text-gray-400">Order Confirmation</span>
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-[#1A1A1A] border border-gray-200 dark:border-[#2A2A2A] rounded-full text-[11px] font-mono text-gray-600 dark:text-gray-400">Tracking Timeline</span>
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-[#1A1A1A] border border-gray-200 dark:border-[#2A2A2A] rounded-full text-[11px] font-mono text-gray-600 dark:text-gray-400">Email Updates</span>
+                            </div>
+                        </div>
+
+                        <!-- Email Templates & Notifications (1 Image) -->
+<div class="space-y-4 group">
+    <h3 class="text-2xl font-bold text-black dark:text-white">Email Templates & Notifications</h3>
+    <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-base">The customer experience continues outside the platform through email notifications. I designed responsive email templates to keep users updated around important order events, ensuring the brand experience remains consistent even in their inbox.</p>
+    
+    <div class="rounded-2xl overflow-hidden border border-gray-200 dark:border-border bg-white dark:bg-card p-3 shadow-md group mt-4">
+        <div class="overflow-hidden rounded-xl bg-gray-100 dark:bg-dark">
+            <!-- [INSERT EMAIL TEMPLATES IMAGE HERE] -->
+            <img src="../Images/placeholder-email-templates.png" alt="Email Templates and Notifications" class="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-500">
+        </div>
+    </div>
+    
+    <div class="flex flex-wrap gap-2 pt-2">
+        <span class="px-3 py-1 bg-gray-100 dark:bg-[#1A1A1A] border border-gray-200 dark:border-[#2A2A2A] rounded-full text-[11px] font-mono text-gray-600 dark:text-gray-400">Order Confirmation</span>
+        <span class="px-3 py-1 bg-gray-100 dark:bg-[#1A1A1A] border border-gray-200 dark:border-[#2A2A2A] rounded-full text-[11px] font-mono text-gray-600 dark:text-gray-400">Shipping Updates</span>
+        <span class="px-3 py-1 bg-gray-100 dark:bg-[#1A1A1A] border border-gray-200 dark:border-[#2A2A2A] rounded-full text-[11px] font-mono text-gray-600 dark:text-gray-400">Delivery Confirmation</span>
+    </div>
+</div>
+
+                        <!-- Design System & Edge Cases (1 Image) -->
+                        <div class="space-y-4 group">
+                            <h3 class="text-2xl font-bold text-black dark:text-white">Design System & Edge Cases</h3>
+                            <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-base">A strong e-commerce experience cannot only account for the successful purchase. I designed reusable components and accounted for edge cases (Out of Stock, Payment Failed, BNPL Declined, Empty Cart).</p>
+                            
+                            <div class="rounded-2xl overflow-hidden border border-gray-200 dark:border-border bg-white dark:bg-card p-3 shadow-md group mt-4">
+                                <div class="overflow-hidden rounded-xl bg-gray-100 dark:bg-dark">
+                                    <!-- [INSERT DESIGN SYSTEM & EDGE CASES IMAGE HERE] -->
+                                    <img src="../Images/placeholder-hifi-5.png" alt="Design System and Edge Cases" class="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-500">
+                                </div>
+                            </div>
+                            
+                            <div class="flex flex-wrap gap-2 pt-2">
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-[#1A1A1A] border border-gray-200 dark:border-[#2A2A2A] rounded-full text-[11px] font-mono text-gray-600 dark:text-gray-400">Component Library</span>
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-[#1A1A1A] border border-gray-200 dark:border-[#2A2A2A] rounded-full text-[11px] font-mono text-gray-600 dark:text-gray-400">Error States</span>
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-[#1A1A1A] border border-gray-200 dark:border-[#2A2A2A] rounded-full text-[11px] font-mono text-gray-600 dark:text-gray-400">Empty States</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Outcome & Reflection -->
+                    <div class="reveal p-8 md:p-10 rounded-2xl bg-white dark:bg-card border border-gray-200 dark:border-border shadow-sm space-y-6 mt-16">
+                        <div class="flex items-center gap-3"><span class="w-2 h-2 bg-green-500 rounded-full"></span><span class="text-xs font-mono uppercase tracking-widest text-green-600 dark:text-green-400 font-bold">Results &amp; Impact</span></div>
+                        <h3 class="text-2xl md:text-3xl font-bold text-black dark:text-white">The Final Experience</h3>
+                        
+                        <p class="text-gray-700 dark:text-gray-200 text-base leading-relaxed font-medium">
+                            Argon brings together the full e-commerce journey in one marketplace experience. The result is a complete ecosystem designed around the customer's journey from discovery to delivery.
+                        </p>
+                        
+                        <!-- What I Learned Block -->
+                        <div class="p-6 rounded-xl bg-gray-50 dark:bg-[#151515] border border-gray-200 dark:border-border mt-6">
+                            <h4 class="font-bold text-lg text-black dark:text-white mb-2">What I Learned</h4>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                                Designing Argon helped me think about e-commerce as a complete journey rather than a collection of individual screens. The customer experience starts before the purchase and continues after payment.
+                            </p>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mt-3">
+                                That meant thinking about how customers discover products, evaluate sellers, compare items, and make payment decisions. It also reinforced the importance of designing different states (like BNPL failures or shipping updates) and not only the ideal successful journey.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- RIGHT SIDEBAR -->
+                <div class="lg:col-span-4 space-y-8 lg:sticky lg:top-28 mt-16 lg:mt-0">
+                    <div class="bg-white dark:bg-card border border-gray-200 dark:border-border p-8 rounded-2xl reveal shadow-sm">
+                        <h3 class="text-xs font-mono font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-6">Project Information</h3>
+                        <div class="space-y-5 text-sm">
+                            <div class="pb-4 border-b border-gray-100 dark:border-border"><p class="text-gray-400 text-xs font-mono uppercase mb-1">Product</p><p class="font-bold text-black dark:text-white text-base">Argone</p></div>
+                            <div class="pb-4 border-b border-gray-100 dark:border-border"><p class="text-gray-400 text-xs font-mono uppercase mb-1">Domain</p><p class="font-bold text-black dark:text-white">E-commerce &bull; Marketplace</p></div>
+                            <div class="pb-4 border-b border-gray-100 dark:border-border"><p class="text-gray-400 text-xs font-mono uppercase mb-1">Role</p><p class="font-bold text-black dark:text-white">Product Designer</p></div>
+                            <div class="pb-4 border-b border-gray-100 dark:border-border"><p class="text-gray-400 text-xs font-mono uppercase mb-1">Duration</p><p class="font-semibold text-gray-800 dark:text-gray-200">Continuous Iteration</p></div>
+                            <div>
+                                <p class="text-gray-400 text-xs font-mono uppercase mb-2">Key Areas</p>
+                                <div class="flex flex-wrap gap-1.5">
+                                    <span class="px-2 py-1 bg-gray-100 dark:bg-dark border border-gray-200 dark:border-border rounded text-[10px] text-gray-600 dark:text-gray-400 font-mono">Product Discovery</span>
+                                    <span class="px-2 py-1 bg-gray-100 dark:bg-dark border border-gray-200 dark:border-border rounded text-[10px] text-gray-600 dark:text-gray-400 font-mono">Store Experience</span>
+                                    <span class="px-2 py-1 bg-gray-100 dark:bg-dark border border-gray-200 dark:border-border rounded text-[10px] text-gray-600 dark:text-gray-400 font-mono">Checkout & Payment</span>
+                                    <span class="px-2 py-1 bg-gray-100 dark:bg-dark border border-gray-200 dark:border-border rounded text-[10px] text-gray-600 dark:text-gray-400 font-mono">Buy Now Pay Later</span>
+                                    <span class="px-2 py-1 bg-gray-100 dark:bg-dark border border-gray-200 dark:border-border rounded text-[10px] text-gray-600 dark:text-gray-400 font-mono">Order Tracking</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white dark:bg-card border border-gray-200 dark:border-border p-8 rounded-2xl reveal shadow-sm">
+                        <h3 class="text-xs font-mono font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-6">Prototypes &amp; Links</h3>
+                        <div class="space-y-3">
+                            <!-- Web Prototype Link -->
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between p-3.5 rounded-xl bg-black text-white dark:bg-accent dark:text-dark font-bold text-xs uppercase tracking-wider transition-all hover:bg-gray-800 dark:hover:bg-white hover-trigger">
+                                <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>Web </span>
+                                <svg class="w-4 h-4 transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                            </a>
+                            
+                            <!-- Mobile Prototype Link -->
+                            <!-- <a href="#" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between p-3.5 rounded-xl border border-gray-200 dark:border-border bg-gray-50 dark:bg-dark text-black dark:text-white font-semibold text-xs transition-all hover:border-black dark:hover:border-accent hover-trigger">
+                                <span>Mobile App Prototype</span>
+                                <svg class="w-3.5 h-3.5 text-gray-400 group-hover:text-black dark:group-hover:text-accent transform group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                            </a> -->
+                        </div>
+                    </div>                
+                </div>
+            </div>
+        </section>
+
+        <!-- Next Project -->
+        <section class="max-w-7xl mx-auto px-6 pb-20 reveal">
+            <div class="p-8 md:p-12 rounded-3xl bg-white dark:bg-card border border-gray-200 dark:border-border flex flex-col md:flex-row justify-between items-start md:items-center gap-6 shadow-sm">
+                <div>
+                    <span class="text-xs uppercase tracking-widest text-gray-400 font-mono block mb-2">Next Case Study</span>
+                    <h3 class="text-3xl md:text-4xl font-bold text-black dark:text-white">HealthFusion</h3>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm mt-1">A healthtech platform designed to connect companies, HMOs, employees, hospitals, and wellness providers.</p>
+                </div>
+                <a href="../Case-studies/healthfusion.html" class="inline-flex items-center gap-3 bg-black dark:bg-accent text-white dark:text-dark px-8 py-3.5 rounded-full font-bold text-xs uppercase tracking-wider hover:bg-gray-800 dark:hover:bg-white transition-all hover-trigger flex-shrink-0">
+                    View Project <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                </a>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="mt-20 border-t border-gray-200 dark:border-border pt-20 pb-12 relative overflow-hidden">
+            <div class="absolute top-12 right-8 md:right-16 text-black dark:text-accent opacity-40 hover:opacity-100 transition-opacity animate-[spin_12s_linear_infinite] pointer-events-none">
+                <svg width="44" height="44" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l2.5 9.5L24 12l-9.5 2.5L12 24l-2.5-9.5L0 12l9.5-2.5z"/></svg>
+            </div>
+            <div class="max-w-7xl mx-auto px-6 reveal">
+                <div class="mb-20 text-center flex flex-col items-center">
+                    <span class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400 font-semibold mb-4 block">Have a project in mind?</span>
+                    <h2 class="text-5xl sm:text-6xl md:text-8xl font-black leading-none tracking-tight text-black dark:text-accent mb-6">Let's Talk</h2>
+                    <a href="mailto:hello@bridgetfayomi.com" class="group inline-flex items-center gap-3 text-xl sm:text-2xl md:text-3xl font-bold tracking-tight text-gray-900 dark:text-white hover:text-black dark:hover:text-accent transition-colors hover-trigger">
+                        <span>hello@bridgetfayomi.com</span>
+                        <span class="w-8 h-8 rounded-full border border-gray-300 dark:border-gray-700 group-hover:border-black dark:group-hover:border-accent flex items-center justify-center text-xs transition-colors">&rarr;</span>
+                    </a>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12 py-12 border-y border-gray-200 dark:border-border text-sm">
+                    <div class="md:col-span-5 space-y-4">
+                        <div class="flex items-center gap-2"><div class="w-3 h-3 bg-black dark:bg-accent rounded-sm rotate-45"></div><span class="font-bold text-base text-black dark:text-white">Bridget Fayomi</span></div>
+                        <p class="text-gray-600 dark:text-gray-400 leading-relaxed text-sm max-w-sm">Product Designer crafting bold digital products, intuitive UX flows, and intentional visual systems.</p>
+                        <div class="flex items-center gap-3 pt-2">
+                            <a href="#" class="w-9 h-9 rounded-full border border-gray-200 dark:border-border flex items-center justify-center hover:border-black dark:hover:border-accent hover:text-black dark:hover:text-accent text-gray-700 dark:text-gray-300 transition-colors hover-trigger font-bold text-xs">&#120143;</a>
+                            <a href="#" class="w-9 h-9 rounded-full border border-gray-200 dark:border-border flex items-center justify-center hover:border-black dark:hover:border-accent hover:text-black dark:hover:text-accent text-gray-700 dark:text-gray-300 transition-colors hover-trigger font-serif font-bold text-xs">B&#275;</a>
+                            <a href="#" class="w-9 h-9 rounded-full border border-gray-200 dark:border-border flex items-center justify-center hover:border-black dark:hover:border-accent hover:text-black dark:hover:text-accent text-gray-700 dark:text-gray-300 transition-colors hover-trigger font-bold text-xs">in</a>
+                        </div>
+                    </div>
+                    <div class="md:col-span-3 md:col-start-7">
+                        <h4 class="font-bold text-xs uppercase tracking-wider text-gray-400 dark:text-gray-500 mb-4">Navigation</h4>
+                        <ul class="space-y-3 text-sm text-gray-600 dark:text-gray-400">
+                            <li><a href="../Index.html" class="hover:text-black dark:hover:text-white transition-colors hover-trigger">Home</a></li>
+                            <li><a href="../pages/projects.html" class="hover:text-black dark:hover:text-white transition-colors hover-trigger">Projects</a></li>
+                            <li><a href="../pages/design-dump.html" class="hover:text-black dark:hover:text-white transition-colors hover-trigger">Explorations</a></li>
+                            <li><a href="../pages/contact.html" class="hover:text-black dark:hover:text-white transition-colors hover-trigger">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="md:col-span-3">
+                        <h4 class="font-bold text-xs uppercase tracking-wider text-gray-400 dark:text-gray-500 mb-4">Availability</h4>
+                        <div class="space-y-3 text-sm text-gray-600 dark:text-gray-400">
+                            <div class="flex items-center gap-2">
+                                <span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span></span>
+                                <span class="text-black dark:text-white font-medium">Available for new projects</span>
+                            </div>
+                            <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">Open for product design, design systems, and visual design worldwide.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="py-12 text-center overflow-hidden">
+                    <div class="text-[13vw] font-black leading-none tracking-tighter outline-text hover:text-black dark:hover:text-white transition-colors duration-500 cursor-default select-none">BRIDGET</div>
+                </div>
+                <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-gray-500 dark:text-gray-400">
+                    <p>&copy; 2026 Bridget Fayomi. All rights reserved.</p>
+                    <p>Product Designer &bull; Digital Experiences</p>
+                </div>
+            </div>
+        </footer>
+    </main>
+    <script src="../js/scripts.js"></script>
+</body>
+</html>

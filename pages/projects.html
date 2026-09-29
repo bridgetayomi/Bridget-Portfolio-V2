@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazing Work | Bridget Fayomi</title>
+
+    <!-- Theme Initialization Script (Anti-FOUC) -->
+    <script>
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+
+    <!-- Fonts & Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] },
+                    colors: {
+                        dark: '#0a0a0a',
+                        card: '#111111',
+                        accent: '#c4f02a',
+                        border: '#222222',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Hover overlay centered in the middle of each project card */
+        .project-card-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.65);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            gap: 12px;
+            padding: 24px;
+        }
+
+        .group:hover .project-card-overlay {
+            opacity: 1;
+        }
+
+        .project-card-name {
+            font-size: 1.6rem;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #ffffff;
+            transform: translateY(12px) scale(0.95);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+        }
+
+        .group:hover .project-card-name {
+            transform: translateY(0) scale(1);
+        }
+
+        .project-card-view {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #c4f02a;
+            color: #0a0a0a;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            padding: 8px 18px;
+            border-radius: 999px;
+            width: fit-content;
+            transform: translateY(16px);
+            opacity: 0;
+            box-shadow: 0 4px 18px rgba(196, 240, 42, 0.35);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.05s, opacity 0.3s ease 0.05s, background-color 0.2s ease;
+        }
+
+        .group:hover .project-card-view {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .project-card-view:hover {
+            background-color: #ffffff;
+        }
+    </style>
+</head>
+
+<body class="case-study antialiased font-sans selection:bg-accent selection:text-dark">
+
+    <!-- Custom Cursor -->
+    <div id="cursor-dot"></div>
+    <div id="cursor-ring"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300 backdrop-blur-md 
+    bg-white/80 dark:bg-dark/80 border-b border-gray-200 dark:border-border"
+        id="navbar">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+            <a href="../Index.html"
+                class="text-2xl font-bold tracking-tighter flex items-center gap-2 text-black dark:text-white hover-trigger">
+                <!-- <div class="w-4 h-4 bg-black dark:bg-accent rounded-sm rotate-45"></div> -->
+                DesignsbyB.
+            </a>
+
+            <div class="hidden md:flex gap-8 text-sm font-medium text-gray-600 dark:text-gray-400">
+                <a href="../index.html"
+                    class="hover:text-black dark:hover:text-white transition-colors hover-trigger">Home</a>
+                <a href="projects.html" class="text-black dark:text-accent font-semibold hover-trigger">Projects</a>
+                <a href="explorations.html"
+                    class="hover:text-black dark:hover:text-white transition-colors hover-trigger">Explorations</a>
+                <a href="../about.html"
+                    class="hover:text-black dark:hover:text-white transition-colors hover-trigger">About</a>
+                <a href="contact.html"
+                    class="hover:text-black dark:hover:text-white transition-colors hover-trigger">Contact</a>
+            </div>
+
+            <!-- Right Controls: Theme Toggle & Contact Button -->
+            <div class="flex items-center gap-3">
+                <button id="theme-toggle"
+                    class="theme-toggle-btn bg-gray-100 dark:bg-[#1A1A1A] border border-gray-200 dark:border-[#2A2A2A] shadow-sm rounded-full p-2.5 flex items-center justify-center hover:bg-gray-200 dark:hover:bg-[#2A2A2A] transition-colors duration-300 hover-trigger"
+                    aria-label="Toggle theme">
+                    <svg class="theme-toggle-light-icon hidden w-4 h-4 text-yellow-500 dark:text-gray-300"
+                        fill="currentColor" viewBox="0 0 20 20">
+                        <path
+                            d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                            fill-rule="evenodd" clip-rule="evenodd"></path>
+                    </svg>
+                    <svg class="theme-toggle-dark-icon w-4 h-4 text-gray-700 dark:text-gray-300" fill="currentColor"
+                        viewBox="0 0 20 20">
+                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                    </svg>
+                </button>
+
+                <a href="contact.html"
+                    class="bg-black dark:bg-accent text-white dark:text-dark px-6 py-2.5 rounded-none font-bold text-sm flex items-center gap-2 hover:bg-gray-800 dark:hover:bg-white transition-colors hover-trigger">
+                    Contact <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-32">
+        <!-- Hero Section -->
+        <section class="max-w-7xl mx-auto px-6 pt-20 pb-16">
+            <div class="flex items-center gap-4 mb-6 reveal">
+                <span class="text-sm uppercase tracking-widest text-gray-500 dark:text-gray-400">Case Studies</span>
+                <div class="h-px bg-gray-300 dark:bg-gray-700 flex-1 max-w-[100px]"></div>
+            </div>
+
+            <h1 class="hero-text uppercase reveal delay-100 relative z-10 text-black dark:text-white">
+                Amazing <br>
+                <span class="flex items-center gap-6">
+                    <svg class="w-16 h-16 md:w-32 md:h-32 text-black dark:text-accent hover-trigger"
+                        viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="30" cy="50" r="25" />
+                        <circle cx="70" cy="50" r="25" />
+                    </svg>
+                    Work
+                </span>
+            </h1>
+            <!-- Abstract background glow -->
+            <div
+                class="absolute top-40 left-0 w-[500px] h-[500px] bg-accent/10 dark:bg-accent/5 rounded-full blur-[120px] pointer-events-none">
+            </div>
+        </section>
+
+        <!-- Staggered Image Grid -->
+        <section class="max-w-7xl mx-auto px-6 pb-32">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 relative z-10">
+
+                <!-- Left Column -->
+                <div class="flex flex-col gap-8 md:gap-16">
+                    <!-- Project Card 1: BILLA -->
+                    <a href="case-study.html"
+                        class="block w-full overflow-hidden rounded-sm group hover-trigger reveal">
+                        <div
+                            class="aspect-[4/5] bg-gray-100 dark:bg-card border border-gray-200 dark:border-border/50 relative overflow-hidden">
+                            <img src="../Images/billa-cover.png" alt="BILLA"
+                                class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700">
+                            <!-- Overlay in the middle of card -->
+                            <div class="project-card-overlay">
+                                <span class="project-card-name">BILLA</span>
+                                <span class="project-card-view">View &#x2197;</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Project Card 2: HEALTHFUSION -->
+                    <a href="../Case-studies/healthfusion.html"
+                        class="block w-full overflow-hidden rounded-sm group hover-trigger reveal">
+                        <div
+                            class="aspect-[4/5] bg-gray-100 dark:bg-card border border-gray-200 dark:border-border/50 relative overflow-hidden">
+                            <img src="../Images/Healthfusion cover.avif" alt="HEALTHFUSION"
+                                class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700">
+                            <!-- Overlay in the middle of card -->
+                            <div class="project-card-overlay">
+                                <span class="project-card-name">Healthfusion</span>
+                                <span class="project-card-view">View &#x2197;</span>
+                            </div>
+                        </div>
+                    </a>
+
+
+                    <!-- Project Card 3: ARGONE -->
+                    <a href="../Case-studies/argonne.htl"
+                        class="block w-full overflow-hidden rounded-sm group hover-trigger reveal">
+                        <div
+                            class="aspect-[4/5] bg-gray-100 dark:bg-card border border-gray-200 dark:border-border/50 relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+                                alt="ARGONE"
+                                class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700">
+                            <!-- Overlay in the middle of card -->
+                            <div class="project-card-overlay">
+                                <span class="project-card-name">ARGONE</span>
+                                <span class="project-card-view">Coming Soon &#x2197;</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Right Column (Staggered Downward via Margin) -->
+                <div class="flex flex-col gap-8 md:gap-16 md:mt-32">
+                    <!-- Project Card 4: PENCENTRAL -->
+                    <a href="../Case-studies/pencentral.html"
+                        class="block w-full overflow-hidden rounded-sm group hover-trigger reveal">
+                        <div
+                            class="aspect-square bg-gray-100 dark:bg-card border border-gray-200 dark:border-border/50 relative overflow-hidden">
+                            <img src="../Images/Pencentral.png" alt="PENCENTRAL"
+                                class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700">
+                            <!-- Overlay in the middle of card -->
+                            <div class="project-card-overlay">
+                                <span class="project-card-name">PENCENTRAL</span>
+                                <span class="project-card-view">View &#x2197;</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Project Card 5: Bluwox -->
+                    <a href="../Case-studies/bluwox.html"
+                        class="block w-full overflow-hidden rounded-sm group hover-trigger reveal">
+                        <div
+                            class="aspect-[4/5] bg-gray-100 dark:bg-card border border-gray-200 dark:border-border/50 relative overflow-hidden">
+                            <img src="../Images/Estateiq.png" alt="ESTATEIQ"
+                                class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700">
+                            <!-- Overlay in the middle of card -->
+                            <div class="project-card-overlay">
+                                <span class="project-card-name">Bluwox</span>
+                                <span class="project-card-view">View &#x2197;</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Project Card 6: ORGSPHERE -->
+                    <a href="case-study.html"
+                        class="block w-full overflow-hidden rounded-sm group hover-trigger reveal">
+                        <div
+                            class="aspect-square bg-gray-100 dark:bg-card border border-gray-200 dark:border-border/50 relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1527814050087-3793815479db?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+                                alt="ORGSPHERE"
+                                class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700">
+                            <!-- Overlay in the middle of card -->
+                            <div class="project-card-overlay">
+                                <span class="project-card-name">ORGSPHERE</span>
+                                <span class="project-card-view">View &#x2197;</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+
+
+
+
+        <!-- Footer -->
+        <footer class="mt-20 border-t border-gray-200 dark:border-border pt-20 pb-12 relative overflow-hidden">
+            <!-- Decorative Spinning Star -->
+            <div
+                class="absolute top-12 right-8 md:right-16 text-black dark:text-accent opacity-40 hover:opacity-100 transition-opacity animate-[spin_12s_linear_infinite] pointer-events-none">
+                <svg width="44" height="44" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0l2.5 9.5L24 12l-9.5 2.5L12 24l-2.5-9.5L0 12l9.5-2.5z" />
+                </svg>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-6 reveal">
+                <!-- 1. Hero CTA Block -->
+                <div class="mb-20 text-center flex flex-col items-center">
+                    <span
+                        class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400 font-semibold mb-4 block">Have
+                        a project in mind?</span>
+                    <h2
+                        class="text-5xl sm:text-6xl md:text-8xl font-black leading-none tracking-tight text-black dark:text-accent mb-6">
+                        Let's Talk
+                    </h2>
+                    <a href="mailto:bridgetayomi@yahoo.com"
+                        class="group inline-flex items-center gap-3 text-xl sm:text-2xl md:text-3xl font-bold tracking-tight text-gray-900 dark:text-white hover:text-black dark:hover:text-accent transition-colors hover-trigger">
+                        <span>bridgetayomi@yahoo.com</span>
+                        <span
+                            class="w-8 h-8 rounded-full border border-gray-300 dark:border-gray-700 group-hover:border-black dark:group-hover:border-accent flex items-center justify-center text-xs transition-colors">&rarr;</span>
+                    </a>
+                </div>
+
+                <!-- 2. Balanced 3-Column Personal Grid (No Newsletter) -->
+                <div
+                    class="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12 py-12 border-y border-gray-200 dark:border-border text-sm">
+                    <!-- Column 1: Personal Bio & Socials -->
+                    <div class="md:col-span-5 space-y-4">
+                        <div class="flex items-center gap-2">
+                            <div class="w-3 h-3 bg-black dark:bg-accent rounded-sm rotate-45"></div>
+                            <span class="font-bold text-base text-black dark:text-white">Bridget Fayomi</span>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-400 leading-relaxed text-sm max-w-sm">
+                            Product Designer crafting bold digital products, intuitive UX flows, and intentional visual systems.
+                        </p>
+                        <div class="flex items-center gap-3 pt-2">
+                            <a href="https://x.com/yebriggy?s=11"
+                                class="w-9 h-9 rounded-full border border-gray-200 dark:border-border flex items-center justify-center hover:border-black dark:hover:border-accent hover:text-black dark:hover:text-accent text-gray-700 dark:text-gray-300 transition-colors hover-trigger font-bold text-xs">𝕏</a>
+                  
+                            <a href="https://www.linkedin.com/in/bridget-fayomi-07a087157/"
+                                class="w-9 h-9 rounded-full border border-gray-200 dark:border-border flex items-center justify-center hover:border-black dark:hover:border-accent hover:text-black dark:hover:text-accent text-gray-700 dark:text-gray-300 transition-colors hover-trigger font-bold text-xs">in</a>
+                        </div>
+                    </div>
+
+                    <!-- Column 2: Navigation Links -->
+                    <div class="md:col-span-3 md:col-start-7">
+                        <h4 class="font-bold text-xs uppercase tracking-wider text-gray-400 dark:text-gray-500 mb-4">
+                            Navigation</h4>
+                        <ul class="space-y-3 text-sm text-gray-600 dark:text-gray-400">
+                            <li><a href="../Index.html"
+                                    class="hover:text-black dark:hover:text-white transition-colors hover-trigger">Home</a>
+                            </li>
+                            <li><a href="projects.html"
+                                    class="hover:text-black dark:hover:text-white transition-colors hover-trigger">Projects</a>
+                            </li>
+                            <li><a href="design dump.html/'\\\\\"
+                                    class="hover:text-black dark:hover:text-white transition-colors hover-trigger">Explorations</a>
+                            </li>
+                            <li><a href="contact.html"
+                                    class="hover:text-black dark:hover:text-white transition-colors hover-trigger">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 3: Focus & Availability -->
+                    <div class="md:col-span-3">
+                        <h4 class="font-bold text-xs uppercase tracking-wider text-gray-400 dark:text-gray-500 mb-4">
+                            Availability</h4>
+                        <div class="space-y-3 text-sm text-gray-600 dark:text-gray-400">
+                            <div class="flex items-center gap-2">
+                                <span class="relative flex h-2 w-2">
+                                    <span
+                                        class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                                    <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                                </span>
+                                <span class="text-black dark:text-white font-medium">Available for new projects</span>
+                            </div>
+                            <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
+                                Available for Product Design and UI/UX roles, working with teams building thoughtful digital products.</p>
+                        
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Giant Signature Watermark -->
+                <div class="py-12 text-center overflow-hidden">
+                    <div
+                        class="text-[13vw] font-black leading-none tracking-tighter outline-text hover:text-black dark:hover:text-white transition-colors duration-500 cursor-default select-none">
+                        BRIDGET
+                    </div>
+                </div>
+
+                <!-- 4. Bottom Alignment Row -->
+                <div
+                    class="flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-gray-500 dark:text-gray-400">
+                    <p>&copy; 2026 Bridget Fayomi. All rights reserved.</p>
+                    <!-- <p>Art Direction &amp; Visual Design</p> -->
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- External JS -->
+    <script src="../js/scripts.js"></script>
+</body>
+
+</html>

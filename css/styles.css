@@ -1,0 +1,169 @@
+/* --- Global Variables for Main Portfolio (index.html) --- */
+:root {
+    --bg-color: #FAFAFA;
+    --text-color: #111111;
+    --dot-color: #d4d4d4;
+}
+
+.dark {
+    --bg-color: #0a0a0a;
+    --text-color: #FAFAFA;
+    --dot-color: #2a2a2a;
+}
+
+/* --- Base Body Styling for Main Portfolio --- */
+body.portfolio-main {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    cursor: none; /* Hides default cursor so custom one shows */
+}
+
+/* --- Base Body Styling for Case Study & Projects Pages --- */
+body.case-study {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    overflow-x: hidden;
+    cursor: none; /* Hides default cursor so custom one shows */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* --- Background Pattern --- */
+.bg-pattern {
+    background-image: radial-gradient(var(--dot-color) 1px, transparent 1px);
+    background-size: 24px 24px;
+    background-position: -12px -12px;
+}
+
+/* --- Scrollbar Styling --- */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: #d1d5db;
+    border-radius: 4px;
+}
+.dark ::-webkit-scrollbar-thumb, 
+.dark::-webkit-scrollbar-thumb {
+    background: #4b5563;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #9ca3af;
+}
+
+/* --- Custom Cursor (For All Pages) --- */
+#cursor-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #111111;
+    border-radius: 50%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: background-color 0.2s ease;
+}
+.dark #cursor-dot {
+    background-color: #c4f02a;
+}
+
+#cursor-ring {
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(0, 0, 0, 0.35);
+    border-radius: 50%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%, -50%);
+    transition: width 0.2s, height 0.2s, border-color 0.2s, background-color 0.2s;
+}
+.dark #cursor-ring {
+    border: 1px solid rgba(196, 240, 42, 0.5);
+}
+
+/* Hover effects for custom cursor */
+body:has(a:hover) #cursor-ring, 
+body:has(button:hover) #cursor-ring, 
+body:has(.hover-trigger:hover) #cursor-ring {
+    width: 60px;
+    height: 60px;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-color: #111111;
+}
+.dark body:has(a:hover) #cursor-ring, 
+.dark body:has(button:hover) #cursor-ring, 
+.dark body:has(.hover-trigger:hover) #cursor-ring {
+    background-color: rgba(196, 240, 42, 0.12);
+    border-color: #c4f02a;
+}
+
+/* --- Animations --- */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0px); }
+}
+
+.animate-float {
+    animation: float 4s ease-in-out infinite;
+}
+
+/* Smooth reveal animations */
+.reveal-up, .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-up.active, .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Sidebar Gradient --- */
+.sidebar-header-bg {
+    background: linear-gradient(135deg, #a75024 0%, #000000 100%);
+}
+
+/* --- Case Study Specifics --- */
+.hero-text {
+    font-size: clamp(3rem, 8vw, 8rem);
+    line-height: 1;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+.outline-text {
+    -webkit-text-stroke: 1.5px #d1d5db;
+    color: transparent;
+    transition: color 0.5s ease, -webkit-text-stroke 0.3s ease;
+}
+
+.dark .outline-text {
+    -webkit-text-stroke: 1px #333333;
+    color: transparent;
+}
+
+/* Accordion */
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+    opacity: 0;
+}
+.accordion-item.active .accordion-content {
+    opacity: 1;
+}
+.accordion-item.active .icon-plus {
+    transform: rotate(45deg);
+}

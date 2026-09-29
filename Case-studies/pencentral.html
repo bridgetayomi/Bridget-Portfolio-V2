@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../Images/bridget-fav-small.png" />
+    <title>PenCentral — Case Study | Bridget Fayomi</title>
+    <meta name="description"
+        content="Case study: PenCentral, a PENCOM-approved pension remittance switch infrastructure for Africa, designed by Bridget Fayomi." />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NW8Z6RFTC2"></script>
+    <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'G-NW8Z6RFTC2');</script>
+    <script>if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) { document.documentElement.classList.add('dark'); } else { document.documentElement.classList.remove('dark'); }</script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <script>tailwind.config = { darkMode: 'class', theme: { extend: { fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'], mono: ['"IBM Plex Mono"', 'monospace'] }, colors: { dark: '#0a0a0a', card: '#111111', accent: '#c4f02a', border: '#222222' } } } }</script>
+</head>
+
+<body class="case-study antialiased font-sans selection:bg-accent selection:text-dark">
+    <div id="cursor-dot"></div>
+    <div id="cursor-ring"></div>
+
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300 backdrop-blur-md bg-white/80 dark:bg-dark/80 border-b border-gray-200 dark:border-border"
+        id="navbar">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+            <a href="../index.html"
+                class="text-2xl font-bold tracking-tighter flex items-center gap-2 text-black dark:text-white hover-trigger">
+                <div class="w-4 h-4 bg-black dark:bg-accent rounded-sm rotate-45"></div>Bridget.
+            </a>
+            <div class="hidden md:flex gap-8 text-sm font-medium text-gray-600 dark:text-gray-400">
+                <a href="../index 2.html"
+                    class="hover:text-black dark:hover:text-white transition-colors hover-trigger">Home</a>
+                <a href="../pages/projects.html"
+                    class="hover:text-black dark:hover:text-white transition-colors hover-trigger">Projects</a>
+                <a href="../pages/explorations.html"
+                    class="hover:text-black dark:hover:text-white transition-colors hover-trigger">Explorations</a>
+                <a href="../about.html"
+                    class="hover:text-black dark:hover:text-white transition-colors hover-trigger">About</a>
+                <a href="#" class="text-black dark:text-accent font-semibold hover-trigger">PenCentral</a>
+            </div>
+            <div class="flex items-center gap-3">
+                <button id="theme-toggle"
+                    class="theme-toggle-btn bg-gray-100 dark:bg-[#1A1A1A] border border-gray-200 dark:border-[#2A2A2A] shadow-sm rounded-full p-2.5 flex items-center justify-center hover:bg-gray-200 dark:hover:bg-[#2A2A2A] transition-colors duration-300 hover-trigger"
+                    aria-label="Toggle theme">
+                    <svg class="theme-toggle-light-icon hidden w-4 h-4 text-yellow-500" fill="currentColor"
+                        viewBox="0 0 20 20">
+                        <path
+                            d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                            fill-rule="evenodd" clip-rule="evenodd"></path>
+                    </svg>
+                    <svg class="theme-toggle-dark-icon w-4 h-4 text-gray-700 dark:text-gray-300" fill="currentColor"
+                        viewBox="0 0 20 20">
+                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                    </svg>
+                </button>
+                <a href="../pages/contact.html"
+                    class="bg-black dark:bg-accent text-white dark:text-dark px-6 py-2.5 rounded-none font-bold text-sm flex items-center gap-2 hover:bg-gray-800 dark:hover:bg-white transition-colors hover-trigger">Contact
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg></a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-32">
+        <!-- Hero -->
+        <section class="max-w-7xl mx-auto px-6 pt-12 md:pt-16 pb-12">
+            <div class="flex flex-wrap items-center justify-between gap-4 mb-8 reveal">
+                <a href="../pages/projects.html"
+                    class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-accent transition-colors hover-trigger">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                    </svg>Back to Selected Work
+                </a>
+                <span
+                    class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-medium bg-black/5 dark:bg-white/5 border border-gray-200 dark:border-border text-gray-700 dark:text-gray-300">
+                    <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>Case Study &bull; Fintech &bull; Pension
+                    Infrastructure
+                </span>
+            </div>
+            <h1 class="hero-text uppercase reveal delay-100 text-black dark:text-white">
+                PenCentral<br>
+                <span class="flex items-center gap-4 md:gap-6">
+                    <svg class="w-14 h-14 md:w-28 md:h-28 text-black dark:text-accent hover-trigger flex-shrink-0"
+                        viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="30" cy="50" r="25" />
+                        <circle cx="70" cy="50" r="25" />
+                    </svg>
+                    Remittance
+                </span>
+            </h1>
+            <p
+                class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 max-w-4xl mt-8 font-normal leading-relaxed reveal delay-150">
+                PenCentral is a PENCOM-approved PSSP platform that helps organisations of all kinds — Corporate,
+                FinTechs, Payrolls, VAS, Banks — centrally remit pension contributions to their desired Pension Fund
+                Administrators and Custodians in seconds.
+            </p>
+            <div
+                class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-10 pt-8 border-t border-gray-200 dark:border-border reveal delay-200 text-sm">
+                <div><span
+                        class="text-xs uppercase tracking-wider text-gray-400 dark:text-gray-500 block mb-1 font-mono">Role</span><span
+                        class="font-bold text-black dark:text-white">Product Designer</span></div>
+                <div><span
+                        class="text-xs uppercase tracking-wider text-gray-400 dark:text-gray-500 block mb-1 font-mono">Duration</span><span
+                        class="font-bold text-black dark:text-white">6 Weeks</span></div>
+                <div><span
+                        class="text-xs uppercase tracking-wider text-gray-400 dark:text-gray-500 block mb-1 font-mono">Year</span><span
+                        class="font-bold text-black dark:text-white">2024</span></div>
+                <div><span
+                        class="text-xs uppercase tracking-wider text-gray-400 dark:text-gray-500 block mb-1 font-mono">Platform</span><span
+                        class="font-bold text-black dark:text-white">Web Dashboard</span></div>
+            </div>
+        </section>
+
+        <!-- Hero Image -->
+        <section class="max-w-7xl mx-auto px-6 reveal delay-200">
+            <div
+                class="w-full bg-[#0f1117] border border-gray-200 dark:border-border/60 rounded-3xl overflow-hidden shadow-2xl relative group">
+                <img src="../Images/Pencentral.png" alt="PenCentral dashboard mockup on desktop"
+                    class="w-full h-auto object-cover transform group-hover:scale-[1.01] transition-transform duration-700">
+            </div>
+        </section>
+
+        <!-- Content + Sidebar -->
+        <section class="max-w-7xl mx-auto px-6 py-20 md:py-28">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+
+                <!-- LEFT COLUMN -->
+                <div class="lg:col-span-8 space-y-20">
+
+                    <!-- Overview -->
+                    <div class="reveal space-y-6">
+                        <div class="flex items-center gap-3"><span class="w-2 h-2 bg-accent rounded-full"></span><span
+                                class="text-xs font-mono uppercase tracking-widest text-gray-500 dark:text-gray-400 font-semibold">Overview</span>
+                        </div>
+                        <h2 class="text-3xl md:text-4xl font-bold text-black dark:text-white tracking-tight">Africa's
+                            Central Pension Remittance Switch</h2>
+                        <p class="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">PenCentral (formerly
+                            PensionCentral) is a pension remittance switch infrastructure for Africa. The platform helps
+                            organisations of all kinds — from startups and FinTechs to legacy banks and large corporates
+                            — streamline and automate their pension payment workflows, centrally remitting payments to
+                            desired PFAs and PFCs in seconds.</p>
+
+                        <!-- Key Highlight / Proven Scale Banner -->
+                        <div
+                            class="p-6 rounded-2xl bg-accent/5 dark:bg-accent/10 border border-accent/20 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                            <div
+                                class="w-10 h-10 rounded-xl bg-accent/20 flex items-center justify-center flex-shrink-0">
+                                <svg class="w-5 h-5 text-black dark:text-accent" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                                </svg>
+                            </div>
+                            <p
+                                class="text-sm md:text-base text-gray-800 dark:text-gray-200 leading-relaxed font-medium">
+                                My design work has contributed to platforms serving <strong>10,000+ users</strong> and
+                                <strong>&#8358;300B+ in transaction value</strong>, including a pension platform
+                                redesign that improved user engagement by <strong>30%</strong> and onboarding workflows
+                                that reduced customer sign-up errors by <strong>25%</strong>.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Problem / Goal / Solution -->
+                    <div class="space-y-6 reveal">
+                        <div
+                            class="p-8 rounded-2xl bg-white dark:bg-card border border-gray-200 dark:border-border shadow-sm">
+                            <span
+                                class="px-2.5 py-1 text-[11px] font-mono font-bold uppercase rounded bg-red-500/10 text-red-600 dark:text-red-400 border border-red-500/20 inline-block mb-4">The
+                                Problem</span>
+                            <h3 class="text-xl font-bold text-black dark:text-white mb-4">A Broken Remittance Process
+                            </h3>
+                            <ul class="space-y-2.5">
+                                <li
+                                    class="flex items-start gap-3 text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+                                    <span
+                                        class="mt-1.5 w-1.5 h-1.5 rounded-full bg-red-400 flex-shrink-0"></span>Multiple
+                                    paperwork processes slowing down each payment cycle</li>
+                                <li
+                                    class="flex items-start gap-3 text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+                                    <span
+                                        class="mt-1.5 w-1.5 h-1.5 rounded-full bg-red-400 flex-shrink-0"></span>Enormous
+                                    time investment required to avoid data entry errors</li>
+                                <li
+                                    class="flex items-start gap-3 text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+                                    <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-red-400 flex-shrink-0"></span>Long
+                                    processing and crediting times spanning 3 weeks to 1 month</li>
+                                <li
+                                    class="flex items-start gap-3 text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+                                    <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-red-400 flex-shrink-0"></span>Large
+                                    amounts of uncredited funds sitting with PFCs</li>
+                                <li
+                                    class="flex items-start gap-3 text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+                                    <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-red-400 flex-shrink-0"></span>No
+                                    mechanism to detect when an employee migrates to another PFA</li>
+                            </ul>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="p-8 rounded-2xl bg-blue-500/5 border border-blue-500/20 shadow-sm">
+                                <span
+                                    class="px-2.5 py-1 text-[11px] font-mono font-bold uppercase rounded bg-blue-500/15 text-blue-600 dark:text-blue-400 border border-blue-500/30 inline-block mb-4">The
+                                    Goal</span>
+                                <h3 class="text-lg font-bold text-black dark:text-white mb-2">Seconds, Not Weeks</h3>
+                                <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">Design a central
+                                    remittance switch that cuts payment times to seconds, automates RSA validation,
+                                    integrates payment gateway redundancy, and simplifies employer/employee contribution
+                                    splitting.</p>
+                            </div>
+                            <div class="p-8 rounded-2xl bg-green-500/5 border border-green-500/20 shadow-sm">
+                                <span
+                                    class="px-2.5 py-1 text-[11px] font-mono font-bold uppercase rounded bg-green-500/15 text-green-600 dark:text-green-400 border border-green-500/30 inline-block mb-4">The
+                                    Solution</span>
+                                <h3 class="text-lg font-bold text-black dark:text-white mb-2">One Dashboard, All PFAs
+                                </h3>
+                                <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">A robust switch
+                                    dashboard enabling organisations to centrally manage all pension payments — one
+                                    upload, one payment, instantly distributed to all respective PFAs.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Responsibilities -->
+                    <div
+                        class="reveal p-8 rounded-2xl bg-white dark:bg-card border border-gray-200 dark:border-border shadow-sm">
+                        <div class="flex items-center gap-3 mb-6"><span
+                                class="w-2 h-2 bg-accent rounded-full"></span><span
+                                class="text-xs font-mono uppercase tracking-widest text-gray-500 dark:text-gray-400 font-semibold">Scope
+                                of Work</span></div>
+                        <h3 class="text-2xl font-bold text-black dark:text-white mb-6">My Responsibilities</h3>
+                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                            <div
+                                class="flex items-center gap-3 p-3.5 rounded-xl bg-gray-50 dark:bg-dark border border-gray-200 dark:border-border">
+                                <span class="text-black dark:text-accent font-mono font-bold text-xs">01</span><span
+                                    class="text-sm font-semibold text-gray-800 dark:text-gray-200">High Fidelity
+                                    UI</span></div>
+                            <div
+                                class="flex items-center gap-3 p-3.5 rounded-xl bg-gray-50 dark:bg-dark border border-gray-200 dark:border-border">
+                                <span class="text-black dark:text-accent font-mono font-bold text-xs">02</span><span
+                                    class="text-sm font-semibold text-gray-800 dark:text-gray-200">Prototyping</span>
+                            </div>
+                            <div
+                                class="flex items-center gap-3 p-3.5 rounded-xl bg-gray-50 dark:bg-dark border border-gray-200 dark:border-border">
+                                <span class="text-black dark:text-accent font-mono font-bold text-xs">03</span><span
+                                    class="text-sm font-semibold text-gray-800 dark:text-gray-200">Dev
+                                    Collaboration</span></div>
+                        </div>
+                    </div>
+
+                    <!-- Feature Highlights -->
+                    <div class="reveal space-y-6">
+                        <div class="flex items-center gap-3"><span class="w-2 h-2 bg-accent rounded-full"></span><span
+                                class="text-xs font-mono uppercase tracking-widest text-gray-500 dark:text-gray-400 font-semibold">Key
+                                Features</span></div>
+                        <h2 class="text-3xl md:text-4xl font-bold text-black dark:text-white">Feature Highlights</h2>
+                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed">Discover the features that make
+                            managing pension remittance easier, faster, and more secure.</p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                            <div
+                                class="p-7 rounded-2xl bg-white dark:bg-card border border-gray-200 dark:border-border shadow-sm hover:border-gray-300 dark:hover:border-gray-600 transition-colors">
+                                <div class="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center mb-4">
+                                    <svg class="w-5 h-5 text-black dark:text-accent" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                            d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z">
+                                        </path>
+                                    </svg></div>
+                                <h4 class="font-bold text-black dark:text-white mb-2">RSA Validation</h4>
+                                <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">Verifies RSA PINs
+                                    and confirms the employee's current PFA before payment, reducing errors and
+                                    uncredited contributions.</p>
+                            </div>
+                            <div
+                                class="p-7 rounded-2xl bg-white dark:bg-card border border-gray-200 dark:border-border shadow-sm hover:border-gray-300 dark:hover:border-gray-600 transition-colors">
+                                <div class="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center mb-4">
+                                    <svg class="w-5 h-5 text-black dark:text-accent" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                            d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z">
+                                        </path>
+                                    </svg></div>
+                                <h4 class="font-bold text-black dark:text-white mb-2">Secure Payment</h4>
+                                <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">Securely pay pension
+                                    contributions anytime with seamless, encrypted payment options.</p>
+                            </div>
+                            <div
+                                class="p-7 rounded-2xl bg-white dark:bg-card border border-gray-200 dark:border-border shadow-sm hover:border-gray-300 dark:hover:border-gray-600 transition-colors">
+                                <div class="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center mb-4">
+                                    <svg class="w-5 h-5 text-black dark:text-accent" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                            d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path>
+                                    </svg></div>
+                                <h4 class="font-bold text-black dark:text-white mb-2">Multiple Payment Gateways</h4>
+                                <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">Trusted gateway
+                                    redundancy ensures zero downtime during remittance across all major payment options.
+                                </p>
+                            </div>
+                            <div
+                                class="p-7 rounded-2xl bg-white dark:bg-card border border-gray-200 dark:border-border shadow-sm hover:border-gray-300 dark:hover:border-gray-600 transition-colors">
+                                <div class="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center mb-4">
+                                    <svg class="w-5 h-5 text-black dark:text-accent" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                            d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z">
+                                        </path>
+                                    </svg></div>
+                                <h4 class="font-bold text-black dark:text-white mb-2">Employer &amp; Employee
+                                    Contributions</h4>
+                                <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">Unified dashboard to
+                                    manage contributions from both parties — auto-split and auto-distributed to the
+                                    right PFA.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- High Fidelity Screens -->
+                    <div class="reveal space-y-8">
+                        <div class="flex items-center gap-3"><span class="w-2 h-2 bg-accent rounded-full"></span><span
+                                class="text-xs font-mono uppercase tracking-widest text-gray-500 dark:text-gray-400 font-semibold">Interface
+                                Design</span></div>
+                        <div
+                            class="flex items-baseline justify-between border-b border-gray-200 dark:border-border pb-3">
+                            <h2 class="text-3xl md:text-4xl font-bold text-black dark:text-white">High Fidelity Screens
+                            </h2>
+                            <span class="font-mono text-xs text-gray-400">UI</span>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-base">Key screens showing how
+                            the product comes together across critical user journeys — from account creation to payments
+                            and bulk schedule uploads.</p>
+                        <div class="space-y-6">
+                            <div
+                                class="rounded-2xl overflow-hidden border border-gray-200 dark:border-border bg-white dark:bg-card p-3 shadow-md group">
+                                <div class="overflow-hidden rounded-xl"><img src="../Images/Pencentral-Signup.png"
+                                        alt="PenCentral select account option"
+                                        class="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-500">
+                                </div>
+                                <div class="p-3 text-center"><span
+                                        class="text-xs font-mono font-semibold uppercase text-gray-700 dark:text-gray-300">Onboarding
+                                        &bull; Select Account Type</span></div>
+                            </div>
+                            <div
+                                class="rounded-2xl overflow-hidden border border-gray-200 dark:border-border bg-white dark:bg-card p-3 shadow-md group">
+                                <div class="overflow-hidden rounded-xl"><img src="../Images/Pencentral-Signup 2.png"
+                                        alt="PenCentral create account"
+                                        class="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-500">
+                                </div>
+                                <div class="p-3 text-center"><span
+                                        class="text-xs font-mono font-semibold uppercase text-gray-700 dark:text-gray-300">Onboarding
+                                        &bull; Create Your Account</span></div>
+                            </div>
+                            <div
+                                class="rounded-2xl overflow-hidden border border-gray-200 dark:border-border bg-white dark:bg-card p-3 shadow-md group">
+                                <div class="overflow-hidden rounded-xl"><img src="../Images/Pencentral-Dashboard.png"
+                                        alt="PenCentral main dashboard"
+                                        class="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-500">
+                                </div>
+                                <div class="p-3 text-center"><span
+                                        class="text-xs font-mono font-semibold uppercase text-gray-700 dark:text-gray-300">Dashboard
+                                        &bull; Remittance Overview &amp; Analytics</span></div>
+                            </div>
+                            <div
+                                class="rounded-2xl overflow-hidden border border-gray-200 dark:border-border bg-white dark:bg-card p-3 shadow-md group">
+                                <div class="overflow-hidden rounded-xl"><img src="../Images/Pen Checkout page.png"
+                                        alt="PenCentral payment checkout"
+                                        class="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-500">
+                                </div>
+                                <div class="p-3 text-center"><span
+                                        class="text-xs font-mono font-semibold uppercase text-gray-700 dark:text-gray-300">Payment
+                                        &bull; Checkout &amp; Contribution Confirmation</span></div>
+                            </div>
+                            <div
+                                class="rounded-2xl overflow-hidden border border-gray-200 dark:border-border bg-white dark:bg-card p-3 shadow-md group">
+                                <div class="overflow-hidden rounded-xl"><img src="../Images/Schedules 02.png"
+                                        alt="PenCentral schedules"
+                                        class="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-500">
+                                </div>
+                                <div class="p-3 text-center"><span
+                                        class="text-xs font-mono font-semibold uppercase text-gray-700 dark:text-gray-300">Schedules
+                                        &bull; Bulk Upload &amp; Remittance Tracking</span></div>
+                            </div>
+                            <!-- Placeholder for more screens -->
+                            <div
+                                class="rounded-2xl border border-dashed border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-card/50 p-8 text-center">
+                                <p class="text-xs font-mono text-gray-400 uppercase tracking-widest">More screens coming
+                                    soon</p>
+                                <p class="text-sm text-gray-400 mt-1">Coming Soon Stay Tuned! </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- AI Section -->
+                    <div class="reveal space-y-8">
+                        <div class="flex items-center gap-3"><span class="w-2 h-2 bg-accent rounded-full"></span><span
+                                class="text-xs font-mono uppercase tracking-widest text-gray-500 dark:text-gray-400 font-semibold">Extended
+                                Feature</span></div>
+                        <div
+                            class="flex items-baseline justify-between border-b border-gray-200 dark:border-border pb-3">
+                            <h2 class="text-2xl md:text-3xl font-bold text-black dark:text-white">Expanding PenCentral
+                                with AI</h2>
+                            <span class="font-mono text-xs text-gray-400">AI</span>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-base">I designed an AI assistant
+                            to support users across the PenCentral website and platform, with plans to extend the
+                            experience to other products in the company ecosystem. The goal was to make it easier for
+                            users to ask questions and get support without leaving the experience they are already
+                            using.</p>
+                        <div
+                            class="rounded-2xl overflow-hidden border border-gray-200 dark:border-border bg-white dark:bg-card p-3 shadow-md group">
+                            <div class="overflow-hidden rounded-xl"><img src="../Images/Pen-Bot.png"
+                                    alt="PenCentral AI assistant"
+                                    class="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-500">
+                            </div>
+                            <div class="p-3 text-center"><span
+                                    class="text-xs font-mono font-semibold uppercase text-gray-700 dark:text-gray-300">AI
+                                    Assistant &bull; Overview &amp; Entry Point</span></div>
+                        </div>
+                        <div>
+                            <div class="flex items-center gap-2 mb-4"><span
+                                    class="w-2 h-2 bg-accent rounded-full"></span>
+                                <h4 class="text-sm font-bold text-black dark:text-white uppercase tracking-wider">The
+                                    Conversation Flow</h4>
+                            </div>
+                            <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-sm mb-6">I designed the full
+                                conversation flow and interface — thinking through how users start conversations,
+                                receive AI-generated responses, and escalate to human support when needed.</p>
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                                <div
+                                    class="rounded-2xl overflow-hidden border border-gray-200 dark:border-border bg-white dark:bg-card p-3 shadow-sm text-center group">
+                                    <div class="overflow-hidden rounded-xl"><img
+                                            src="../Images/Pen-Bot-conversation.png" alt="Starting a conversation"
+                                            class="w-full h-auto object-contain group-hover:scale-105 transition-transform duration-500">
+                                    </div>
+                                    <div class="mt-3"><span
+                                            class="text-xs font-mono font-semibold uppercase text-gray-600 dark:text-gray-400">Starting
+                                            a Conversation</span></div>
+                                </div>
+                                <div
+                                    class="rounded-2xl overflow-hidden border border-gray-200 dark:border-border bg-white dark:bg-card p-3 shadow-sm text-center group">
+                                    <div class="overflow-hidden rounded-xl"><img src="../Images/Pen-Bot-Ai response.png"
+                                            alt="AI response"
+                                            class="w-full h-auto object-contain group-hover:scale-105 transition-transform duration-500">
+                                    </div>
+                                    <div class="mt-3"><span
+                                            class="text-xs font-mono font-semibold uppercase text-gray-600 dark:text-gray-400">AI
+                                            Response</span></div>
+                                </div>
+                                <div
+                                    class="rounded-2xl overflow-hidden border border-gray-200 dark:border-border bg-white dark:bg-card p-3 shadow-sm text-center group">
+                                    <div class="overflow-hidden rounded-xl"><img
+                                            src="../Images/Pen-Bot-Humman support.png" alt="Escalation to human support"
+                                            class="w-full h-auto object-contain group-hover:scale-105 transition-transform duration-500">
+                                    </div>
+                                    <div class="mt-3"><span
+                                            class="text-xs font-mono font-semibold uppercase text-gray-600 dark:text-gray-400">Escalation
+                                            to Human</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Outcome -->
+                    <div
+                        class="reveal p-8 md:p-10 rounded-2xl bg-white dark:bg-card border border-gray-200 dark:border-border shadow-sm space-y-6">
+                        <div class="flex items-center gap-3"><span
+                                class="w-2 h-2 bg-green-500 rounded-full"></span><span
+                                class="text-xs font-mono uppercase tracking-widest text-green-600 dark:text-green-400 font-bold">Results
+                                &amp; Impact</span></div>
+                        <h3 class="text-2xl md:text-3xl font-bold text-black dark:text-white">Measurable Scale &amp;
+                            Outcome</h3>
+
+                        <p class="text-gray-700 dark:text-gray-200 text-base md:text-lg leading-relaxed font-medium">
+                            My design work has contributed to platforms serving 10,000+ users and &#8358;300B+ in
+                            transaction value, including a pension platform redesign that improved user engagement by
+                            30% and onboarding workflows that reduced customer sign-up errors by 25%.
+                        </p>
+
+                        <!-- Stat Counters Grid -->
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-2">
+                            <div
+                                class="p-4 rounded-xl bg-gray-50 dark:bg-dark border border-gray-200 dark:border-border text-center">
+                                <span
+                                    class="text-2xl md:text-3xl font-black text-black dark:text-accent font-mono block">10,000+</span>
+                                <span class="text-xs text-gray-600 dark:text-gray-400 font-medium">Users Served</span>
+                            </div>
+                            <div
+                                class="p-4 rounded-xl bg-gray-50 dark:bg-dark border border-gray-200 dark:border-border text-center">
+                                <span
+                                    class="text-2xl md:text-3xl font-black text-black dark:text-accent font-mono block">&#8358;300B+</span>
+                                <span class="text-xs text-gray-600 dark:text-gray-400 font-medium">Transaction
+                                    Value</span>
+                            </div>
+                            <div
+                                class="p-4 rounded-xl bg-gray-50 dark:bg-dark border border-gray-200 dark:border-border text-center">
+                                <span
+                                    class="text-2xl md:text-3xl font-black text-black dark:text-accent font-mono block">+30%</span>
+                                <span class="text-xs text-gray-600 dark:text-gray-400 font-medium">User
+                                    Engagement</span>
+                            </div>
+                            <div
+                                class="p-4 rounded-xl bg-gray-50 dark:bg-dark border border-gray-200 dark:border-border text-center">
+                                <span
+                                    class="text-2xl md:text-3xl font-black text-black dark:text-accent font-mono block">-25%</span>
+                                <span class="text-xs text-gray-600 dark:text-gray-400 font-medium">Sign-up Errors</span>
+                            </div>
+                        </div>
+
+                        <ul class="space-y-3 pt-2">
+                            <li
+                                class="flex items-start gap-3 text-gray-600 dark:text-gray-300 text-base leading-relaxed">
+                                <span class="mt-2 w-2 h-2 rounded-full bg-green-500 flex-shrink-0"></span>Reduced
+                                average pension remittance time from 3 business days to <strong
+                                    class="text-black dark:text-white">under 10 seconds</strong>.</li>
+                            <li
+                                class="flex items-start gap-3 text-gray-600 dark:text-gray-300 text-base leading-relaxed">
+                                <span class="mt-2 w-2 h-2 rounded-full bg-green-500 flex-shrink-0"></span>Achieved
+                                <strong class="text-black dark:text-white">99.8% validation accuracy</strong> for RSAs,
+                                eliminating bouncebacks and uncredited balances.</li>
+                            <li
+                                class="flex items-start gap-3 text-gray-600 dark:text-gray-300 text-base leading-relaxed">
+                                <span class="mt-2 w-2 h-2 rounded-full bg-green-500 flex-shrink-0"></span>Successfully
+                                integrated with multiple major payment gateways for complete <strong
+                                    class="text-black dark:text-white">payment redundancy</strong>.</li>
+                            <li
+                                class="flex items-start gap-3 text-gray-600 dark:text-gray-300 text-base leading-relaxed">
+                                <span class="mt-2 w-2 h-2 rounded-full bg-green-500 flex-shrink-0"></span>Received
+                                positive feedback from Employers, Finance Managers, and HR teams across corporate,
+                                fintech, and banking sectors.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Reflection -->
+                    <div
+                        class="reveal p-8 md:p-10 rounded-2xl bg-black/5 dark:bg-white/5 border border-gray-200 dark:border-border space-y-4">
+                        <div class="flex items-center gap-3"><span class="w-2 h-2 bg-accent rounded-full"></span><span
+                                class="text-xs font-mono uppercase tracking-widest text-gray-500 dark:text-gray-400 font-semibold">Key
+                                Takeaway</span></div>
+                        <h3 class="text-2xl font-bold text-black dark:text-white">Reflection</h3>
+                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-base italic">&ldquo;Designing
+                            PenCentral taught me a lot about working on products where accuracy and trust really matter.
+                            I had to understand pension payment mechanics, how different system parts connect, and how
+                            to turn complex processes into a dashboard that feels simple and approachable. When people
+                            are dealing with money, every detail matters — clear information, helpful feedback, and
+                            visible status at every step can make a massive difference in user confidence.&rdquo;</p>
+                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-base italic">&ldquo;Working on
+                            the AI assistant gave me a completely different challenge — thinking through the many ways
+                            people phrase questions, how the assistant should respond, and what happens when it lacks
+                            the right answer. It deepened my understanding of designing AI interactions that feel simple
+                            and trustworthy.&rdquo;</p>
+                    </div>
+
+                    <!-- Accordion -->
+                    <div class="reveal space-y-4 pt-4">
+                        <h3 class="text-xl font-bold text-black dark:text-white mb-4">Design Decisions</h3>
+                        <div class="space-y-4" id="accordion">
+                            <div
+                                class="accordion-item bg-white dark:bg-card border border-gray-200 dark:border-border rounded-xl active shadow-sm">
+                                <button
+                                    class="w-full text-left px-6 py-5 flex justify-between items-center hover-trigger"
+                                    onclick="toggleAccordion(this)">
+                                    <span class="font-bold text-black dark:text-accent">Why a switch model over
+                                        individual PFA portals?</span>
+                                    <svg class="w-5 h-5 text-black dark:text-accent icon-plus transition-transform duration-300"
+                                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M12 4v16m8-8H4"></path>
+                                    </svg>
+                                </button>
+                                <div class="accordion-content px-6" style="max-height: 200px;">
+                                    <p class="text-gray-600 dark:text-gray-400 text-sm pb-5 leading-relaxed">
+                                        Organisations deal with employees spread across multiple PFAs. A switch model
+                                        means one schedule upload and one payment gets automatically routed to every PFA
+                                        — removing the need for HR teams to maintain separate relationships, logins, and
+                                        workflows with each administrator.</p>
+                                </div>
+                            </div>
+                            <div
+                                class="accordion-item bg-white dark:bg-card border border-gray-200 dark:border-border rounded-xl shadow-sm">
+                                <button
+                                    class="w-full text-left px-6 py-5 flex justify-between items-center hover-trigger"
+                                    onclick="toggleAccordion(this)">
+                                    <span class="font-bold text-black dark:text-accent">How does RSA validation prevent
+                                        uncredited contributions?</span>
+                                    <svg class="w-5 h-5 text-black dark:text-accent icon-plus transition-transform duration-300"
+                                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M12 4v16m8-8H4"></path>
+                                    </svg>
+                                </button>
+                                <div class="accordion-content px-6">
+                                    <p class="text-gray-600 dark:text-gray-400 text-sm pb-5 leading-relaxed">Before any
+                                        payment is processed, PenCentral pings PENCOM's registry to confirm the
+                                        employee's active RSA PIN and current PFA. If an employee has switched PFAs, the
+                                        system routes the contribution correctly — preventing funds from landing in the
+                                        wrong account and sitting uncredited.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- RIGHT SIDEBAR -->
+                <div class="lg:col-span-4 space-y-8 lg:sticky lg:top-28">
+                    <div
+                        class="bg-white dark:bg-card border border-gray-200 dark:border-border p-8 rounded-2xl reveal shadow-sm">
+                        <h3
+                            class="text-xs font-mono font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-6">
+                            Project Information</h3>
+                        <div class="space-y-5 text-sm">
+                            <div class="pb-4 border-b border-gray-100 dark:border-border">
+                                <p class="text-gray-400 text-xs font-mono uppercase mb-1">Product</p>
+                                <p class="font-bold text-black dark:text-white text-base">PenCentral</p>
+                            </div>
+                            <div class="pb-4 border-b border-gray-100 dark:border-border">
+                                <p class="text-gray-400 text-xs font-mono uppercase mb-1">Category</p>
+                                <p class="font-bold text-black dark:text-white">Fintech &bull; Pension Infrastructure
+                                </p>
+                            </div>
+                            <div class="pb-4 border-b border-gray-100 dark:border-border">
+                                <p class="text-gray-400 text-xs font-mono uppercase mb-1">Impact &amp; Scale</p>
+                                <p class="font-bold text-black dark:text-accent">10K+ Users &bull; &#8358;300B+ Volume
+                                </p>
+                            </div>
+                            <div class="pb-4 border-b border-gray-100 dark:border-border">
+                                <p class="text-gray-400 text-xs font-mono uppercase mb-1">Role</p>
+                                <p class="font-bold text-black dark:text-white">Product Designer</p>
+                            </div>
+                            <div class="pb-4 border-b border-gray-100 dark:border-border">
+                                <p class="text-gray-400 text-xs font-mono uppercase mb-1">Duration</p>
+                                <p class="font-semibold text-gray-800 dark:text-gray-200">6 Weeks &bull; 2024</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-400 text-xs font-mono uppercase mb-1">Deliverables</p>
+                                <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">High Fidelity UI,
+                                    Interactive Prototypes, Dev Handoff, AI Assistant Flow</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="bg-white dark:bg-card border border-gray-200 dark:border-border p-8 rounded-2xl reveal shadow-sm">
+                        <h3
+                            class="text-xs font-mono font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-6">
+                            Live Product &amp; Links</h3>
+                        <div class="space-y-3">
+                            <a href="https://pencentral.ng/" target="_blank" rel="noopener noreferrer"
+                                class="group flex items-center justify-between p-3.5 rounded-xl bg-black text-white dark:bg-accent dark:text-dark font-bold text-xs uppercase tracking-wider transition-all hover:bg-gray-800 dark:hover:bg-white hover-trigger">
+                                <span class="flex items-center gap-2"><span
+                                        class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>Website
+                                    (Live)</span>
+                                <svg class="w-4 h-4 transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
+                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14">
+                                    </path>
+                                </svg>
+                            </a>
+                            <a href="https://corporate.pencentral.ng/account/signin/option" target="_blank"
+                                rel="noopener noreferrer"
+                                class="group flex items-center justify-between p-3.5 rounded-xl border border-gray-200 dark:border-border bg-gray-50 dark:bg-dark text-black dark:text-white font-semibold text-xs transition-all hover:border-black dark:hover:border-accent hover-trigger">
+                                <span>Dashboard (Live)</span>
+                                <svg class="w-3.5 h-3.5 text-gray-400 group-hover:text-black dark:group-hover:text-accent transform group-hover:translate-x-0.5 transition-transform"
+                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 5l7 7-7 7"></path>
+                                </svg>
+                            </a>
+                        </div>
+                        <p class="text-xs text-gray-400 dark:text-gray-500 mt-5 leading-relaxed border-t
+                         border-gray-100 dark:border-border pt-4">Full platform access is restricted
+                            to registered organisations.
+                            <a href="mailto:hello@bridgetfayomi.com" class="underline 
+                         hover:text-black dark:hover:text-accent transition-colors">Reach out</a>
+                            for a walkthrough.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Next Project -->
+        <section class="max-w-7xl mx-auto px-6 pb-20 reveal">
+            <div
+                class="p-8 md:p-12 rounded-3xl bg-white dark:bg-card border border-gray-200 dark:border-border flex flex-col md:flex-row justify-between items-start md:items-center gap-6 shadow-sm">
+                <div>
+                    <span class="text-xs uppercase tracking-widest text-gray-400 font-mono block mb-2">Next Case
+                        Study</span>
+                    <h3 class="text-3xl md:text-4xl font-bold text-black dark:text-white">My Billa</h3>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm mt-1">Fintech &amp; utility bills payment
+                        platform with unified multi-bill checkout.</p>
+                </div>
+                <a href="../Case-studies/mybilla.html"
+                    class="inline-flex items-center gap-3 bg-black dark:bg-accent text-white dark:text-dark px-8 py-3.5 rounded-full font-bold text-xs uppercase tracking-wider hover:bg-gray-800 dark:hover:bg-white transition-all hover-trigger flex-shrink-0">
+                    View Project <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
+                </a>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="mt-20 border-t border-gray-200 dark:border-border pt-20 pb-12 relative overflow-hidden">
+            <div
+                class="absolute top-12 right-8 md:right-16 text-black dark:text-accent opacity-40 hover:opacity-100 transition-opacity animate-[spin_12s_linear_infinite] pointer-events-none">
+                <svg width="44" height="44" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0l2.5 9.5L24 12l-9.5 2.5L12 24l-2.5-9.5L0 12l9.5-2.5z" />
+                </svg>
+            </div>
+            <div class="max-w-7xl mx-auto px-6 reveal">
+                <div class="mb-20 text-center flex flex-col items-center">
+                    <span
+                        class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400 font-semibold mb-4 block">Have
+                        a project in mind?</span>
+                    <h2
+                        class="text-5xl sm:text-6xl md:text-8xl font-black leading-none tracking-tight text-black dark:text-accent mb-6">
+                        Let's Talk</h2>
+                    <a href="mailto:hello@bridgetfayomi.com"
+                        class="group inline-flex items-center gap-3 text-xl sm:text-2xl md:text-3xl font-bold tracking-tight text-gray-900 dark:text-white hover:text-black dark:hover:text-accent transition-colors hover-trigger">
+                        <span>hello@bridgetfayomi.com</span>
+                        <span
+                            class="w-8 h-8 rounded-full border border-gray-300 dark:border-gray-700 group-hover:border-black dark:group-hover:border-accent flex items-center justify-center text-xs transition-colors">&rarr;</span>
+                    </a>
+                </div>
+                <div
+                    class="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12 py-12 border-y border-gray-200 dark:border-border text-sm">
+                    <div class="md:col-span-5 space-y-4">
+                        <div class="flex items-center gap-2">
+                            <div class="w-3 h-3 bg-black dark:bg-accent rounded-sm rotate-45"></div><span
+                                class="font-bold text-base text-black dark:text-white">Bridget Fayomi</span>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-400 leading-relaxed text-sm max-w-sm">Product Designer
+                            crafting bold digital products, intuitive UX flows, and intentional
+                            visual systems.</p>
+                        <div class="flex items-center gap-3 pt-2">
+                            <a href="#"
+                                class="w-9 h-9 rounded-full border border-gray-200 dark:border-border flex items-center justify-center hover:border-black dark:hover:border-accent hover:text-black dark:hover:text-accent text-gray-700 dark:text-gray-300 transition-colors hover-trigger font-bold text-xs">&#120143;</a>
+                            <a href="#"
+                                class="w-9 h-9 rounded-full border border-gray-200 dark:border-border flex items-center justify-center hover:border-black dark:hover:border-accent hover:text-black dark:hover:text-accent text-gray-700 dark:text-gray-300 transition-colors hover-trigger font-serif font-bold text-xs">B&#275;</a>
+                            <a href="#"
+                                class="w-9 h-9 rounded-full border border-gray-200 dark:border-border flex items-center justify-center hover:border-black dark:hover:border-accent hover:text-black dark:hover:text-accent text-gray-700 dark:text-gray-300 transition-colors hover-trigger font-bold text-xs">in</a>
+                        </div>
+                    </div>
+                    <div class="md:col-span-3 md:col-start-7">
+                        <h4 class="font-bold text-xs uppercase tracking-wider text-gray-400 dark:text-gray-500 mb-4">
+                            Navigation</h4>
+                        <ul class="space-y-3 text-sm text-gray-600 dark:text-gray-400">
+                            <li><a href="../Index.html"
+                                    class="hover:text-black dark:hover:text-white transition-colors hover-trigger">Home</a>
+                            </li>
+                            <li><a href="../pages/projects.html"
+                                    class="hover:text-black dark:hover:text-white transition-colors hover-trigger">Projects</a>
+                            </li>
+                            <li><a href="../pages/explorations.html"
+                                    class="hover:text-black dark:hover:text-white transition-colors hover-trigger">Explorations</a>
+                            </li>
+                            <li><a href="../pages/contact.html"
+                                    class="hover:text-black dark:hover:text-white transition-colors hover-trigger">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="md:col-span-3">
+                        <h4 class="font-bold text-xs uppercase tracking-wider text-gray-400 dark:text-gray-500 mb-4">
+                            Availability</h4>
+                        <div class="space-y-3 text-sm text-gray-600 dark:text-gray-400">
+                            <div class="flex items-center gap-2">
+                                <span class="relative flex h-2 w-2"><span
+                                        class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span><span
+                                        class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span></span>
+                                <span class="text-black dark:text-white font-medium">Available for new projects</span>
+                            </div>
+                            <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">Open for product design,
+                                design systems, and visual design worldwide.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="py-12 text-center overflow-hidden">
+                    <div
+                        class="text-[13vw] font-black leading-none tracking-tighter outline-text hover:text-black dark:hover:text-white transition-colors duration-500 cursor-default select-none">
+                        BRIDGET</div>
+                </div>
+                <div
+                    class="flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-gray-500 dark:text-gray-400">
+                    <p>&copy; 2026 Bridget Fayomi. All rights reserved.</p>
+                    <p>Product Designer &bull; Digital Experiences</p>
+                </div>
+            </div>
+        </footer>
+    </main>
+    <script src="../js/scripts.js"></script>
+</body>
+
+</html>
