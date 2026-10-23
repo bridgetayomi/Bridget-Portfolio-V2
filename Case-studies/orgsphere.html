@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../Images/bridget-fav-small.png" />
+    <title>Orgsphere — HR &amp; Employee Request Management Platform | Bridget Fayomi</title>
+    <meta name="description"
+        content="Case study: Orgsphere, an HR platform that unifies request approvals, performance reviews, employee records, and payroll into one cohesive dashboard, designed by Bridget Fayomi." />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NW8Z6RFTC2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-NW8Z6RFTC2');
+    </script>
+
+    <!-- Theme Initialization Script (Anti-FOUC) -->
+    <script>
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+
+    <!-- Fonts & Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        mono: ['"IBM Plex Mono"', 'monospace']
+                    },
+                    colors: {
+                        dark: '#0a0a0a',
+                        card: '#111111',
+                        accent: '#c4f02a',
+                        border: '#222222',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="case-study antialiased font-sans selection:bg-accent selection:text-dark">
+
+    <div id="cursor-dot"></div>
+    <div id="cursor-ring"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300 backdrop-blur-md bg-white/80 dark:bg-dark/80 border-b border-gray-200 dark:border-border" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+            <a href="../Index.html" class="text-2xl font-bold tracking-tighter flex items-center gap-2 text-black dark:text-white hover-trigger">DesignsbyB.</a>
+            <div class="hidden md:flex gap-8 text-sm font-medium text-gray-600 dark:text-gray-400">
+                <a href="../Index.html" class="hover:text-black dark:hover:text-white transition-colors hover-trigger">Home</a>
+                <a href="../pages/projects.html" class="hover:text-black dark:hover:text-white transition-colors hover-trigger">Projects</a>
+                <a href="../pages/explorations.html" class="hover:text-black dark:hover:text-white transition-colors hover-trigger">Explorations</a>
+                <a href="../about.html" class="hover:text-black dark:hover:text-white transition-colors hover-trigger">About</a>
+                <a href="#" class="text-black dark:text-accent font-semibold hover-trigger">ORGSPHERE</a>
+            </div>
+            <div class="flex items-center gap-3">
+                <button id="theme-toggle" class="theme-toggle-btn bg-gray-100 dark:bg-[#1A1A1A] border border-gray-200 dark:border-[#2A2A2A] shadow-sm rounded-full p-2.5 flex items-center justify-center hover:bg-gray-200 dark:hover:bg-[#2A2A2A] transition-colors duration-300 hover-trigger" aria-label="Toggle theme">
+                    <svg class="theme-toggle-light-icon hidden w-4 h-4 text-yellow-500 dark:text-gray-300" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+                    <svg class="theme-toggle-dark-icon w-4 h-4 text-gray-700 dark:text-gray-300" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                </button>
+                <a href="../pages/contact.html" class="bg-black dark:bg-accent text-white dark:text-dark px-6 py-2.5 rounded-none font-bold text-sm flex items-center gap-2 hover:bg-gray-800 dark:hover:bg-white transition-colors hover-trigger">
+                    Contact <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-32">
+
+        <!-- ── HERO ── -->
+        <section class="max-w-7xl mx-auto px-6 pt-12 md:pt-16 pb-12">
+            <div class="flex flex-wrap items-center justify-between gap-4 mb-8 reveal">
+                <a href="../pages/projects.html" class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-accent transition-colors hover-trigger">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                    Back to Selected Work
+                </a>
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-medium bg-black/5 dark:bg-white/5 border border-gray-200 dark:border-border text-gray-700 dark:text-gray-300">
+                    <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
+                    Case Study &bull; HR &amp; Workforce Management
+                </span>
+            </div>
+
+            <h1 class="hero-text uppercase reveal delay-100 text-black dark:text-white">
+                Orgsphere <br>
+                <span class="flex items-center gap-4 md:gap-6">
+                    <svg class="w-14 h-14 md:w-28 md:h-28 text-black dark:text-accent hover-trigger flex-shrink-0" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="30" cy="50" r="25" /><circle cx="70" cy="50" r="25" />
+                    </svg>
+                    HR Platform
+                </span>
+            </h1>
+
+            <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 max-w-4xl mt-8 font-normal leading-relaxed reveal delay-150">
+                Orgsphere is a platform designed to simplify request approvals, performance reviews, employee requests (leave, expense, training), and employee records by bringing them into one cohesive dashboard.
+            </p>
+
+            <!-- Metadata bar -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-10 pt-8 border-t border-gray-200 dark:border-border reveal delay-200 text-sm">
+                <div>
+                    <span class="text-xs uppercase tracking-wider text-gray-400 dark:text-gray-500 block mb-1 font-mono">Role</span>
+                    <span class="font-bold text-black dark:text-white">Product Designer</span>
+                </div>
+                <div>
+                    <span class="text-xs uppercase tracking-wider text-gray-400 dark:text-gray-500 block mb-1 font-mono">Team</span>
+                    <span class="font-bold text-black dark:text-white">2 PMs, 1 Developer</span>
+                </div>
+                <div>
+                    <span class="text-xs uppercase tracking-wider text-gray-400 dark:text-gray-500 block mb-1 font-mono">Duration</span>
+                    <span class="font-bold text-black dark:text-white">12 Weeks</span>
+                </div>
+                <div>
+                    <span class="text-xs uppercase tracking-wider text-gray-400 dark:text-gray-500 block mb-1 font-mono">Platform</span>
+                    <span class="font-bold text-black dark:text-white">Web &amp; Mobile</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── HERO IMAGE ── -->
+        <section class="max-w-7xl mx-auto px-6 reveal delay-200">
+            <div class="w-full bg-[#18191D] border border-gray-200 dark:border-border/60 rounded-3xl overflow-hidden shadow-2xl relative group">
+                <img src="../Images/Orgsphere.avif" alt="Orgsphere HR dashboard" class="w-full h-auto object-cover transform group-hover:scale-[1.01] transition-transform duration-700">
+            </div>
+        </section>
+
+        <!-- ── MAIN CONTENT + SIDEBAR ── -->
+        <section class="max-w-7xl mx-auto px-6 py-20 md:py-28">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+
+                <!-- LEFT: Case Study Narrative -->
+                <div class="lg:col-span-8 space-y-20">
+
+                    <!-- Overview -->
+                    <div class="reveal space-y-4">
+                        <div class="flex items-center gap-3">
+                            <span class="w-2 h-2 bg-accent rounded-full"></span>
+                            <span class="text-xs font-mono uppercase tracking-widest text-gray-500 dark:text-gray-400 font-semibold">Overview</span>
+                        </div>
+                        <h2 class="text-3xl md:text-4xl font-bold text-black dark:text-white tracking-tight">One Platform for Every HR Workflow</h2>
+                        <p class="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
+                            Orgsphere is a platform built to integrate legacy systems, payrolls, request approvals, performance review management, and employee records in one place. It helps HR managers handle employee requests efficiently — covering leave applications, expense approvals, appraisals, announcements, and training management — all under one unified system.
+                        </p>
+                    </div>
+
+                    <!-- Goal / Problem / Solution -->
+                    <div class="space-y-6 reveal">
+                        <div class="p-8 rounded-2xl bg-white dark:bg-card border border-gray-200 dark:border-border shadow-sm hover:border-gray-300 dark:hover:border-gray-700 transition-colors">
+                            <div class="flex items-center gap-3 mb-3">
+                                <span class="px-2.5 py-1 text-[11px] font-mono font-bold uppercase rounded bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/20">The Primary Goal</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-black dark:text-white mb-3">Build a Digital Workspace That Works for Everyone</h3>
+                            <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                                The goal was to create a platform that tracks and manages employee requests seamlessly, standardises the multi-tier request approval flow, keeps records of employee performance and appraisals, and provides a comprehensive set of management tools for the HR team.
+                            </p>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="p-8 rounded-2xl bg-red-500/5 border border-red-500/20 shadow-sm">
+                                <span class="px-2.5 py-1 text-[11px] font-mono font-bold uppercase rounded bg-red-500/15 text-red-600 dark:text-red-400 border border-red-500/30 inline-block mb-4">The Problem</span>
+                                <h3 class="text-lg font-bold text-black dark:text-white mb-2">Paper-Based Workflows Slowing Everything Down</h3>
+                                <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">Staff members could not easily make requests, verify their statuses, or get fast approvals. Managers struggled to track their team's requests. Most processes were handled manually — paper forms led to data security risks, slow processing times, and missing documentation.</p>
+                            </div>
+                            <div class="p-8 rounded-2xl bg-green-500/5 border border-green-500/20 shadow-sm">
+                                <span class="px-2.5 py-1 text-[11px] font-mono font-bold uppercase rounded bg-green-500/15 text-green-600 dark:text-green-400 border border-green-500/30 inline-block mb-4">The Solution</span>
+                                <h3 class="text-lg font-bold text-black dark:text-white mb-2">A Unified Request &amp; Approval Hub</h3>
+                                <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">I designed an intuitive, responsive web and mobile application for employees, managers, and HR teams. The platform standardises approval workflows to increase corporate transparency and automatically channels financial requests to the appropriate departments for validation.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Responsibilities -->
+                    <div class="reveal p-8 rounded-2xl bg-white dark:bg-card border border-gray-200 dark:border-border shadow-sm">
+                        <div class="flex items-center gap-3 mb-6">
+                            <span class="w-2 h-2 bg-accent rounded-full"></span>
+                            <span class="text-xs font-mono uppercase tracking-widest text-gray-500 dark:text-gray-400 font-semibold">Scope of Work</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-black dark:text-white mb-6">My Responsibilities</h3>
+                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                            <div class="flex items-center gap-3 p-3.5 rounded-xl bg-gray-50 dark:bg-dark border border-gray-200 dark:border-border">
+                                <span class="text-black dark:text-accent font-mono font-bold text-xs">01</span>
+                                <span class="text-sm font-semibold text-gray-800 dark:text-gray-200">Design Systems</span>
+                            </div>
+                            <div class="flex items-center gap-3 p-3.5 rounded-xl bg-gray-50 dark:bg-dark border border-gray-200 dark:border-border">
+                                <span class="text-black dark:text-accent font-mono font-bold text-xs">02</span>
+                                <span class="text-sm font-semibold text-gray-800 dark:text-gray-200">UX Research</span>
+                            </div>
+                            <div class="flex items-center gap-3 p-3.5 rounded-xl bg-gray-50 dark:bg-dark border border-gray-200 dark:border-border">
+                                <span class="text-black dark:text-accent font-mono font-bold text-xs">03</span>
+                                <span class="text-sm font-semibold text-gray-800 dark:text-gray-200">User Flows</span>
+                            </div>
+                            <div class="flex items-center gap-3 p-3.5 rounded-xl bg-gray-50 dark:bg-dark border border-gray-200 dark:border-border">
+                                <span class="text-black dark:text-accent font-mono font-bold text-xs">04</span>
+                                <span class="text-sm font-semibold text-gray-800 dark:text-gray-200">Wireframes</span>
+                            </div>
+                            <div class="flex items-center gap-3 p-3.5 rounded-xl bg-gray-50 dark:bg-dark border border-gray-200 dark:border-border">
+                                <span class="text-black dark:text-accent font-mono font-bold text-xs">05</span>
+                                <span class="text-sm font-semibold text-gray-800 dark:text-gray-200">High Fidelity UI</span>
+                            </div>
+                            <div class="flex items-center gap-3 p-3.5 rounded-xl bg-gray-50 dark:bg-dark border border-gray-200 dark:border-border">
+                                <span class="text-black dark:text-accent font-mono font-bold text-xs">06</span>
+                                <span class="text-sm font-semibold text-gray-800 dark:text-gray-200">Developer Handoff</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Design Process -->
+                    <div class="space-y-16">
+                        <div class="reveal">
+                            <div class="flex items-center gap-3 mb-2">
+                                <span class="w-2 h-2 bg-accent rounded-full"></span>
+                                <span class="text-xs font-mono uppercase tracking-widest text-gray-500 dark:text-gray-400 font-semibold">The Process</span>
+                            </div>
+                            <h2 class="text-3xl md:text-4xl font-bold text-black dark:text-white">Design &amp; Discovery</h2>
+                        </div>
+
+                        <!-- 1. Research -->
+                        <div class="reveal space-y-6">
+                            <div class="flex items-baseline justify-between border-b border-gray-200 dark:border-border pb-3">
+                                <h3 class="text-2xl font-bold text-black dark:text-white">1. Understanding the HR Experience</h3>
+                                <span class="font-mono text-xs text-gray-400">DISCOVERY</span>
+                            </div>
+                            <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-base">I set out to discover how HR managers, employees, and line managers interact with existing HR portals. Here are the primary pain points, frustrations, and expectations gathered during user research:</p>
+                            <div class="rounded-2xl overflow-hidden border border-gray-200 dark:border-border bg-white dark:bg-card p-3 shadow-md">
+                                <img src="../Images/HMO Dashboard.avif" alt="Early research findings from Orgsphere HR user discovery" class="w-full h-auto rounded-xl object-contain">
+                            </div>
+                            <p class="text-xs font-mono text-gray-500 dark:text-gray-400 text-center">Early stages of findings from HR user research</p>
+                        </div>
+
+                        <!-- 2. User Personas -->
+                        <div class="reveal space-y-6">
+                            <div class="flex items-baseline justify-between border-b border-gray-200 dark:border-border pb-3">
+                                <h3 class="text-2xl font-bold text-black dark:text-white">2. User Personas</h3>
+                                <span class="font-mono text-xs text-gray-400">EMPATHY</span>
+                            </div>
+                            <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-base">I created key user personas that reflect the needs, goals, and frustrations of users. These personas helped guide design decisions and kept the focus on solving the right problems.</p>
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                <div class="p-5 rounded-2xl bg-white dark:bg-card border border-gray-200 dark:border-border shadow-sm hover:border-gray-400 dark:hover:border-gray-600 transition-colors">
+                                    <span class="font-bold text-black dark:text-accent uppercase font-mono block mb-2 text-xs">Employee</span>
+                                    <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">Wants a simple, transparent way to file requests (leave, discounts, expense reimbursement) and track progress in real time.</p>
+                                </div>
+                                <div class="p-5 rounded-2xl bg-white dark:bg-card border border-gray-200 dark:border-border shadow-sm hover:border-gray-400 dark:hover:border-gray-600 transition-colors">
+                                    <span class="font-bold text-black dark:text-accent uppercase font-mono block mb-2 text-xs">Line Manager</span>
+                                    <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">Needs a clear dashboard to review pending requests, compare team availability, and approve or reject submissions quickly.</p>
+                                </div>
+                                <div class="p-5 rounded-2xl bg-white dark:bg-card border border-gray-200 dark:border-border shadow-sm hover:border-gray-400 dark:hover:border-gray-600 transition-colors">
+                                    <span class="font-bold text-black dark:text-accent uppercase font-mono block mb-2 text-xs">HR Team</span>
+                                    <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">Requires an automated portal to oversee compliance, manage employee profiles, track approvals, and manage performance logs.</p>
+                                </div>
+                            </div>
+                            <p class="text-xs font-mono text-gray-500 dark:text-gray-400 text-center">Two primary personas</p>
+                        </div>
+
+                        <!-- 3. Information Architecture -->
+                        <div class="reveal space-y-6">
+                            <div class="flex items-baseline justify-between border-b border-gray-200 dark:border-border pb-3">
+                                <h3 class="text-2xl font-bold text-black dark:text-white">3. Information Architecture</h3>
+                                <span class="font-mono text-xs text-gray-400">STRUCTURE</span>
+                            </div>
+                            <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-base">I structured the application layout to make navigation clean, organise modular HR permissions, and reduce cognitive load for users across all three roles.</p>
+                            <div class="rounded-2xl overflow-hidden border border-gray-200 dark:border-border bg-white dark:bg-card p-3 shadow-md group">
+                                <img src="../Images/HR- Dashboard.avif" alt="Orgsphere information architecture" class="w-full h-auto rounded-xl object-contain">
+                                <span class="block mt-2 text-center text-xs font-mono text-gray-400">Information Architecture diagrams</span>
+                            </div>
+                        </div>
+
+                        <!-- 4. User Flow -->
+                        <div class="reveal space-y-6">
+                            <div class="flex items-baseline justify-between border-b border-gray-200 dark:border-border pb-3">
+                                <h3 class="text-2xl font-bold text-black dark:text-white">4. Mapping the User Experience</h3>
+                                <span class="font-mono text-xs text-gray-400">JOURNEY</span>
+                            </div>
+                            <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-base">I mapped out key user flows to visualise how employees, managers, and admins would complete core actions, such as submitting and approving expense requests.</p>
+                            <div class="flex justify-center pt-2">
+                                <a href="https://figma.com/your-cas-userflow" target="_blank" rel="noopener noreferrer"
+                                    class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-gray-300 dark:border-border bg-white dark:bg-card text-black dark:text-accent font-bold text-xs uppercase tracking-wider hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all hover-trigger shadow-sm">
+                                    View Full User Flow
+                                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- 5. High Fidelity Screens -->
+                        <div class="reveal space-y-12">
+                            <div class="flex items-baseline justify-between border-b border-gray-200 dark:border-border pb-3">
+                                <h3 class="text-2xl font-bold text-black dark:text-white">5. High Fidelity Screens</h3>
+                                <span class="font-mono text-xs text-gray-400">INTERFACE DESIGN</span>
+                            </div>
+                            <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-base">I designed screens for all three user roles — employee, line manager, and HR admin — with a focus on clarity, role-appropriate access, and a consistent design language across web and mobile.</p>
+
+                            <!-- Admin suite -->
+                            <div class="space-y-6">
+                                <div class="flex items-center gap-3">
+                                    <span class="px-2.5 py-1 text-[11px] font-mono font-bold uppercase rounded bg-accent/10 text-black dark:text-accent border border-accent/30">Admin View</span>
+                                    <h4 class="text-lg font-bold text-black dark:text-white">HR Admin Dashboard</h4>
+                                </div>
+                                <div class="rounded-2xl overflow-hidden border border-gray-200 dark:border-border bg-white dark:bg-card p-4 shadow-md group">
+                                    <div class="overflow-hidden rounded-xl border border-gray-100 dark:border-border/60">
+                                        <img src="../Images/Orgsphere.avif" alt="Orgsphere HR Admin Dashboard" class="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-500">
+                                    </div>
+                                    <div class="p-4 bg-gray-50 dark:bg-dark/40 rounded-xl mt-3 flex flex-col sm:flex-row justify-between sm:items-center gap-2">
+                                        <div>
+                                            <span class="text-xs font-mono font-bold uppercase text-black dark:text-accent block">HR Admin Portal</span>
+                                            <span class="text-xs text-gray-600 dark:text-gray-400">Centralised overview of all active employee requests, approvals, performance logs, and announcements.</span>
+                                        </div>
+                                        <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-black/5 dark:bg-white/10 text-gray-600 dark:text-gray-300 self-start sm:self-center flex-shrink-0">Web App</span>
+                                    </div>
+                                </div>
+                                <div class="rounded-2xl overflow-hidden border border-gray-200 dark:border-border bg-white dark:bg-card p-4 shadow-md group">
+                                    <div class="overflow-hidden rounded-xl border border-gray-100 dark:border-border/60">
+                                        <img src="../Images/Employee Appointment details.avif" alt="Orgsphere employee appointment details" class="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-500">
+                                    </div>
+                                    <div class="p-4 bg-gray-50 dark:bg-dark/40 rounded-xl mt-3 flex flex-col sm:flex-row justify-between sm:items-center gap-2">
+                                        <div>
+                                            <span class="text-xs font-mono font-bold uppercase text-black dark:text-accent block">Employee Request Details</span>
+                                            <span class="text-xs text-gray-600 dark:text-gray-400">Detailed view of an individual employee's appointment and request history, with real-time status tracking.</span>
+                                        </div>
+                                        <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-black/5 dark:bg-white/10 text-gray-600 dark:text-gray-300 self-start sm:self-center flex-shrink-0">Records Module</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Mobile app -->
+                            <div class="space-y-6">
+                                <div class="flex items-center gap-3">
+                                    <span class="px-2.5 py-1 text-[11px] font-mono font-bold uppercase rounded bg-purple-500/10 text-purple-600 dark:text-purple-400 border border-purple-500/20">Mobile View</span>
+                                    <h4 class="text-lg font-bold text-black dark:text-white">Employee Mobile App</h4>
+                                </div>
+                                <div class="rounded-2xl overflow-hidden border border-gray-200 dark:border-border bg-white dark:bg-card p-4 shadow-md group">
+                                    <div class="overflow-hidden rounded-xl border border-gray-100 dark:border-border/60">
+                                        <img src="../Images/Orgsphere-mobile.avif" alt="Orgsphere mobile app for employee requests" class="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-500">
+                                    </div>
+                                    <div class="p-4 bg-gray-50 dark:bg-dark/40 rounded-xl mt-3 flex flex-col sm:flex-row justify-between sm:items-center gap-2">
+                                        <div>
+                                            <span class="text-xs font-mono font-bold uppercase text-black dark:text-accent block">Employee Mobile Application</span>
+                                            <span class="text-xs text-gray-600 dark:text-gray-400">Responsive mobile experience for employees to submit leave, expense, and training requests and track approvals on the go.</span>
+                                        </div>
+                                        <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-black/5 dark:bg-white/10 text-gray-600 dark:text-gray-300 self-start sm:self-center flex-shrink-0">Mobile App</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 6. Outcome -->
+                        <div class="reveal space-y-6">
+                            <div class="flex items-baseline justify-between border-b border-gray-200 dark:border-border pb-3">
+                                <h3 class="text-2xl font-bold text-black dark:text-white">6. Outcome</h3>
+                                <span class="font-mono text-xs text-gray-400">RESULT</span>
+                            </div>
+                            <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-base">The Orgsphere platform streamlined key HR processes by digitising request approvals, performance management, and employee records. Replacing paper-based workflows with a centralised platform improved communication, reduced processing time, and gave both employees and HR teams better visibility into everyday operations.</p>
+                        </div>
+
+                        <!-- 7. Reflection -->
+                        <div class="reveal space-y-6">
+                            <div class="flex items-baseline justify-between border-b border-gray-200 dark:border-border pb-3">
+                                <h3 class="text-2xl font-bold text-black dark:text-white">7. Reflection</h3>
+                                <span class="font-mono text-xs text-gray-400">LEARNINGS</span>
+                            </div>
+                            <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-base">Working on this project gave me valuable experience designing a large-scale HR system with multiple user roles and interconnected workflows. It pushed me to think beyond individual screens and focus on how different parts of the product fit together to create a consistent user experience. As the platform continues to evolve, additional features — including payroll management — are planned to support more of the organisation's HR operations.</p>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- END LEFT COLUMN -->
+
+                <!-- RIGHT SIDEBAR -->
+                <aside class="lg:col-span-4 space-y-8 lg:sticky lg:top-32">
+
+                    <!-- Prototype Links -->
+                    <div class="reveal p-6 rounded-2xl bg-white dark:bg-card border border-gray-200 dark:border-border shadow-sm">
+                        <h3 class="text-xs font-mono uppercase tracking-widest text-gray-500 dark:text-gray-400 font-semibold mb-5">Prototype Links</h3>
+                        <div class="space-y-3">
+                            <a href="https://www.figma.com/proto/kJi4oYaZeSnXVqgnSwAtfH/Designlinks?node-id=0-1&p=f&viewport=-23809%2C16211%2C0.69&t=AFgRhJIZUdME5tG1-0&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=215%3A54035&show-proto-sidebar=1"
+                                target="_blank" rel="noopener noreferrer"
+                                class="flex items-center justify-between w-full p-4 rounded-xl bg-gray-50 dark:bg-dark border border-gray-200 dark:border-border hover:border-black dark:hover:border-accent group transition-colors hover-trigger">
+                                <span class="text-sm font-semibold text-black dark:text-white">HR Admin</span>
+                                <svg class="w-4 h-4 text-gray-400 group-hover:text-black dark:group-hover:text-accent transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                            </a>
+                            <a href="https://www.figma.com/proto/kJi4oYaZeSnXVqgnSwAtfH/Designlinks?node-id=0-1&p=f&viewport=-1315%2C611%2C0.02&t=AFgRhJIZUdME5tG1-0&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=216%3A133069&show-proto-sidebar=1"
+                                target="_blank" rel="noopener noreferrer"
+                                class="flex items-center justify-between w-full p-4 rounded-xl bg-gray-50 dark:bg-dark border border-gray-200 dark:border-border hover:border-black dark:hover:border-accent group transition-colors hover-trigger">
+                                <span class="text-sm font-semibold text-black dark:text-white">Line Manager</span>
+                                <svg class="w-4 h-4 text-gray-400 group-hover:text-black dark:group-hover:text-accent transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                            </a>
+                            <a href="https://www.figma.com/proto/kJi4oYaZeSnXVqgnSwAtfH/Designlinks?node-id=0-1&p=f&viewport=-17027%2C4531%2C0.29&t=AFgRhJIZUdME5tG1-0&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=216%3A95245&show-proto-sidebar=1"
+                                target="_blank" rel="noopener noreferrer"
+                                class="flex items-center justify-between w-full p-4 rounded-xl bg-gray-50 dark:bg-dark border border-gray-200 dark:border-border hover:border-black dark:hover:border-accent group transition-colors hover-trigger">
+                                <span class="text-sm font-semibold text-black dark:text-white">Web App (Employee)</span>
+                                <svg class="w-4 h-4 text-gray-400 group-hover:text-black dark:group-hover:text-accent transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                            </a>
+                            <a href="https://www.figma.com/proto/kJi4oYaZeSnXVqgnSwAtfH/Designlinks?node-id=1-3&p=f&viewport=290%2C610%2C0.05&t=AFgRhJIZUdME5tG1-0&scaling=scale-down&content-scaling=fixed&starting-point-node-id=216%3A182956&show-proto-sidebar=1"
+                                target="_blank" rel="noopener noreferrer"
+                                class="flex items-center justify-between w-full p-4 rounded-xl bg-gray-50 dark:bg-dark border border-gray-200 dark:border-border hover:border-black dark:hover:border-accent group transition-colors hover-trigger">
+                                <span class="text-sm font-semibold text-black dark:text-white">Mobile App (Employee)</span>
+                                <svg class="w-4 h-4 text-gray-400 group-hover:text-black dark:group-hover:text-accent transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project Details -->
+                    <div class="reveal p-6 rounded-2xl bg-white dark:bg-card border border-gray-200 dark:border-border shadow-sm">
+                        <h3 class="text-xs font-mono uppercase tracking-widest text-gray-500 dark:text-gray-400 font-semibold mb-5">Project Details</h3>
+                        <div class="space-y-4 text-sm">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="text-gray-500 dark:text-gray-400 font-mono text-xs uppercase">Category</span>
+                                <span class="font-semibold text-black dark:text-white text-right">HR &amp; Workforce Management</span>
+                            </div>
+                            <div class="flex justify-between items-start gap-2 pt-3 border-t border-gray-100 dark:border-border">
+                                <span class="text-gray-500 dark:text-gray-400 font-mono text-xs uppercase">Platform</span>
+                                <span class="font-semibold text-black dark:text-white text-right">Web &amp; Mobile</span>
+                            </div>
+                            <div class="flex justify-between items-start gap-2 pt-3 border-t border-gray-100 dark:border-border">
+                                <span class="text-gray-500 dark:text-gray-400 font-mono text-xs uppercase">Tools</span>
+                                <span class="font-semibold text-black dark:text-white text-right">Figma, FigJam</span>
+                            </div>
+                            <div class="flex justify-between items-start gap-2 pt-3 border-t border-gray-100 dark:border-border">
+                                <span class="text-gray-500 dark:text-gray-400 font-mono text-xs uppercase">Duration</span>
+                                <span class="font-semibold text-black dark:text-white text-right">12 Weeks</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </aside>
+            </div>
+        </section>
+
+        <!-- ── NEXT CASE STUDY ── -->
+        <section class="max-w-7xl mx-auto px-6 py-16 border-t border-gray-200 dark:border-border flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 reveal">
+            <div>
+                <span class="text-xs font-mono uppercase tracking-widest text-gray-400 dark:text-gray-500 block mb-1">Next Case Study</span>
+                <h3 class="text-2xl font-bold text-black dark:text-white">Pencentral</h3>
+                <p class="text-gray-500 dark:text-gray-400 text-sm mt-1">A digital platform for writers to publish, share, and monetise their work.</p>
+            </div>
+            <a href="../Case-studies/pencentral.html"
+                class="inline-flex items-center gap-3 bg-black dark:bg-accent text-white dark:text-dark px-8 py-3.5 rounded-full font-bold text-xs uppercase tracking-wider hover:bg-gray-800 dark:hover:bg-white transition-all hover-trigger flex-shrink-0">
+                View Project <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+            </a>
+        </section>
+
+        <!-- ── FOOTER ── -->
+        <footer class="mt-20 border-t border-gray-200 dark:border-border pt-20 pb-12 relative overflow-hidden">
+            <div class="absolute top-12 right-8 md:right-16 text-black dark:text-accent opacity-40 hover:opacity-100 transition-opacity animate-[spin_12s_linear_infinite] pointer-events-none">
+                <svg width="44" height="44" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l2.5 9.5L24 12l-9.5 2.5L12 24l-2.5-9.5L0 12l9.5-2.5z" /></svg>
+            </div>
+            <div class="max-w-7xl mx-auto px-6 reveal">
+                <div class="mb-20 text-center flex flex-col items-center">
+                    <span class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400 font-semibold mb-4 block">Have a project in mind?</span>
+                    <h2 class="text-5xl sm:text-6xl md:text-8xl font-black leading-none tracking-tight text-black dark:text-accent mb-6">Let's Talk</h2>
+                    <a href="mailto:bridgetayomi@yahoo.com" class="group inline-flex items-center gap-3 text-xl sm:text-2xl md:text-3xl font-bold tracking-tight text-gray-900 dark:text-white hover:text-black dark:hover:text-accent transition-colors hover-trigger">
+                        <span>bridgetayomi@yahoo.com</span>
+                        <span class="w-8 h-8 rounded-full border border-gray-300 dark:border-gray-700 group-hover:border-black dark:group-hover:border-accent flex items-center justify-center text-xs transition-colors">&rarr;</span>
+                    </a>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12 py-12 border-y border-gray-200 dark:border-border text-sm">
+                    <div class="md:col-span-5 space-y-4">
+                        <div class="flex items-center gap-2">
+                            <div class="w-3 h-3 bg-black dark:bg-accent rounded-sm rotate-45"></div>
+                            <span class="font-bold text-base text-black dark:text-white">Bridget Fayomi</span>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-400 leading-relaxed text-sm max-w-sm">Product Designer crafting bold digital products, intuitive UX flows, and intentional visual systems.</p>
+                        <div class="flex items-center gap-3 pt-2">
+                            <a href="#" class="w-9 h-9 rounded-full border border-gray-200 dark:border-border flex items-center justify-center hover:border-black dark:hover:border-accent hover:text-black dark:hover:text-accent text-gray-700 dark:text-gray-300 transition-colors hover-trigger font-bold text-xs">𝕏</a>
+                            <a href="#" class="w-9 h-9 rounded-full border border-gray-200 dark:border-border flex items-center justify-center hover:border-black dark:hover:border-accent hover:text-black dark:hover:text-accent text-gray-700 dark:text-gray-300 transition-colors hover-trigger font-serif font-bold text-xs">Bē</a>
+                            <a href="#" class="w-9 h-9 rounded-full border border-gray-200 dark:border-border flex items-center justify-center hover:border-black dark:hover:border-accent hover:text-black dark:hover:text-accent text-gray-700 dark:text-gray-300 transition-colors hover-trigger font-bold text-xs">in</a>
+                        </div>
+                    </div>
+                    <div class="md:col-span-3 md:col-start-7">
+                        <h4 class="font-bold text-xs uppercase tracking-wider text-gray-400 dark:text-gray-500 mb-4">Navigation</h4>
+                        <ul class="space-y-3 text-sm text-gray-600 dark:text-gray-400">
+                            <li><a href="../Index.html" class="hover:text-black dark:hover:text-white transition-colors hover-trigger">Home</a></li>
+                            <li><a href="../pages/projects.html" class="hover:text-black dark:hover:text-white transition-colors hover-trigger">Projects</a></li>
+                            <li><a href="../pages/explorations.html" class="hover:text-black dark:hover:text-white transition-colors hover-trigger">Explorations</a></li>
+                            <li><a href="../pages/contact.html" class="hover:text-black dark:hover:text-white transition-colors hover-trigger">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="md:col-span-3">
+                        <h4 class="font-bold text-xs uppercase tracking-wider text-gray-400 dark:text-gray-500 mb-4">Availability</h4>
+                        <div class="space-y-3 text-sm text-gray-600 dark:text-gray-400">
+                            <div class="flex items-center gap-2">
+                                <span class="relative flex h-2 w-2">
+                                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                                    <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                                </span>
+                                <span class="text-black dark:text-white font-medium">Available for new projects</span>
+                            </div>
+                            <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">I'm always open to meaningful projects, new ideas, and opportunities to create thoughtful digital products.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="py-12 text-center overflow-hidden">
+                    <div class="text-[13vw] font-black leading-none tracking-tighter outline-text hover:text-black dark:hover:text-white transition-colors duration-500 cursor-default select-none">BRIDGET</div>
+                </div>
+                <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-gray-500 dark:text-gray-400">
+                    <p>&copy; 2026 Bridget Fayomi. All rights reserved.</p>
+                    <p>Product Designer &bull; Digital Experiences</p>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script src="../js/scripts.js"></script>
+</body>
+
+</html>
